@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="Settings">
+        <xs:complexType>
+                <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                    <xs:element name="Translation" type="XTranslation" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+
+            <xs:attribute name="sTemplateFilePath" use="required" type="xs:string"/>
+            <xs:attribute name="sDataPathFile" use="required" type="xs:string"/>
+            <xs:attribute name="sFilePath" use="required" type="xs:string"/>
+            <xs:attribute name="sLogDir" use="required" type="xs:string"/>
+            <xs:attribute name="bIncludeHeader" use="required" type="xs:boolean"/>
+            <xs:attribute name="sUsername" use="optional" type="xs:string"/>
+            <xs:attribute name="sObjectTypeName" use="optional" type="xs:string"/>
+            <xs:attribute name="sDateFormat" use="required" type="xs:string"/>
+            <xs:attribute name="sDateAndTimeFormat" use="required" type="xs:string"/>
+            <xs:attribute name="bLinearize" use="required" type="xs:boolean"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="XTranslation">
+            <xs:attribute name="sKey" type="xs:string"/>
+            <xs:attribute name="sValue" type="xs:string"/>
+    </xs:complexType>
+    
+</xs:schema>

@@ -1,0 +1,116 @@
+[App]
+;Windows only.
+;0: the resource on the network share is used.
+;1: the resources are locally copied. This increases the start-up of TEEXMA (by default)
+bCopy_Resources=1
+
+;Deprecated. Do not use.
+;0: the user password is sent into the various command lines  (by default).
+;1: the user password is not sent into the various command lines. The user has to re-enter his password.
+;bSecured_Mode=0
+
+;The "date and time" format. By default, the date format in use on the machine is used.
+;sDate_and_Hour_Format=dd/MM/yyyy hh:mm:ss
+
+;The short date format. By default, the date format in use on the machine is used.
+;sDate_Format=dd/MM/yyyy
+
+;0: the user has to manually close the splashcreen (by default).
+;1: the splashscreen is automatically closed when initialization is finished.
+bClose_Splashscreen=0
+
+;A short description for the TEEXMA application. The complete title of the application is "TEEXMA - #sShort_Description#"
+;sShort_Description=
+
+[Forms]
+;The list data ordering type. 
+;1: the list are sorted by ascending identifiers (the youngest on the top).
+;2: the list are sorted by descending identifiers (the oldest on the top) (by default).
+iList_Ordering_Type=2
+
+;0: the order in the list of data is not displayed (by default).
+;1: a numerical order is used.
+;2: a alphabetical order is used (upper case).
+iData_Numbering_Type=0
+
+;0: the banner is not visible at TEEXMA start-up. The user may activate it into the "Options" menu.
+;1: the banner is visible at TEEXMA start-up. The user may hide it (by default).
+bBanner_Visible_By_Default=1
+
+;Web only.
+;0: the path of the object is displayed into the banner (by default).
+;1: the path of the object is NOT displayed into the banner.
+bDisplay_Object_Path_In_Banner=0
+
+;Deprecated.
+;The maximum number of the data or values displayed into a given cell of the table view (50 by default). 
+;The value must be an integer and positive value.
+;iNb_Max_Data_Displayed=50
+
+;The maximum number of links displayed into the read form (10 by default). 
+;The value must be an integer and positive value.
+;If set to 0 or lower, all links are displayed.
+;This parameter does not apply to the multiple inheritage table nor the associative classes.
+iNb_Max_Links_Displayed=10
+
+;Web only
+;0: the richtext component is not used.
+;1: the richtext component is used (by default).
+;!BE CAREFUL! If you want to activate the RichText afterwards you have to use special TextConvertor (Ask BASSETTI)
+bUse_RichText=1
+
+[Extractions]
+;0: units are not extracted into the WORD extractions (by default).
+;1: units are extracted into the WORD extractions.
+bDisplay_Unit_In_Extractions=0
+
+;0: extraction process is not displayed by default at TEEXMA start-up. The user may activate this option into the "Options" menu (by default).
+;1: extraction process is displayed by default at TEEXMA start-up. The user may unactivate this option into the "Options" menu.
+bExtractions_Displayed=0
+
+;deprecated.
+;web only
+;0: extractions and exportations are executed on the client (by default).
+;1: extractions and exportations are executed on the server (Microsoft Office must be installed on the server).
+bForce_Win_Extraction=1
+
+;deprecated.
+;web orientated^^
+;0: the encoding used for the TSV file (used by excel for the exportations or for the graphics) depends on the version of Excel. if <11, the ANSI encoding is used. if >=11 , the UTF-8 encoding is used (by default).
+;1: the encoding used for the TSV file (used by excel for the exportations or for the graphics) is ANSI.
+;bForce_Ansi=0
+
+[Models_Applications]
+;win only
+;0: the excel models are not displayed (when executed) at TEEXMA start-up. The user may activate this option into the "Options" menu (by default).
+;1: the excel models are displayed (when executed) at TEEXMA start-up. A confirmation popup message is displayed, allowing the user to abort the calculation. The user may unactivate this option into the "Options" menu.
+bXLS_Models_Displayed=0
+
+;A maximum number of models applications loops (An MA writes data that triggers MAs that write new data that trigger new MAs aso.).
+;This parameters allows to prevent from infinite loops. It is set to 50 by default.
+;If equals to -1, no limit is applied.
+;Else, the value must be an integer and positive value.
+iNb_MA_Max_Loops=50
+
+[Business_Views]
+;Deprecated
+;In business view, if an object is present in many branches of the tree, displaying all those branches may be long. 
+;This parameter allows to limit the number of branches to expand. It is set to 1 by default.
+;The value must be an integer and positive value.
+;iNb_Max_Path=1
+
+[Workflows]
+;Deprecated.
+;For flowmind workflows that works asynchroneously, the sleep duration (in milliseconds) to ensure to retrieve the "right" data.
+;The value must be an integer and positive value. It is set to 300 milliseconds by default.
+;iWF_Sleep_Duration=300
+
+[Web]
+;A max size for files to upload. The default value is 10Mo.
+;iMax_Size_Upload=10
+
+;This variable overrides the default TEEXMA url read from a session variable.
+;sUrl_TEEXMA=
+
+;Specify the application name if the web site is an application in a website.
+;sIISApplicationName=""

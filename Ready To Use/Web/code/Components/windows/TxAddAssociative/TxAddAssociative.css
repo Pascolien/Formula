@@ -1,0 +1,28 @@
+﻿
+#idDivTreeAsso{
+    width:100%-10px;
+    height: 200px;
+	border: #A4BED4 1px solid;
+    margin-top:6px;
+}
+
+#idDivToolbarAsso{
+    margin-top:-1px;
+    margin-bottom:6px;
+}
+
+#idDivAddAssociative label{
+    margin-right:6px;
+    margin-top:3px;
+    float:left;
+    width: 160px;
+    text-align: right;
+}
+
+#idDivComboAssoFormType{
+    margin-bottom:6px;
+}
+
+#idDivButtonBarAsso{
+    margin-right:6px;
+}

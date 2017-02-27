@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="TxViews" type="XViews"/>
+	
+    <xs:complexType name="XViews">
+        <xs:choice minOccurs="0" maxOccurs="unbounded" >
+            <xs:element name="OTQuery" type="XOTQuery" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="LinkQuery" type="XLinkQuery" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:choice>
+    </xs:complexType>
+    
+    <xs:complexType name="XQuery">
+        <xs:attribute name="sName" type="xs:string" use="required"/>
+         <xs:attribute name="iQueryType" type="xs:integer" use="required"/>      
+    </xs:complexType>
+    
+    <xs:complexType name="XOTQuery">
+        <xs:complexContent>
+            <xs:extension base="XQuery">
+                <xs:attribute name="sAttIDs" type="xs:string" use="optional"/>
+                <xs:attribute name="sOTTag" type="xs:string" use="required"/>
+                <xs:attribute name="sFieldNames" type="xs:string" use="optional"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+   <xs:complexType name="XLinkQuery">
+        <xs:complexContent>
+            <xs:extension base="XQuery">
+                <xs:attribute name="sLinkTypeTag" type="xs:string" use="required"/>                
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+</xs:schema>

@@ -1,0 +1,11 @@
+﻿<a href="#" id="idADisplayHomePage" title="Retourner au portail">
+    <img id="idTxLogo" src="/temp_resources/theme/img/icone.png" />
+    <img id="idBassettiLogo" src="/temp_resources/theme/img/logo.png" />
+</a>
+
+<script type="text/javascript">
+    J("#idADisplayHomePage img").each(function () {
+        J(this).attr("src", _url(J(this).attr("src")));
+    });
+    translate();
+</script>

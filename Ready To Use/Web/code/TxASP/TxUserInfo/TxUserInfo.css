@@ -1,0 +1,21 @@
+﻿
+#userInformation {
+    padding: 15px 5px 5px 5px;
+    width: 95%;
+    text-align: center;
+}
+
+#userName {
+    font-size: 18px;
+    word-wrap: break-word;
+    font-weight: bolder;
+    margin-bottom: 15px;
+}
+
+#lastConnection, label[for="lastConnection"] {
+    font-size: 12px;
+}
+
+#lastConnection {
+    font-weight: bolder;
+}

@@ -1,0 +1,167 @@
+﻿var wFEF;
+var lFEF;
+
+function displayFormulaWindow(aJSONFormula) {
+    if (!dhxWins) {
+        dhxWins = new dhtmlXWindows("dhx_blue");
+        dhxWins.setImagePath('../../../resources/theme/img/dhtmlx/windows/');
+    }
+
+    wFEF = dhxWins.createWindow("editFormula", 10, 10, 450, 350);
+    wFEF.setText("Edit Formula");
+    wFEF.center();
+    wFEF.denyPark();
+    wFEF.button("close").hide();
+    wFEF.denyResize();
+    wFEF.setIcon("windowIcon");
+
+    lFEF = wFEF.attachLayout('2E');
+    lFEF.setAutoSize("a", "a");
+
+    var a = lFEF.cells('a');
+    a.hideHeader();
+
+    /* Data */
+    /** Big div **/
+    var bigdiv = document.createElement("div");
+    bigdiv.setAttribute('style', 'width: 100%; height: 100%;  background: #e7f2ff;overflow-y:auto');
+    a.attachObject(bigdiv);
+
+    /*** Div Formula ***/
+    var divFormula = document.createElement("div");
+    divFormula.setAttribute("id", "divFormula");
+    divFormula.setAttribute("class", 'editdiv');
+
+    /**** Caption for Formula Name ****/
+    var sNameFomula = document.createTextNode('Formula :');
+    divFormula.appendChild(sNameFomula);
+
+    /**** Input for Formula ****/
+    var inputFormula = document.createElement('textarea');
+    inputFormula.setAttribute('id', 'efFormula')
+    inputFormula.setAttribute('rows', '10');
+    inputFormula.setAttribute('cols', '70');
+    inputFormula.setAttribute('style', 'width:100%;resize: none')
+    inputFormula.value = aJSONFormula.formula;
+    divFormula.appendChild(inputFormula);
+
+    bigdiv.appendChild(divFormula);
+
+    /*** Div Result Unit ***/
+    var divFormulaUnit = document.createElement("div");
+    divFormulaUnit.setAttribute("id", "divFormulaUnit");
+    divFormulaUnit.setAttribute("class", 'editdiv');
+    divFormulaUnit.setAttribute("style", "margin-top:135px")
+
+    /**** Caption for Result Unit ****/
+    var sNameFormulaUnit = document.createTextNode('Result Unit :');
+    divFormulaUnit.appendChild(sNameFormulaUnit);
+
+    /**** Input for Result Unit ****/
+    var inputResultUnit = document.createElement('input');
+    inputResultUnit.setAttribute('id', 'efResultUnit')
+    inputResultUnit.setAttribute('class', 'editinput');
+    inputResultUnit.setAttribute('style', ' with: 100!i%mportant')
+    if (aJSONFormula.result.unit) inputResultUnit.value = aJSONFormula.result.unit;
+    divFormulaUnit.appendChild(inputResultUnit);
+
+    bigdiv.appendChild(divFormulaUnit);
+
+    bigdiv.setDisabledparent = true;
+
+    /** ToolBar in Layout B **/
+    var b = lFEF.cells('b');
+    b.hideHeader();
+    b.setHeight(38);
+    b.fixSize(1, 1);
+
+    var divtoolbar = document.createElement('div');
+    divtoolbar.setAttribute('id', 'divformulatoolbar');
+    divtoolbar.setAttribute('style', 'margin-top: 2px; height: 30px; overflow: hidden; margin-left:0px; padding-right:6px;')
+    b.attachObject(divtoolbar);
+
+    var editformtoolbar = new dhtmlXToolbarObject('divformulatoolbar');
+    editformtoolbar.setIconsPath("/Resources/theme/img/");
+    editformtoolbar.setAlign("right");
+
+    /*--Buttons--*/
+    editformtoolbar.addButton('save', 0, 'Ok', 'btn_form/16x16_true.png');
+    editformtoolbar.addButton('cancel', 1, 'Cancel', 'btn_form/16x16_false.png');
+
+  
+
+    editformtoolbar.attachEvent("onClick", function (id) {
+
+        switch (id) {
+            case "save":
+                debugger;
+
+                var param;
+                ObjFormula.formula = inputFormula.value;
+                ObjFormula.result.unit = inputResultUnit.value;
+
+                param = getParams(math.parse(ObjFormula.formula, {}).params).filter(function (e) {
+                    return typeof e === "string";
+                });
+
+                var inputs = param.filter(function () { return true; });
+
+                param = param.filter(function (p) {
+                    return !ObjFormula.variables.some(function (v) { return v.name === p });
+
+                });
+
+
+
+                var maj = ObjFormula.variables.filter(function (a) {
+
+                    return !param.some(function (v) { return v.name === a });
+
+
+                });
+                var i;
+
+                //del unused variables
+
+                maj.forEach(function (a) {
+                    var index = ObjFormula.variables.findIndex(function (v) {
+                        return v === a;
+                    });
+                    //if a var is not in the formula anymore it ll be erased but when 
+                    //you modify the formula all those var that were declared and are still used wont be deleted
+
+                    if (index > -1 && inputs.indexOf(a.name) === -1) ObjFormula.variables.splice(index, 1);
+                })
+                //fin test 
+                editVariables(param);
+
+                function editVariables(aVariables) {
+
+                    if (!(aVariables && aVariables.length > 0)) return;
+                    editVariable({ name: aVariables[0] }, function () {
+                        aVariables.shift();
+                        editVariables(aVariables)
+                    });
+                }
+
+               // debugger;
+                if (ObjFormula.checkDisplay == true) {
+
+                    if (ObjFormula.calculate() == true) {
+                        ObjFormula.display();
+                    }
+                }
+
+                ObjFormula.display();
+                ObjFormula.calculate();
+                dhxWins.window("editFormula").close();
+
+
+
+                break;
+
+            default:
+                dhxWins.window("editFormula").close();
+        }
+    });
+}

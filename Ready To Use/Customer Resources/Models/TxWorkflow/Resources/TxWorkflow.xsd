@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="TxWorkflow">
+        <xs:complexType>
+            <xs:sequence maxOccurs="unbounded">
+                <xs:element name="TxWorkflowConfiguration" type="XWorkflowConfiguration"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="XWorkflowConfiguration">
+        <xs:choice minOccurs="1" maxOccurs="unbounded">
+            <xs:element name="Log" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Template" minOccurs="1" maxOccurs="1"/>
+                        <xs:element name="BlackListedAction" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                    <xs:attribute name="bLogActions" type="xs:boolean" use="optional" default="false"/>
+                    <xs:attribute name="sLogAttTag" type="xs:string" use="required"/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Action" type="XAction" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:choice>
+        <xs:attribute name="sName" type="xs:string" use="required"/>
+        <xs:attribute name="sOTTag" type="xs:string" use="required"/>
+        <xs:attribute name="sTag" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="XTask">      
+        <xs:attribute name="sRLTag" type="xs:string" use="optional"/>
+        <xs:attribute name="sName" type="xs:string" use="optional"/>
+        <xs:attribute name="sFailureTreatmentType" type="XFailureTreatmentType" default="fttBlock"/>
+        <xs:attribute name="sDescription" type="xs:string" use="optional"/>
+    </xs:complexType>
+    
+    <xs:complexType name="XTaggedTask">
+        <xs:complexContent>
+            <xs:extension base="XTask">
+                <xs:attribute name="sTag" type="xs:string" use="required"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:complexType name="XMCSTask">
+        <xs:complexContent>
+            <xs:extension base="XTask">
+                <xs:choice minOccurs="0" maxOccurs="unbounded">
+                    <xs:element  name="MessageInCaseOfFailure" minOccurs="0" maxOccurs="1" type="xs:string"/>
+                </xs:choice>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:complexType name="XTasksList">
+        <xs:complexContent>
+            <xs:extension base="XTask">
+                <xs:choice minOccurs="1" maxOccurs="unbounded">
+                    <xs:element name="WriteFormTask" type="XWriteFormTask" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element name="ModelApplicationTask" type="XTaggedTask" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element name="DataWritingTask" type="XDataWritingTask" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element name="MCSTask" type="XMCSTask" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element name="AdvancedDuplicationTask" type="XTaggedTask" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element name="MessageTask" type="XMessageTask" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element name="TasksList" type="XTasksList" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:choice>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="XAction">
+        <xs:complexContent>
+            <xs:extension base="XTasksList">
+                <xs:attribute name="sFlag" type="xs:string" use="optional"/>
+                <xs:attribute name="sIconUrl" type="xs:string" use="optional"/>
+                <xs:attribute name="bIgnoreRights" type="xs:string" use="optional"/>
+                <xs:attribute name="sFailureTreatmentType" use="prohibited"/>               
+            </xs:extension>            
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:simpleType name="XFailureTreatmentType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="fttBlock"/>
+            <xs:enumeration value="fttAllow"/>
+            <xs:enumeration value="fttAllowButWarn"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="XDataWritingTask">
+        <xs:complexContent>
+            <xs:extension base="XTask">
+                <xs:sequence>
+                    <xs:element name="DataSettings" type="XDataSettings" minOccurs="1" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="XDataSettings">
+        <xs:sequence >
+            <xs:element name="Properties" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Property" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:simpleContent>
+                                    <xs:extension base="xs:string">
+                                        <xs:attribute name="sName" type="xs:string" use="required"/>
+                                    </xs:extension>
+                                </xs:simpleContent>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="sAttTag" use="required"></xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="XWriteFormTask">
+        <xs:complexContent>
+            <xs:extension base="XTask">
+                <xs:sequence>
+                    <xs:element name="FieldSettings" type="XDataSettings" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+                <xs:attribute name="sWriteFormType" type="XWriteFormType" use="required"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:simpleType name="XWriteFormType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="wftDefaultForm"/>
+            <xs:enumeration value="wftAttributesList"/>
+        </xs:restriction>
+    </xs:simpleType>    
+
+    <xs:complexType name="XMessageTask">
+        <xs:complexContent>
+            <xs:extension base="XTask">
+                <xs:attribute name="sMessage" type="xs:string"/>
+                <xs:attribute name="sType" type="XMessageTaskType"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:simpleType name="XMessageTaskType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="mtWarning"/>
+            <xs:enumeration value="mtInformation"/>
+            <xs:enumeration value="mtOkCancel"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

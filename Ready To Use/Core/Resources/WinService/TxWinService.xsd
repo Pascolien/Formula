@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="TxWinService">
+        <xs:complexType>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="ArchivedFilesIndexingTask" type="XWinServiceTask" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="ExternalServersSolrIndexingTask" type="XWinServiceTask" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="FullTextLogFileSplittingTask" type="XWinServiceTask" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="ModelApplicationTask" minOccurs="0" maxOccurs="unbounded" type="XModelApplicationTask"/>
+                <xs:element name="ReloadingTask" minOccurs="0" maxOccurs="1" type="XWinServiceTask"/>
+            </xs:choice>
+            <xs:attribute name="iTimeToSleepInCaseOfFailure" use="optional" type="xs:int"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="XWinServiceTask">
+        <xs:sequence minOccurs="1" maxOccurs="1">
+            <xs:element name="Period" type="XPeriod" maxOccurs="1" minOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="XModelApplicationTask">
+        <xs:complexContent>
+            <xs:extension base="XWinServiceTask">
+                <xs:attribute name="sMATag" type="xs:string"/>
+                <xs:attribute name="sTag" use="optional" type="xs:string"/>
+                <xs:attribute name="sExplaination" use="optional" type="xs:string"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="XPeriod">
+        <xs:sequence minOccurs="0" maxOccurs="7">
+            <xs:element name="AllowedWeekDay" maxOccurs="7" type="xs:int"/>
+        </xs:sequence>
+        <xs:attribute name="sPeriodType" use="required">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="Fixed"/>
+                    <xs:enumeration value="EveryDay"/>
+                    <xs:enumeration value="EveryMonth"/>
+                    <xs:enumeration value="EveryYear"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="iPeriod" type="xs:int" use="optional"/>
+        <xs:attribute name="fHour" type="xs:float" use="optional"/>
+    </xs:complexType>
+
+</xs:schema>

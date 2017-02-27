@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="TxExtractions" type="XExtractions"/>
+	
+    <xs:complexType name="XExtractions">
+        <xs:choice minOccurs="0" maxOccurs="unbounded" >
+            <xs:element name="TxExcelExtraction" type="XExcelExtraction" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="TxWordExtraction" type="XWordExtraction" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:choice>
+    </xs:complexType>
+    
+    <xs:complexType name="XVirtualExtraction">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="AfterExtractionExecutable">
+                <xs:complexType>
+                    <xs:sequence minOccurs="1" maxOccurs="1">
+                        <xs:element minOccurs="1" maxOccurs="unbounded" name="Arguments">
+                            <xs:complexType>
+                                <xs:sequence minOccurs="1" maxOccurs="unbounded">
+                                    <xs:element minOccurs="1" maxOccurs="unbounded" name="Argument"></xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                    <xs:attribute name="sRelativePath" type="xs:string" use="required"></xs:attribute>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="sTemplateRFilePath" type="xs:string" use="required"/>
+        <xs:attribute name="sName" type="xs:string" use="required"/>
+        <xs:attribute name="sTag" type="xs:string" use="required"/>
+        <xs:attribute name="sAttFileWhereToPublish" type="xs:string" use="optional"/>
+        <xs:attribute name="sTemplateFileName" type="xs:string" use="required"/>
+        <xs:attribute name="sOnAfterExtractionExecutableRPathFile" type="xs:string" use="optional"/>
+        <xs:attribute name="sOTTag" type="xs:string" use="required" />
+    </xs:complexType>
+    
+    <xs:complexType name="XExcelExtraction">
+        <xs:complexContent>
+            <xs:extension base="XVirtualExtraction">
+                <xs:sequence minOccurs="1" maxOccurs="unbounded">
+                    <xs:element minOccurs="1" maxOccurs="unbounded" name="TxWorksheet" type="XWorksheet"/>
+                </xs:sequence>    
+            </xs:extension>
+        </xs:complexContent>
+       </xs:complexType>    
+       
+    <xs:complexType name="XWorksheet">
+          <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element name="TxSource" type="XTxSource" />
+          </xs:sequence>
+          <xs:attribute name="sName" type="xs:string" use="required"></xs:attribute>
+          <xs:attribute name="bTranspose" type="xs:boolean" use="optional" default="false"/>
+          <xs:attribute name="iStartRow" type="xs:integer" use="optional"/>
+          <xs:attribute name="sObjectColumn" type="xs:string" use="optional" />
+          <xs:attribute name="sStartColumn" type="xs:string" use="optional" />
+          <xs:attribute name="iObjectRow" type="xs:integer" use="optional" />
+          <xs:attribute name="bObjectsAppearOnceOnly" type="xs:boolean" use="optional" />
+          <xs:attribute name="sDateAndTimeCell" type="xs:string" use="optional" />
+          <xs:attribute name="sObjectTypeCell" type="xs:string" use="optional" />
+        <xs:attribute name="sUsernameCell" type="xs:string" use="optional" />
+    </xs:complexType> 
+    
+    <xs:complexType name="XTxSource">
+        <xs:attribute name="sAttributesSetTag" type="xs:string" use="required" />
+    </xs:complexType>    
+    
+    <xs:complexType name="XExcelSource">
+        <xs:sequence>
+            <xs:element name="ExcelToWordPairs" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="ExcelToWordPair" minOccurs="1" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:attribute name="sType" use="required">
+                                    <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                            <xs:enumeration value="Range"></xs:enumeration>
+                                            <xs:enumeration value="Chart"></xs:enumeration>
+                                        </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:attribute>
+                                <xs:attribute name="sRange" type="xs:string" use="optional"></xs:attribute>
+                                <xs:attribute name="sChartName" type="xs:string" use="optional"></xs:attribute>
+                                <xs:attribute name="sBookmark" type="xs:string" use="optional"></xs:attribute>
+                                <xs:attribute name="iColumn" type="xs:integer" use="optional"></xs:attribute>
+                                <xs:attribute name="sBookmarkIfNoValue" type="xs:string" use="optional"></xs:attribute>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="sLayoutType" type="XLayoutType" use="required" />
+    </xs:complexType>    
+       
+    <xs:complexType name="XWordExtraction">
+        <xs:complexContent>
+            <xs:extension base="XVirtualExtraction">
+                <xs:sequence>
+                    <xs:element name="TxSource" minOccurs="0" maxOccurs="unbounded">
+                        <xs:complexType>
+                            <xs:complexContent>
+                                <xs:extension base="XTxSource">
+                                    <xs:attribute name="sObjectBookmark" type="xs:string" use="optional"></xs:attribute>
+                                    <xs:attribute name="iObjectColumn" type="xs:int" use="optional"></xs:attribute>
+                                    <xs:attribute name="sLayoutType" type="XLayoutType" use="required"></xs:attribute>
+                                    <xs:attribute name="sHierarchyBookmark" type="xs:string"></xs:attribute>
+                                    <xs:attribute name="sTableBookmark"  type="xs:string"></xs:attribute>
+                                </xs:extension>
+                            </xs:complexContent>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ExcelSource" type="XExcelSource" minOccurs="0" maxOccurs="unbounded" />
+                </xs:sequence>
+                <xs:attribute name="sType" use="required">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="OneFilePerObject"></xs:enumeration>
+                            <xs:enumeration value="OneFileForAllObjects"></xs:enumeration>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:attribute>
+                <xs:attribute name="sDateAndTimeBookmark" type="xs:string" use="optional"></xs:attribute>
+                <xs:attribute name="sDateBookmark" type="xs:string" use="optional"></xs:attribute>
+                <xs:attribute name="sObjectTypeBookmark" type="xs:string" use="optional"></xs:attribute>
+                <xs:attribute name="sUsernameBookmark" type="xs:string" use="optional"></xs:attribute>
+                <xs:attribute name="sShortDateFormat" type="xs:string" use="optional"></xs:attribute>
+                <xs:attribute name="sDateAndTimeFormat" type="xs:string" use="optional"></xs:attribute>
+                <xs:attribute name="sTrue" type="xs:string" use="optional"></xs:attribute>
+                <xs:attribute name="sFalse" type="xs:string" use="optional"></xs:attribute>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:simpleType name="XLayoutType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Table"></xs:enumeration>
+            <xs:enumeration value="Bookmarks"></xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    
+</xs:schema>

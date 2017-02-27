@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="TxStrGen" type="XStrGen"/>
+	
+    <xs:complexType name="XStrGen">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded" >
+            <xs:element name="TxStrGenConfiguration" type="XStrGenConfiguration" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="XStrGenConfiguration">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">First node StrGen.</xs:documentation>
+        </xs:annotation>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="Text" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="Username" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="Date" type="XDate" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="Data" type="XData" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="Index" type="XIndex" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:choice>
+        <xs:attribute name="sName" type="xs:string" use="required"/>
+        <xs:attribute name="sOTTag" type="xs:string" use="required"/>
+    </xs:complexType>
+    
+    <xs:complexType name="XDate">
+        <xs:attribute name="sDateSeparator" type="xs:string" />
+        <xs:attribute name="sDateFormat" type="xs:string" />
+        <xs:attribute name="sTimeSeparator" type="xs:string" />
+    </xs:complexType>
+    
+    <xs:complexType name="XData">
+        <xs:attribute name="sTags_Att" type="xs:string" use="optional"/>
+        <xs:attribute name="sCase" type="XCase" />
+        <xs:attribute name="iMaxSize" type="xs:int"/>
+        <xs:attribute name="bPerData" type="xs:boolean" />
+        <xs:attribute name="sDataSeparator" type="xs:string"/>
+        <xs:attribute name="iNumberOfData" type="xs:int"/>
+        <xs:attribute name="sPrefix" type="xs:string" />
+        <xs:attribute name="sSuffix" type="xs:string" />
+        <xs:attribute name="bDeleteExtension" type="xs:boolean" />
+        <xs:attribute name="sAbbreviation" type="xs:string" />
+        <xs:attribute name="sDateSeparator" type="xs:string" />
+        <xs:attribute name="sDateFormat" type="xs:string" />
+        <xs:attribute name="sDateTimeFormat" type="xs:string" />
+        <xs:attribute name="sTimeSeparator" type="xs:string" />
+        <xs:attribute name="sIndexFormat" type="XIndexFormat"/>
+        <xs:attribute name="iNumberOfCharacters" type="xs:int" use="optional"/>
+        <xs:attribute name="bConsiderAsIndex" type="xs:boolean" use="optional"/>
+    </xs:complexType> 
+    
+    <xs:simpleType name="XCase">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Lowercase"/>
+            <xs:enumeration value="Uppercase"/>
+            <xs:enumeration value="As Is"/>          
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:complexType name="XIndex">
+        <xs:attribute name="sIncrementationType" type="XIncrementationType" />
+        <xs:attribute name="sRPath_File" type="xs:string"/>
+        <xs:attribute name="sTags_Att_ReferenceIndex" type="xs:string"/>
+        <xs:attribute name="sIndexFormat" type="XIndexFormat"/>
+        <xs:attribute name="sInitialIndex" type="xs:string"/>
+        <xs:attribute name="bIncrement" type="xs:boolean"/>
+        <xs:attribute name="sTag_Att_Index" type="xs:string" use="optional"/>
+        <xs:attribute name="sTag_Att_Data" type="xs:string" use="optional"/>
+        <xs:attribute name="sTag_Obj_Data" type="xs:string" use="optional"/>
+        <xs:attribute name="iNumberOfCharacters" type="xs:int"/>
+    </xs:complexType> 
+    
+    <xs:simpleType name="XIncrementationType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Global"/>
+            <xs:enumeration value="Link"/>
+            <xs:enumeration value="Data"/>
+            
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="XIndexFormat">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="AlphaUpper"/>            
+            <xs:enumeration value="AlphaLower"/>            
+            <xs:enumeration value="Numerical"/>            
+        </xs:restriction>
+    </xs:simpleType>
+    
+    
+</xs:schema>

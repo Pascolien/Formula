@@ -1,0 +1,2004 @@
+/* Feuille de style Teexma Web 3.x */
+/* Feuille de style Teexma Web 3.x */
+
+/* Classe pour la couleur primaire */
+.smc_titre_bas, #smc_cadre_ext, .smc_bordure_ext, .tp_bar,
+.type_entite_bar, #entite, #div_titre_bas, #div_bordure_ext, #tabs a, #tabs a.selected, 
+.smc_titre_haut, .smc_bordure_int, .smc_btn_action, div.create_form_page,
+#popup_form_title_container, div.gdc_sous_formulaire1, div.gdc_sous_formulaire3, div.gdc_sous_formulaire5, #bar,
+div.smc_onglet a.selected, .information, #tabbar_panel  {
+	background: 		#CDD8ED; /* Couleur clair */
+}
+
+/* Classe pour la couleur secondaire */
+.menu1, .footer, .nom_entite, #banniere, #bouton  {
+	background: 		#9EB7CD; /*#423436;  Couleur fonc� */
+	color:        	#ffffff; /* Blanc */
+}
+
+/* Cas particulier */
+#tabs a, div.create_form_page, div.gdc_sous_formulaire2, div.gdc_sous_formulaire4, div.gdc_sous_formulaire6 {
+	/*background:   	#F6F4F4; /* Couleur tr�s clair */
+	background:   	#FFFFFF; /* Couleur tr�s clair */
+}
+
+#tabs a:hover, div.smc_onglet a:hover {
+  background:			#F2AD6F; /* Couleur interm�diaire (fond des onglets lors du passage de la souris) */
+}
+
+div, div.gdc_sous_formulaire1, div.gdc_sous_formulaire2, div.gdc_sous_formulaire3,
+div.gdc_sous_formulaire4, div.gdc_sous_formulaire5, div.gdc_sous_formulaire6, #general,
+div.smc_onglet, div.bar_text, div.smc_onglet a, div.smc_onglet a.selected, #bar, .information,
+#div_bordure_int, fieldset.field1, #tabbar_panel {
+	border: 				0px #336699 solid; /* Couleur fonc� */
+}
+
+#tabs a.selected, div.smc_onglet a.selected {
+  border-bottom:	1px #F4975D solid; /* couleur clair */
+}
+
+/* Couleur et regle par defaut */
+/*
+* {
+	font-family:			Tahoma, Verdana, Arial, Helvetica, sans-serif, monospace;
+	font-size:      	11px;
+	/*color:						#000000; /* Noir */ 
+/*}
+*/
+
+html, body, div, form {
+	margin:						0;
+	padding:					0;
+	
+}
+
+html,body {
+	background-color:white;
+	/*height:				    100%;
+	
+	width:						100%;*/
+}
+
+
+/* Composants et zones sous fonds blanc */
+body, input, select, option {
+	/*background: transparent;*/
+}
+
+img, a, form, div {
+	/*background-color: transparent;*/
+}
+
+hr.hr1 {
+	height: 					1px;
+	color:						#000000;
+}
+
+fieldset {
+	border: 1px solid black;
+}
+
+.textelong {
+	width: 					300px;
+	word-wrap:			break-word;
+	word-break:			break-all;
+}
+
+a.a_source {
+	float: left;
+}
+
+#contenu_form {
+	position: 	absolute;
+	top: 				5px;
+	bottom: 		0px;
+	left: 			0px;
+	right: 			0px;
+	overflow: 	auto;
+	padding: 		5px;	
+	_height: 		90%;
+	_width: 		96%;
+}
+
+div.smc_bordure_int #contenu_form {
+  top:        0;
+}
+
+#btn_ajout_supp {
+	float: left;
+ 	margin-left: 10px;
+ 	height: 20px;
+}
+
+#btn_deplacement {
+	text-align: right;
+	margin-right: 10px;
+	height: 20px;
+}
+
+#champ_recherche {
+	height: 16px;
+	border: 0px;
+}
+
+#logo_icone {
+	margin: 					4px 0 0 4px;
+	height:						32px;
+	width: 						32px;
+	float: 						left;
+	
+}
+
+#logo_bassetti {
+	float:  					left;
+	margin: 					10px 25px 0 5px;
+}
+
+
+img.btn_std_ico, img.btn_std_ico_off, img.ico_fleche {
+	margin-left:5px;
+	text-decoration:  none;
+	background:				transparent;
+	border: 					1px transparent solid;
+	_border:          0px; /* hack IE6 */
+	cursor:           pointer;
+	margin-right: 		0px;
+	padding:1px;
+}
+
+img.btn_std_ico_off {
+	cursor: default;
+}
+
+img.btn_std_ico:hover, img.ico_fleche:hover {
+	cursor:pointer;
+	border:       1px grey solid;
+	box-shadow: 0px 1px 0px #aaa;
+	border-radius:2px;
+}
+
+img.btn_std_ico:active, img.ico_fleche:active {
+	background-color:#e2e2e2;
+}
+
+input.btn_std {
+ 	text-align: center;
+	/*background-color: #d4d0c8;	*/
+	min-width: 70px; 
+	height:23px;
+	margin-top: 5px;
+	margin-right: 6px;
+	padding: 2px 2px 2px 2px;
+	cursor: pointer;
+}
+#btn_change_password{
+	position:relative;
+	text-align:right;
+	margin-top:5px;
+	/*float:right;*/
+}
+	#btn_valid_pass{
+		
+	}
+
+input#input_name_gc{
+	width:150px;
+}
+
+#select_type_gc{
+	width:155px;
+}
+
+
+.iframe_form {
+	width: 		98%;
+	height: 	600px;
+	border : 	1px;
+}
+
+.iframe_form1 {
+	margin:		4px;
+	width: 		98%;
+	height: 	300px;
+	border : 	1px;
+}
+
+.information {
+	margin-top:       10px;
+	padding:					5px;
+	border-width:     1px;
+	border-style:			dashed;
+	/*z-index: 					1px;*/
+
+}
+
+a.ok_recherche {
+	font-size:					9px;
+	text-decoration:		none;
+	line-height: 				10px;
+	position: 					relative;
+	left: 							158px;
+	top: 								-15px;
+	margin-bottom: 			-10px;
+}
+
+img.loupe_recherche {
+	line-height: 				10px;
+	position: 					relative;
+	left: 							-20px;
+	top: 								-1px;
+	margin-bottom: 			-20px;
+	height:							18px;
+}
+
+/* ----------------------------------------------------- */
+/*    PAGE DE CONNEXION LOGIN ET CHOIX DE LA BASE       */
+/* ----------------------------------------------------- */
+
+	#Login_Message{
+		position: absolute;
+		bottom:30px;
+		font-size:9px;
+		margin-top:5px;
+		
+		left:0px;
+		right:0px;
+		height:auto;
+		display:none;		
+	}
+		#LM_Compatibility_Mode{
+			display:none;
+			width:300px;
+			border:1px solid;
+			left:50%;
+			padding:5px;
+		}
+		#LM_Popup_Blocked{
+			display:none;
+			width:300px;
+			border:1px solid;
+			left:50%;
+			padding:5px;
+		}
+	#load_structure{
+		z-index: 10;
+		position: absolute;
+		width:100%;
+		height:100%;
+		/*background:url("../../../resources/theme/img/Image_Loading.jpg") no-repeat;*/
+		background:url("../../../temp_resources/texts and illustrations/HTML/folder.jpg") no-repeat;
+		background-position: 50% 50%;
+	}
+	#progress{
+		position:absolute;
+		width: 100%;
+		bottom: 100px;
+	}
+	#message{
+		font-family:verdana;
+		font-size:12px;
+	}
+/* ----------------------------------------------------- */
+div.cadre_header {
+	text-align:					center;
+	margin-top:					40px;
+	background:					#FFFFFF;
+	border:						1px #000000 solid;
+	width:						100%;
+	height:						100px;
+}
+
+div.cadre_ext {
+    position:					absolute;
+    top:						50%;
+	padding:					10px;
+	background:					#FFFFFF;
+	border:						1px #000000 solid;
+	width:						90%;
+	height:						400px;
+	margin:						4%;
+	margin-top:					-200px;
+}
+
+div.cadre_int {
+	text-align:			center;
+	position:				absolute;
+	top:						50%;
+	left:						50%;
+	padding:				10px;
+	margin:					auto;
+	margin-top:			-80px;
+	margin-left:		-130px;
+	background:			#EEEEEE;
+	border:					1px #888888 dashed;
+	width:					260px;
+	height:					160px;
+}
+
+div.cadre_footer {
+	position:					absolute;
+	top:						100%;
+	margin-top:					-140px;
+	text-align:					center;
+	background:					#FFFFFF;
+	border:						1px #000000 solid;
+	width:						100%;
+	height:						100px;
+}
+
+div.version {
+	font-size:					9px;
+	position:					absolute;
+	bottom:						-14px;
+	right:						10px;
+}
+
+div.info {
+	font-size:					9px;
+	color:						red;
+	text-align:					left;
+}
+
+div.page_ajout {
+	margin:					10px;
+	padding:				10px;
+	border:					1px #000000 solid;
+}
+
+div.create_form_page {
+	position: 		absolute;
+	top: 					0px;
+	bottom: 			0px;
+	left: 				0px;
+	right: 				0px;
+	/*border-width: 1px;*/
+	margin-right: 4px;
+	line-height:	16px;
+	_height:			98%;
+	_width:				98%;
+	cursor:       default;
+	overflow: 		hidden;
+}
+
+div.nom_entite {
+	font-size:		14px;
+	text-align:		center;
+	font-weight:	bold;
+	width:        100%;
+	line-height:	18px;
+}
+
+div.nom_entite a, div.nom_entite img {
+	text-decoration: 	none;
+	border:						0;
+}
+
+div.nom_entite a {
+	border:		1px solid white;
+}
+
+span.tree_nom_entite {
+	padding: 4px;
+}
+
+span.tree_nom_entite a {
+	text-decoration: none;
+}
+
+div.nom_nouvel_entite {
+	font-weight:			bold;
+	font-size:				12px;
+}
+
+div.mwi_spacer {
+	margin-bottom:	8px;
+	clear:					both;
+}
+
+div.mwi_gauche {
+	float:  left;
+	width: 260px;
+	line-height: 20px;
+}
+
+	div.mwi_icone {
+		padding: 0;
+		float: left;
+		width: 30px;
+	}
+
+	div.mwi_legende {
+		text-align: right;
+		padding: 0;
+		float:  left;
+		width: 225px;
+		font-size: 11px;
+	}
+
+div.mwi_valeur {  
+	color: #000080;
+	padding: 0;
+  float:  left;
+	line-height: 18px;
+  cursor: text;
+  margin-bottom: 10px;
+}
+
+	div.mwi_valeur img.empty_img_write {
+		height: 1px;
+		_height: 14px; 
+		width: 21px;	
+		_width: 19px;
+	}
+	
+	div.mwi_valeur img.empty_img_read {
+		height: 1px;
+		_height: 15px; 
+		width: 22px;		
+	}
+	
+	div.mwi_valeur span {
+	  color: #000080;
+	}
+
+	div.mwi_valeur img[src$='source'] {
+	  clear: left;
+	}
+	
+div.mwi_valeur a {
+	color:  #0000FF;
+}
+
+div.mwi_valeur2 {
+	padding-left:			260px;
+	margin-right: 10px;
+	margin-top: -14px;
+	top:					-14px;
+	left:							260px;
+	font-size:				11px;
+	line-height:			14px;
+	text-align:				justify;
+}
+
+div.mwi_legende2 {
+	margin:					2px;
+	font-weight:		bold;
+	width:					240px;
+	font-size:			11px;
+	line-height:		14px;
+}
+
+.bouton1 {
+	border:					1px #000000 solid;
+}
+
+.bouton2 a {
+	color:					#423436;
+ background-color:		#F4975D;
+	border:					1px #423436 solid;
+	font-size:				9px;
+	text-align:				center;
+	padding-left:			10px;
+	padding-right:			10px;
+}
+
+
+div.groupe_carac {
+	/* position: relative; PLANTE IE !!!! */
+	_width: 90%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	border: 1px #000000 solid;
+	padding: 5px;
+}
+
+div.titre_carac {
+	margin: -5px;
+	margin-bottom: 5px;
+	background-color: #CBC7C8;
+	padding-left: 6px;
+	padding-right: 6px;
+	line-height:	16px;
+	font-size:	  11px;
+	font-weight:	bold;
+}
+
+/* ----------------------------------------------------- */
+/*             BOUTONS ENTITE ACTION                     */
+/* ----------------------------------------------------- */
+
+a.bouton_std {
+	padding:						8px;
+	text-decoration:		none;
+	color:							#000000;
+	font-size:					11px;
+ background-color:		#F4975D;
+	border:							1px #000000 solid;
+  display: 						block;
+	margin:             5px;
+}
+
+a.bouton_std:hover {
+	background-color:		#FFFFFF;
+}
+
+a.bouton_std_inv {
+	padding:						8px;
+	text-decoration:		none;
+	color:							#000000;
+	font-size:					11px;
+	background-color:		#FFFFFF;
+	border:							1px #000000 solid;
+}
+
+a.bouton_std_inv:hover {
+ background-color: 	#F4975D;
+}
+
+a.bouton_std2 {
+	padding:						8px;
+	text-decoration:		none;
+	color:							#000000;
+	font-size:					11px;
+ background-color:		#F4975D;
+	border:							1px #000000 solid;
+  min-width:					120px;
+  width:							130px;
+}
+
+a.bouton_std2:hover {
+	background-color:		#FFFFFF;
+}
+
+a.bouton_std2_inv {
+	padding:						8px;
+	text-decoration:		none;
+	color:							#000000;
+	font-size:					11px;
+	background-color:		#FFFFFF;
+	border:							1px #000000 solid;
+}
+
+a.bouton_std2_inv:hover {
+ background-color: 	#F4975D;
+}
+
+.bouton_modif {
+	line-height:			20px;
+	text-align:				center;
+	font-size:				12px;
+	width:					40%;
+	margin:					20px;
+	cursor:					pointer;
+}
+
+
+/* DEFAULT.ASP */
+
+div.default_titre {
+  font-size:					16px;
+}
+
+div.default_texte {
+  background:           #EEEEEE;
+  border:               1px #888888 dashed;
+  position:             absolute;
+  padding:               20px;
+  top:                  30%;
+  left:                 40%;
+  text-align:           left;
+}
+
+div.validation {
+  text-align:           right;
+  margin-top:           20px;
+}
+
+
+/*  ---------------------------------------------------------------------  */
+/* TITRE */
+/*  ---------------------------------------------------------------------  */
+
+div.menu {
+  margin-top:		5px;
+  width:        100%;
+}
+
+div.menu_img {
+  float:					left;
+  padding-left:   50px;
+  padding-top:    0px;
+  margin-right:   50px;
+}
+
+div.menu1 {
+  margin-left:		5px;
+  margin-right:  	5px;
+  height:        	40px;
+  border-width:   1px;
+}
+
+div.menu1 a, div.menu1 img {
+	text-decoration:	none;
+	border: 					0;
+}
+
+div.menu1 a.lien, div.menu1 a.lien_inactif { /* les cubes qui vont contenir les boutons */
+	float:              left;
+	text-decoration:	  none;
+	margin:         		7px 0 5px 6px;
+	width:              26px;
+	height:             26px;
+	border: 						1px transparent solid;
+}
+
+div.menu1 a.lien:hover {
+  border-top:       1px #ffffff solid;
+  border-left:			1px #ffffff solid;
+  border-right:			1px #666666 solid;
+  border-bottom:		1px #666666 solid;
+}
+
+div.menu1 a.lien_on {
+  border-top:       1px #666666 solid;
+  border-left:			1px #666666 solid;
+  border-right:			1px #ffffff solid;
+  border-bottom:		1px #ffffff solid;
+
+}
+
+div.menu1 a.lien_inactif:hover { /* les cubes qui vont contenir les boutons */
+	cursor:						default;
+}
+
+/*  ---------------------------------------------------------------------  */
+/*Fen�tre d'ajout d'un �l�ment pour une liste en mode �criture */
+/*  ---------------------------------------------------------------------  */
+div.ajout_liste {
+	margin:				         10px; /*marge en haut*/
+	margin-right:		       10px;
+	margin-left:		       10px;
+	padding:			         5px;
+	border:				         1px #000000 solid;
+	line-height:		       25px;
+	height:				         60%;
+}
+
+/*  ---------------------------------------------------------------------  */
+/*    Fen�tre d'archivage de document         */
+/*  ---------------------------------------------------------------------  */
+
+div.archiver_doc {
+	margin:						10px; /*marge en haut*/
+	margin-right:				10px;
+	margin-left:				10px;
+	padding:					5px;
+	border:				        1px #000000 solid;
+	line-height:				18px;
+	font-size:					12px;
+	height:				        60%;
+}
+
+
+.bouton_bleu a {
+	color:					#423436;
+ background-color:		#F4975D;
+	border:					1px #423436 solid;
+	font-size:				9px;
+	text-align:				center;
+	padding-left:			10px;
+	padding-right:			10px;
+}
+
+
+/*  -------------------  */
+/*  Default - Connexion  */
+/*  -------------------  */
+td.default1 {
+	vertical-align:        top;
+	font-size:             15px;
+	font-weight:           bold;
+	height:                20px;
+}
+
+div.default {
+	text-align:				center;
+	margin:				    100px;
+	padding:			    5px;
+	background:				#FFFFFF;
+	border:					1px #000000 solid;
+	line-height:		    25px;
+	height:				    80%;
+}
+
+table.coin  {
+	border:					none;
+	text-align:			    left;
+}
+
+table.coin td  {
+	font-weight:           bold;
+}
+
+table.coin td.coin  {
+  border: none;
+  text-align:			       center;
+}
+
+
+/*  -------------------  */
+/*  Type Entite          */
+/*  -------------------  */
+
+
+div.type_entite {
+	position: 		absolute;
+	top: 					19px;
+	margin: 			0px;
+	padding: 			0px;
+	margin-left:	4px;
+	width:				100%;
+}
+
+div.type_entite_bar {
+  padding-left:		4px;
+	padding-top:		6px;
+	height:				  25px;
+	border-width:   1px;
+}
+
+div.type_entite_bar select {
+	width:   96%;
+}
+
+/*  -------------------  */
+/*  Type_Propriete  */
+/*  -------------------  */
+
+#tp {
+	width: 100%;
+}
+
+	#tp_bar_ {
+		position:       absolute;
+		top: 						17px;
+		left: 					0px;
+		right: 					5px;
+		text-align:			right;
+		padding-top:		5px;
+		padding-right:	10px;
+		height:				  28px;
+		border-width:   1px;
+		border-left:  	0;
+	}
+	
+		#tp_bar_text {
+			/*float:								right;*/
+			text-align:						center;
+			vertical-align:        bottom;
+			/*width:								450px;
+			padding:							1px 0 2px 0;*/
+			/*background-color:			white;*/
+			/*border:								1px #000000 dotted;*/
+		}
+		
+		#tp_bar_text a {
+      margin: 0 5px 0 5px;
+    }
+
+	#tabs_container {
+		position: absolute;
+		top: 			0;
+		left: 		0px;
+		right: 		37px;
+		height: 	18px;	
+		overflow: hidden;
+	}	
+	
+		#tabs {
+			position: 		absolute;
+			top: 					2px;
+			left: 				0px;		
+			white-space: 	nowrap;	
+		}
+	
+			#tabs a {
+				padding:			  0;
+				height:   			16px;
+				line-height:    16px;
+			  margin-right:   2px;
+				border-width: 	1px;
+			  cursor:         pointer;
+			  border-style: 	solid;
+			  border-width:		1px 1px 0 1px;
+			}
+
+		#btn_tabs {
+			position: absolute;
+			padding: 	0px;
+			margin: 	0px;
+			top: 			4px;
+			right: 		0px;
+			width: 		35px;
+		}
+		
+		#btn_tabs a, #btn_tabs img {
+			text-decoration: none;
+			padding: 	0;
+			margin: 	0;
+			border: 	0;
+		}
+
+
+/*  -------------------  */
+/*  Propriete            */
+/*  -------------------  */
+
+div.nom_entite1 {
+  background:            #FFFFFF;
+  padding-top:           3px;
+  height:                15px;
+  font-size:             12px;
+  margin-bottom:         5px;
+  text-align:			       center;
+  font-weight:           bold;
+}
+
+
+div.propriete {
+	margin:				         0px;
+	margin-right:		       4px;
+	padding:			         5px;
+  background:			       #FFFFFF;
+  border:				         1px #000000 solid;
+	line-height:		       25px;
+	height:				         92%;
+}
+
+table.affichage_propriete {
+	width:                 92px;
+}
+
+/*  -------------------  */
+/*  Footer		         */
+/*  -------------------  */
+
+div.footer {
+	margin:    		5px 4px 0 4px;
+	border-width: 1px;
+	height:    		20px;
+}
+
+div.footer a {
+	color:      white;
+}
+
+	div.footer_left {
+		float:				 	left;
+		padding:			  10px;
+		padding-top:		4px;
+		font-size:			9px;
+		color:          #ffffff; /* blanc */
+	}
+
+	div.footer_right {
+		float:				  right;
+		/*margin-right:		5px;
+		padding:			  10px;
+		padding-top:		4px;*/
+		font-size:			9px;
+		background-color: white;
+		color:          black; /* blanc */
+	}
+	
+	  div.footer_right div {
+	    float: 		left;
+	    color: 		black;
+	  }
+	  
+	  div.footer_right div a {
+	    color: 		black;
+	  }
+	
+		div.footer_right #img_vertical {
+		  float: 				left;
+			margin: 	3px 5px 0 4px;
+		}
+		
+		div.footer_right #img_logo {
+		  float: left;
+			margin: 2px 5px 0 0;
+		}
+
+/* RECHERCHE SIMPLE . ASP */
+
+
+div.recherche {
+	margin:				    	10px; /*marge en haut*/
+	padding:			    	10px;
+	background:			    #FFFFFF;
+	border:				    	1px #000000 solid;
+	line-height:				25px;
+	height:				    	90%;
+}
+
+div.selection_recherche {
+	padding:						10px;
+	background-color:		#F0F0F0;
+	border:							dashed #000000 1px;
+	width:							500px;
+}
+
+div.selection_multiple {
+	font-size:					12px;
+	padding:						10px;
+	background-color:		#F0F0F0;
+	border:							dashed #000000 1px;
+	width:							auto;
+	height:							auto;
+}
+
+table.tableau_resultat {
+	border-collapse:		collapse;
+	border:							solid #000000 1px;
+	text-align:					left;
+	padding:						0px;
+	width:							96%;
+}
+
+table.tableau input {
+	width: 30px;
+}
+
+div.tableau {
+	float: 		left;
+	overflow: auto;
+	margin-right: 4px;
+}
+
+td.titre_result {
+	text-align:				left;
+	font-size:				10px;
+	font-weight:			bold;
+	margin:					0px;
+	padding:				0px;
+}
+
+td.rech_result {
+	margin:					0px;
+	padding:				0px;
+	font-size:				9px;
+}
+
+.texte1 {
+	font-size:				10px;
+}
+
+span.recherche_resultat {
+	font-weight:			bold;
+	font-size:				10px;
+	color:					red;
+}
+
+div.div_select_cdc {
+  float: left;
+  border: 1px #d3d3d3 inset;
+  width: 270px;
+  height: 160px;
+  padding: 5px;          
+  margin-bottom: 100px;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+div.cdc_liste_detail {
+  cursor:	pointer;
+}
+
+/* CSS CLICK DROIT SUR LES ENTITES */
+
+#menuC {
+  position:					absolute;
+  color:						#000000;
+  background-color:	#d3d3d3;
+  left:							0px;
+  top:							0px;
+  width:						200px;
+  max-height:       500px;  
+  border: 					2px outset #d3d3d3;
+  line-height:			16px;
+  cursor:						default;
+  font-family:			Tahoma, Verdana, Arial, Helvetica, sans-serif, monospace;
+  text-decoration:	none;
+  overflow:         auto;
+}
+
+#menuC a {
+	width:						100%;
+  color:						#000000;
+  font-size:				11px;
+  font-family:			Tahoma, Times New Roman,Arial;
+  padding-left:			5px;
+  cursor:						pointer;
+  text-decoration:	none;
+}
+
+#menuC a:hover {
+	background-color:	#000080;
+  color:						#ffffff;
+  cursor:						pointer;
+  text-decoration:	none;
+}
+
+#lien_button img {
+
+border: 0px;
+}
+
+/* Feuille de style pour la Selection Multi Crit�re */
+
+#resultat_recherche {
+	overflow: auto;
+	height: 280px;
+}
+
+table.resultat {
+	border-collapse: collapse;
+	border:  1px #000000 solid;
+}
+
+table.resultat td {
+	border:  1px #000000 solid;
+}
+
+table.resultat td.ot_name {
+	width: 220px;
+	overflow: none;
+}
+
+table.resultat td.ot_name img {
+	margin-right: 5px;
+}
+
+
+
+td.elem_rejeter {
+	background-color:			red;
+	color:								white;
+}
+
+td.elem_incertain {
+	background-color:			yellow;
+}
+
+td.elem_ok {
+	background-color:			green;
+	color:								white;
+}
+
+div.smc_titre_haut {
+	margin-left:          0px;
+	margin-right:         0px;
+	background:           white;
+	border-width:         1px;
+	font-weight:					bold;
+	font-size:						14px;
+	padding:              5px;
+	height:               20px;
+	/*white-space:          nowrap;*/
+	overflow:             auto;
+}
+
+div.smc_titre_bas {
+	margin-left:          0px;
+	margin-right:         0px;
+	height:          			5px;
+	font-size:            0px;
+	border-width:         0 1px 1px 1px;
+	margin-bottom:				5px;
+}
+
+div.smc_bordure_ext {
+  border-width:         1px;
+}
+
+#ged_bordure_ext{
+	height:175px;
+}
+
+#ged_cadre_int{
+	height:143px;
+}
+
+#ged_file_name{
+	margin-top:-10px;
+}
+
+#ged_btn_action{
+	position:absolute;
+	bottom:7px;
+	right:5px;
+	left:5px;
+}
+
+div.smc_bordure_int {
+	position: 						relative;
+	clear:                both;
+	margin:               5px;
+	padding:							10px;
+	background-color:			white;
+	border-width:         1px;
+	line-height:					18px;
+}
+
+div.smc_btn_action {
+  text-align: 		right;
+	border-width:  	1px 0 0 0;
+	background:   	transparent;
+	margin-top: 		6px;
+}
+
+div.smc_btn_action_fixe {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	right: 5px;
+	height: 35px;
+	/*padding-bottom: 10px;*/
+  text-align: 		right;
+	border-width:  	0 0 0 0;
+	background:   	transparent;
+}
+
+div.clear {
+	clear:								both;
+}
+
+div.smc_critere_texte {
+	padding: 10px;
+	line-height: 16px;
+	font-size: 12px;
+	width: 98%;
+	height:100%;
+	border-left: 1px #000000 solid;
+}
+
+div.smc_commande {
+	border-left:				1px #000000 solid;
+	padding-left:				15px;
+}
+
+div.selection_multicritere {
+	align:								left;
+	text-align:						left;
+	text-valign:					middle;
+	margin:								5px;
+	/*font-size:						9px;*/
+}
+
+div.groupe_critere {
+	line-height:					20px;
+	height:								20px;
+}
+
+div.critere {
+	line-height:					20px;
+	height:								20px;
+}
+
+
+#bar {
+	padding:			10px;
+	border-width: 0 1px 1px 1px;
+	color:       	#423436;
+	
+}
+
+div.bar_text {
+	padding:							20px;
+	background-color:			white;
+	border-width:					1px;
+	border-style:					dotted;
+}
+
+div.smc_onglet {
+	position: absolute;
+	background: transparent;
+	border-bottom: 0px;
+	line-height: 9px;	
+	top: 10px;
+}
+
+div.smc_onglet a {
+	color: black;
+	padding: 0px;
+	margin: 0px;
+	margin-right: 2px;
+	border-width: 1px;
+	border-style: solid solid none solid;
+	font-weight: normal;
+	padding: 0px 6px 0 6px;
+	text-decoration: none;
+}
+
+div.smc_onglet a.selected {
+	color:								black;
+	border-width:         1px;
+}
+
+#liste_cdc {
+	margin-top: 35px;
+	height: 190px;
+}
+
+#liste_cdc div {
+	margin: 0px;
+}
+
+#liste_cdc select {
+	border: 1px #000000 solid;
+}
+
+div.representation_valeur {
+	width:								99%;
+	font-size:						9px;
+	background-color: 		white;
+	background:						white;
+	border:								1px black solid;
+	overflow:             auto;
+	padding:              2px;
+	height:               210px;
+}
+
+table.tab_representation_valeur {
+	overflow: 						auto;
+	background-color:			transparent;
+	height:								200px;
+}
+
+table.classique {
+	width:								98%;
+	font-size: 						11px;
+}
+
+#lien_button {
+text-decoration: none;
+border: 0px;
+}
+
+table.tableau {
+	border-collapse:collapse;
+	border: 1px black solid;
+	overflow: auto;
+}
+
+table.tableau th {
+  background-color: #A1A1A1;
+  color: white;
+  font-weight: bold;
+  border: 1px solid black; 
+  text-align: center;   
+}
+
+table.tableau td {
+	text-align: center;
+	margin : 0px;
+	padding-left: 6px;
+	padding-right: 6px;
+	border: 1px #000000 solid;
+}
+
+div.apercu_image {
+	margin-top: 10px;
+	text-align: center;
+}
+
+div.tree_decal {
+	margin-left: 16px;
+}
+
+#texte_deplacement {
+	clear: both;
+	padding-top: 5px;
+	margin-top: 10px;
+}
+
+#en_cours_de_chargement {
+	width: 100%;
+	text-align: center;
+}
+
+#id_div_waiting_message {
+	position:absolute;
+	width: 100%;
+	text-align: center;
+	display:none;
+	font-size:12px;
+	top:40%
+}
+
+#tps_chargement {
+	display: none;
+}
+
+.popup_liste_e_select {	
+	position:					absolute;					
+	display: 					none;
+	border: 					1px solid black;
+	width: 						200px;
+	height:						160px;
+	font-size: 				100%;
+	text-decoration: 	none;
+	font-size: 				7px;
+	background:				white;
+	overflow: 				none;
+}
+
+.popup_liste_e_select h1 {
+	text-align:				center;
+	background-color: rgb(0,0,102);
+	color:						white;
+}
+
+.popup_liste_e_select div {
+	padding: 	0 5px 5px 5px;
+	overflow: auto;
+}	
+
+.popup {
+	position: 		absolute;
+	display: 			none;
+	border-width: 1px;
+	width:				90%;
+	_width: 				660px;
+	font-size: 		100%;
+	text-decoration: none;
+	font-size: 		7px;
+	background:		white;
+}
+
+	.popup p {
+		padding: 			10px;
+		padding-top: 	0px;
+	}
+
+	.popup h1 {
+		font-size: 			10px;
+		margin: 				1px;
+		border-bottom: 	1px solid #8CACBB;
+		background: 		#DEE7EC;
+		color: 					black;
+		text-align: 		center;
+	}
+	
+	.popup .mwi_gauche {
+		width: 180px;
+	}
+
+	.popup .mwi_legende {
+		width: 150px;
+	}
+
+.pop {
+	position: relative;
+	top: 3px;
+}
+
+#pop1, #pop2, #pop3  {
+position: absolute;
+display: none;
+/*width: 45em;*/
+border: 1px #000000 solid;
+background: red;
+z-index: 550;
+font-size: 100%;
+text-decoration: none;
+}
+
+#pop4, #pop0a, #pop0b, #pop0c, #pop0d  {
+position: absolute;
+display: none;
+width: 20em;
+border: 1px #000000 solid;
+background: white;
+z-index: 550;
+font-size: 100%;
+text-decoration: none;
+}
+
+#pop0a p, #pop0b p, #pop0c p, #pop0d p, #pop1 p, #pop2 p, #pop3 p, #pop4 p {
+margin: 0 0.3em;
+color: black;
+font-size: 10px;
+}
+
+/* ---------------- */
+/* popup_SourceInfo */
+/* ---------------- */
+
+#popup_form {
+	position: absolute;
+	display: none;
+	border: 1px #000000 solid;
+	background-color: white;
+}
+
+#popup_form_title_container {
+	height:				20px;
+	line-height:	20px;
+	font-size: 		12px;
+	text-align: 	center;
+	width:				100%;
+}
+
+#popup_form_title {
+	float: 			left;
+	width: 			90%;
+	background: transparent;
+}
+
+#popup_form_close_button {
+	height:						20px;
+	line-height:			20px;
+	text-align:				center;
+	width: 						16px;
+	background-color: #DFDADB;
+	color: 						black;
+  float: 						right;
+  cursor: 					pointer;
+  font-weight: 			bold;
+}
+
+#popup_form_inside {
+	background-color: white;
+	padding: 5px 5px 10px 5px;
+	width: 99%;
+	height:96%;
+	overflow: auto;
+}
+
+/* -------------------- */
+/* Fin popup_SourceInfo */
+/* -------------------- */
+
+.img_te {
+	margin-right: 3px;
+}
+
+img.ico_doc_visu {
+	/*margin-top:2px;*/
+	margin-left:5px;
+	/*border-left:     	1px #000000 solid;
+	border-top:				1px #000000 solid;
+	border-right:			1px #ffffff solid;
+	border-bottom:		1px #ffffff solid;*/
+	cursor:pointer;
+	border:       1px grey solid;
+	background-color:#e2e2e2;
+	padding:1px;
+	border-radius:2px;
+}
+
+table.class_asso {
+	border-collapse:		collapse;
+	border:							1px solid #000000;
+	padding:            5px;
+}
+
+table.class_asso td {
+	border-collapse:		collapse;
+	border:							1px solid #C9B9B8;
+	padding:    5px;
+}
+
+
+/* BORDURE PAR DEFAUT DES FENETRES POP UP */
+
+#div_principale {
+	position:     absolute;
+	_width:       98%;
+	_height:      98%;
+	top: 					0px;
+	bottom:       0px;
+	left:         0px;
+	right:        0px;
+	margin:				5px;
+}
+
+	#div_titre_haut {
+		border:				1px #000000 solid;
+		font-weight:	bold;
+		font-size:		14px;
+		padding:      5px;
+	}
+
+	#div_titre_bas {
+		height:        	5px;
+		font-size:     	0px;
+		border:					0px 1px 1px 1px;
+		margin-bottom:	10px;
+		width:          auto;
+	}
+
+  #div_bordure_ext {
+    position: 	absolute;
+    _width:     100%;
+    _height:    80%;
+    top:        0px;
+    bottom:     0px;
+    left:       0px;
+    right:      0px;
+    min-height: 130px;
+    border:       1px;
+  }
+
+		#div_bordure_int {		  
+			position: 		absolute;
+			_width:     	95%;
+			_height:    	86%;
+			top:          0px;
+			bottom:       0px;
+			left:         0px;
+			right:        0px;
+			min-height:   100px;
+			margin:       5px;
+			padding:			10px;
+			background:		white;
+			border:       1px;
+			line-height:	20px;
+		}
+		
+		#div_int_fixe {
+			position: 		absolute;
+			_width:     	95%;
+			_height:    	86%;
+			top:          0px;
+			bottom:       50px;
+			left:         0px;
+			right:        0px;
+			min-height:   100px;
+		}
+		
+		#div_bordure_int fieldset {
+      padding: 10px;
+    }
+		
+		  #div_btn_action {
+		    position:   absolute;
+		    _width:     98%;
+		    _height:    100%;
+		    _top:        150px;
+		    bottom:     10px;
+		    left:       10px;
+		    right:      10px;
+			  text-align: right;
+				border-top: 1px #000000 solid;
+		  }
+
+#cadre_source_info {
+	position: absolute;
+	left: 		2px;
+	top: 			5px;
+	right: 		2px;
+	_width: 	98%;
+	bottom: 	30px;
+	overflow: auto;
+}
+
+	#div_btn {
+		display: 			block;
+		position: 		absolute;
+		top: 					510px;
+		left: 				8px;
+		right:				6px;
+		height:       30px;
+		_width:				98%;
+		border-top: 	1px solid black;
+		text-align: 	right;
+		margin-right: 0px;
+		z-index: 			100;
+		background-color: white;
+	}
+	
+	#import_tab_btn_action{
+		margin-top:90px;
+	}
+
+.chgt_pass, .chgt_pass img {
+	text-decoration: none;
+	border: 0;
+}
+
+table.table_html, table.table_html tr, table.table_html td {
+	vertical-align: top;
+}
+
+table.table_html {
+	overflow: hidden;
+}
+
+div.html_text {
+	background-color: white;
+	/*border-top: 1px inset #4B5050;
+	border-left: 1px inset #4B5050;
+	border-bottom: 1px solid grey;
+	border-right: 1px solid grey;*/
+	border: 1px solid #8d9aa3;
+	float: left;
+	width: 600px;
+	height: 200px;
+	overflow: auto;
+
+}
+
+textarea.html_text{
+	margin-bottom:4px;
+}
+
+div.html_editor {
+	/*position: absolute;*/
+	left: -5000px;
+}
+
+
+#btn_save_editor {
+	display: none;
+}
+
+input.te_inp_doc {
+	vertical-align: top; 
+	margin-top: 2px;
+	width:300px;
+}
+
+input.te_inp_date {
+	vertical-align: top; 
+	/*margin-bottom: 4px;*/
+	margin-top: 2px;
+	width:130px;
+}
+
+textarea.field_chaine {
+	min-width: 602px;
+	width: 95%;
+	height: 40px;
+	margin-bottom:4px;
+}
+
+textarea.field_text {
+	min-width: 512px;
+	width: 95%;
+	margin-bottom:4px;
+}
+
+select.comboChoixGDC {
+  width: 335px;
+}
+
+input.btnChoixCDC {
+  width: 360px;
+  height: 22px;
+}
+
+fieldset.field1 {
+	margin-bottom: 	0px;
+	padding-left: 10px;
+	border-width: 1px;
+	height:60px;
+}
+
+fieldset.field1 legend {
+	font-size: 11px;
+	font-weight: bold;
+	padding: 5px 0px;
+}
+
+fieldset.field1 input {
+	height: 22px;
+}
+
+div.warning {
+	padding: 10px;
+	margin-bottom: 10px;  
+}
+
+div.warning a {
+	margin: 25px 5px 5px 5px;
+	border: 1px solid black;
+	padding: 5px;
+	background-color: white; 
+	color: black;   
+}
+
+div.warning a:hover {
+  background-color: #D9D9D9;
+}
+
+#div_obj_properties {
+  width: 100%;
+  /*height: 100%;*/
+  /*padding: 5px;*/
+  overflow: hidden;
+}
+
+#tab_obj_properties {  
+  padding: 5px;
+  border: 1px solid black;
+  width: 100%;
+  /*height: 100%;*/
+}
+
+#tab_obj_properties td {
+  padding: 2px;
+}
+
+div.field_traca {
+  width: 95%;
+  clear: both;
+  margin: 0 5px 0 10px;
+}
+
+div.field_traca fieldset {
+  width: 95%;
+  border-color: black;
+  margin: 0 5px 0 8px;
+}
+
+div.field_traca fieldset legend {
+  margin: 0 5px 0 8px;
+}
+
+div.field_traca fieldset div {
+  margin: 2px;
+  max-height: 100px;  
+  color: #959595;
+  overflow: auto;
+}
+
+div.div_btns {
+  position: absolute;
+  background-color: #DDDDDD;
+  top: 0px;
+  right: 0px;
+  height: 18px;
+  padding-left: 5px;
+  padding-right: 2px;
+}
+
+div.div_btn {
+  float: left;
+  border-left: 1px solid #DDDDDD;
+  border-right: 1px solid #DDDDDD;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+div.div_btn:hover {
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+}
+
+#div_deletion_settings {
+  margin-top: 10px;
+}
+
+#div_deletion_settings select {
+  margin-top: 5px;
+}
+
+#tabbar {
+  width: 100%;
+  height: 20px;
+}
+
+#tabbar_info {
+  position: absolute;
+  top: 25px;
+  right: 10px;
+}
+
+#tabbar_panel {
+  position: absolute;
+  /*background-color: #6699CC;
+  border-color: #336699;*/  
+  border-width: 1px 1px 1px 0;
+  border-style: solid;  
+  left: 0px;
+  right: 4px;
+  top:19px;
+  bottom:3px;
+  _width: 100%;
+  _height: 31px;
+  overflow: none;  
+}
+                 
+#resultat {
+	padding-top: 2px;
+}
+
+#div_nbResult {
+	visibility: hidden;
+	margin-bottom: 6px;
+}
+
+td.label_input_search {
+	text-align: right;
+	width: 154px;
+}
+div #id_TypeOfSearch {
+	height: 410px;
+	width: 690px; 
+	margin-top:10px;
+	margin-right:10px;
+}
+div #id_SearchTeexmaData_OT {
+	float:left;
+	width: 280px;
+	height: 340px; 
+	margin-top:10px;
+	margin-left: 10px;
+}
+div #id_SearchTeexmaData_Objects {
+	float:right;
+	width: 370px;
+	height: 340px; 
+	margin-top:10px;
+	margin-right : 10px;
+}
+div #id_SearchTeexmaFile_OT {
+	float:left;
+	width: 280px;
+	height: 340px; 
+	margin-top:10px;
+	margin-left: 10px;
+}
+div #id_SearchTeexmaFile_Objects {
+	float:right;
+	width: 370px;
+	height: 340px; 
+	margin-top:10px;
+	margin-right : 10px;
+}
+div #id_SearchExternalFile_ServerList {
+	float:left;
+	width: 280px;
+	height: 340px; 
+	margin-top:10px;
+	margin-left: 10px;
+}
+div #id_SearchExternalFile_File {
+	float:right;
+	width: 370px;
+	height: 340px; 
+	margin-top:10px;
+	margin-right : 10px;
+}
+
+/* -------------------- */
+/*   Popup Properties   */
+/* -------------------- */
+
+#popup_property{
+	/*margin-left:200px;*/
+}
+
+.cl_field_property_general{
+	margin-top:6px;
+	margin-left:5px;
+	margin-right:5px;
+	height:150px;
+	padding:10px;
+}
+
+.cl_field_property_general legend{
+	padding-left:5px;
+	padding-right:5px;
+}
+
+.cl_div_property_content{
+	margin-top:5px;
+	margin-bottom:5px;
+}
+
+.cl_property_table{
+	font-size:10pt;
+	
+}
+.cl_property_table td:first-child{
+	width:120px;
+	text-align:right;
+	font-weight:bold;
+}
+
+
+#id_field_property{
+	width:300px;
+}
+#id_text_object_name2{
+	width:100%;
+	margin-bottom:6px;
+}
+#id_text_object_name1{
+	width:245px;
+	margin-bottom:6px;
+}
+#id_text_object_id{
+	width:50px;
+	float:right;
+}
+
+/* -------------------- */
+/*   Popup Extraction   */
+/* -------------------- */
+#combo_extract_type{
+	margin-left:1px;
+	width: 305px;
+	
+}
+#lb_object_selected_extract{
+
+}
+
+#main_tree_extract{
+	height:250px;
+}
+	#treebox_extract{
+		/*float:left;*/
+		width:380px;
+		height:230px;
+	}
+		#tree_extract{
+			cursor:default;
+			height:200px;
+			border-left: 1px solid #A4BED4;
+			border-top: 1px solid #A4BED4;
+			border-right: 1px solid #A4BED4;
+		}
+		#toolbar_extract{
+
+		}
+	#treebox_extract_filtered{
+		/*float:left;*/
+		width:385px;
+		height:230px;
+	}
+		#tree_extract_filtered{
+			cursor:default;
+			height:200px;
+			border-left: 1px solid #A4BED4;
+			border-top: 1px solid #A4BED4;
+			border-right: 1px solid #A4BED4;
+		}
+		#toolbar_extract_filtered{
+
+		}
+
+		.cl_div_data {
+			max-width:70%;
+			/*max-width: max-content;*/
+		}
+		
+#id_div_models{
+	float:left;
+}
+
+/* 
+Some modification for the bug number 2802 & for the color of TinyMce3.x
+I just comment the lines of code for each star and replace that with the specific classes
+You will find this in the three blocks in below
+*/
+.cl_div_group, .cl_div_pe, .mwi_valeur, .field_chaine, .selection_multicritere {
+	font-family:	Tahoma, Verdana, Arial, Helvetica, sans-serif, monospace;
+	font-size:	11px;
+}
+
+.field1, .field_cdc1, .smc_bordure_int{
+	font-family:	Tahoma, Verdana, Arial, Helvetica, sans-serif, monospace;
+	font-size:	11px;
+}
+input {
+	font-family:	Tahoma, Verdana, Arial, Helvetica, sans-serif, monospace;
+	font-size:	11px;
+}

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="ExcelFile">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Worksheet" maxOccurs="unbounded" minOccurs="0">
+                    <xs:complexType mixed="true">
+                        <xs:sequence>
+                            <xs:element name="Cell" maxOccurs="unbounded" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="xs:string">
+                                            <xs:attribute type="xs:integer" name="iRow" use="required"/>
+                                            <xs:attribute type="xs:integer" name="iCol" use="required"/>
+                                            <xs:attribute type="xs:string" name="sBackgroundColor" use="optional"/>
+                                            <xs:attribute type="xs:string" name="sFontColor" use="optional"/>
+                                            <xs:attribute name="sCellType" use="optional">
+                                                <xs:simpleType>
+                                                    <xs:restriction base="xs:string">
+                                                        <xs:enumeration value="ctText"/>
+                                                        <xs:enumeration value="ctDate"/>
+                                                        <xs:enumeration value="ctDateTime"/>
+                                                        <xs:enumeration value="ctFloat"/>
+                                                    </xs:restriction>
+                                                </xs:simpleType>
+                                            </xs:attribute>                                            
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute type="xs:string" name="sName" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,229 @@
+﻿/* CSS Document */
+
+/* TREEVIEW ENTITE */
+
+body {
+	margin: 0; /* pour éviter les marges */
+	padding:0;
+	/*text-align: center; /* pour corriger le bug de centrage IE */
+}
+
+a img {
+	text-decoration: none;
+	border: 0px;
+}
+
+#entite {
+	position: 		absolute;
+	left: 				4px;
+	right: 				4px;
+	top: 					0px;
+	bottom: 			0px;
+	_height:			99%;
+	width: 				280px;
+	border-width: 1px;
+	cursor: 			default;
+}
+
+#entite_info {
+	position: 		absolute;
+	display: 			none;
+	left: 				0px;
+	right: 				0px;
+	margin: 			4px;
+	width: 				254px;
+	height: 			20px;
+	background:   #FFFFFF;
+	padding-left: 15px;
+	padding-top:  3px;
+	height:       15px;
+	font-size:    9px;
+	border:       1px #000000 solid;
+}
+
+#treeview {
+	position: 		absolute;
+	top: 					4px;
+	bottom: 			4px;
+	left: 				0px;
+	right: 				0px;
+	_height:			85%;
+	margin-left: 	4px;
+	margin-right: 2px;
+	width: 				270px;
+	background:		white;
+	border: 1px inset #DBDBDB; 
+	/*border-style:	inset;
+	border-width: 2px;*/
+	overflow: 		auto;
+}
+
+#treeview div, #treeview span {
+	background: transparent;
+}
+
+#treeview img {
+	vertical-align: middle;
+}
+
+#action {
+	position: absolute;
+	display: 	none;
+	right: 		0px;
+	left: 		0px;
+	bottom: 	0px;
+	margin : 	0px 0 6px 0;
+	height: 	20px;
+}
+
+div.info {
+	font-size:					9px;
+	color:						red;
+	text-align:					left;
+}
+
+div.boutons_action {
+	height:			20px;
+}
+
+#treeview_smc {
+	background:	   	#FFFFFF;
+	padding:		   	2px;
+	border:			   	2px;
+	border-style:  	inset;
+	font-size:	   	9px;
+	height:        	92%;
+	width:         	98%;
+	overflow:				auto;
+}
+
+#treeview_smc_int {
+	line-height:					18px;
+	text-align:						left;
+	/*min-height:						100%;*/
+	height:								92%;
+	vertical-align: middle;
+	width:                98%;
+}
+
+#treeview_smc a {
+	text-decoration: none;
+}
+
+/* TREEVIEW ENTITE DANS FORMULAIRE */
+
+img.treeview {
+  text-decoration: none;
+  border: 0px;
+}
+
+div.onglet {
+  position: 			relative;
+	text-align: 		center;
+	float: 					left;
+	line-height: 		16px;
+	width: 					165px;
+	margin:					0px;
+	margin-right: 	10px;
+  padding: 				2px;
+  border: 				1px solid #000000;
+  border-bottom: 	0px;
+  background: 		white;
+  cursor:     		pointer;
+  /*z-index: 				1;*/
+}
+
+.treeview_liste {
+	position: relative;
+	white-space: nowrap;
+  float: left;
+  border: 1px solid #000000;
+	background-color: white;
+  overflow: auto;
+  width: 350px;
+  height: 190px;
+	cursor: default;
+}
+
+
+div.mrg16 {
+	margin-left: 16px;
+}
+
+.tr_el {
+	display: block;
+	clear : both;
+	white-space:	nowrap;
+	line-height: 	20px;
+}
+
+.tr_el img {
+	padding-top: 2px;
+	/*vertical-align: middle;*/
+}
+
+.tr_el span {
+	cursor: pointer;
+}
+
+.tree_valeur {
+	cursor: pointer;
+}
+
+.tree_child {
+	margin-left: 14px;
+	display: none;
+}
+
+div.treeBottom {
+	position: 	relative;
+	background-color: #F6F6F6;
+	height:			25px;
+	border: 		1px solid black;
+	border-top: 0px;
+	padding: 		1px;
+	width: 			348px;
+}
+
+div.searchObj {
+	margin-left: 45px;
+	margin-right: 4px;
+	float: left;
+}
+
+div.treeBtn {
+	float: left;
+}
+
+/***********************************************/
+div.tree_decal {
+	margin-left: 17px;
+}
+
+div.TreeviewPE {
+	border: 1px solid black;
+	padding : 2px;
+	margin: 5px;
+	margin-left: 0;
+	width: 260px;
+	height: 250px;
+	overflow: auto;
+}
+
+div.TreeviewPE div {
+ white-space: nowrap;
+}
+
+div.TreeviewPE span {
+	margin-left: 1px;
+	padding: 0px 2px;
+  white-space: nowrap;
+	cursor: pointer;
+}
+
+div.TreeviewPE img {
+	border: 0;
+ 	text-decoration:  none;
+ 	/*vertical-align: middle;*/
+}
+

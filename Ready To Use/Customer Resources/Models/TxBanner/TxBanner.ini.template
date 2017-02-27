@@ -1,0 +1,3 @@
+'Identifier of an Object Type or an Enumeration identifier = Filename of the html template in the Banner_HTML folder.
+'This key/value allows to use the file Example_Of_Banner.html for the contact object type (if well parametrized).
+1=Example_Of_Banner.html

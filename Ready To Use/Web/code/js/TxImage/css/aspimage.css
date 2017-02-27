@@ -1,0 +1,65 @@
+#src_list, #over_list, #out_list {width:180px;}
+.mceActionPanel {margin-top:7px;}
+.alignPreview {border:1px solid #000; width:140px; height:140px; overflow:hidden; padding:5px;}
+.checkbox {border:0;}
+.panel_wrapper div.current {
+	height:320px;
+	width:100%;
+	margin:0px;
+	padding:0px;
+}
+#leftfield {
+	width: 330px;
+	margin:0px;
+	padding:0px;
+	right: 50px;
+	margin-left : 6px;
+}
+.leftfield {
+	padding:5px;
+}
+
+#rightfield {
+	float: right;
+	width: 320px;
+	position:absolute;
+	right: 40px;
+	top : 0px;
+	margin:0px;
+	padding:0px;
+	left : 400px;
+}
+.imagelist {
+	height:215px;
+	margin:0px;
+	padding:5px;
+}
+.uploadfield {
+	height:10px;
+	margin:0px;
+	padding:5px;
+}
+#fileWindow {
+	height: 92%;
+    width: 97%;
+    border: 0px solid #000000;
+    overflow-x: hidden;
+    display: block;
+    position: absolute;
+    bottom: 1px;
+    right: 0;
+}
+#upload{
+	height: 40px;
+    width: 90%;
+    border: 0px solid #000000;
+    margin-left: 20px;
+}
+#prev {margin:0px; border:1px solid grey ; width:317px; height:195px; overflow:auto;}
+#align, #classlist {width:150px;}
+#width, #height {vertical-align:middle; width:50px; text-align:center;}
+#vspace, #hspace, #border {vertical-align:middle; width:30px; text-align:center;}
+#class_list {width:180px;}
+input text{width: 200px;}
+#constrain, #onmousemovecheck {width:auto;}
+#id, #dir, #lang, #usemap, #longdesc {width:200px;}

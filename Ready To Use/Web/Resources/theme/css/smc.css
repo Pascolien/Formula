@@ -1,0 +1,285 @@
+/* CSS Document */
+body{
+	background-color:white;
+}
+
+#smc_cadre_ext {
+	position: 		absolute;
+	top: 					5px;
+	left: 				5px;
+	width: 				927px;
+	height: 			638px;
+	border-width: 1px;
+}
+	#sup_a{
+		margin-top:-7px;
+	}
+	#smc_cadre_int {
+		position: 		absolute;
+		top: 					5px;
+		left: 				5px;
+		width: 				915px;
+		height: 			598px;
+		background: 	white;
+		border-width: #A4BED4 1px solid;
+	}
+		#smc_zone_gauche {
+		 	position: absolute;
+		 	top: 5px;
+		 	left: 5px;
+		 	width: 300px;
+		 	height: 400px;
+		 	white-space: nowrap;
+		}
+
+			#smc_treeview {
+				position: absolute;
+				top: 20px;
+				left: 0px;
+				width: 300px;
+				height: 538px;
+				border: 1px solid #000000;
+				overflow: auto;
+			}
+
+			div.TreeviewPE {
+			  width: 296px;
+			  height: 440px;
+			  border : #A4BED4 1px solid;
+			}
+
+			#smc_treeview img {
+				text-decoration: none;
+				border: 0px;
+			}
+
+		#smc_zone_droite {
+			padding: 10px;
+			border: 1px solid #A4BED4;
+			white-space: normal;
+			overflow:auto;
+		}
+		
+		  #img_inf_a {
+		    width: 5px;
+		  }
+
+	#smc_zone_bas {
+	  position: absolute;
+		bottom: 5px;
+		left: 5px;
+		width: 930px;
+	}
+	
+	#interieur_critere{
+		height:400px;
+		
+	}
+
+#field_smc_select_all {
+	margin-top: 10px;
+	border: 	1px solid black;
+}
+#id_div_smc_right{
+	position: absolute;
+	top: 5px;
+	left: 310px;
+	width: 625px;
+	height: 400px;
+}
+
+#type_critere, #absence_donnee {
+	padding: 	0px;
+	margin:		0px;
+	float:left; 
+	border: 	1px solid #A4BED4;
+}
+#absence_donnee{
+	float:right;	
+}
+
+#type_critere {
+	bottom: 	5px; 
+	left: 		310px; 
+	width: 		200px;
+	height: 	40px; 
+}
+
+#absence_donnee {
+	bottom:		5px; 
+	left: 		515px; 
+	height: 	40px; 
+	width: 		393px;
+}
+
+#lien_recursif, #ss_lien_recursif {	
+	margin-top: 10px;
+	padding: 5px;
+	border: 1px solid black;
+}
+
+#type_critere legend, #absence_donnee legend, #lien_recursif legend, #ss_lien_recursif legend {
+	margin-left: 10px;
+}
+
+#optimisation {
+	position: relative;
+	margin-top: 10px;
+	width: 565px;
+	border: 1px solid #000000;
+	margin-bottom:10px;
+}
+
+#range_type {
+  position: relative;
+  margin-top:5px;
+  float: left;
+  width:100%;
+  /*top: 390px;*/
+}
+
+#titre_critere {
+	margin-bottom : 5px;
+}
+
+#choix_critere_num {
+	margin-bottom: 10px;
+}
+
+#choix_critere_num input {
+	margin-bottom: 5px;
+}
+
+input.btn_choix_critere {
+	background-color: #d4d0c8;
+	height: 30px;
+	width: 130px;
+	cursor: pointer;
+}
+
+#titre_critere_num {
+	display: block;
+}
+
+.valeur_critere_num input {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+input.btn_choix_critere_enfonce {
+	background-color: #d4d0c8;
+	height: 30px;
+	width: 130px;
+	border-style: inset;
+}
+
+#representation_valeur {
+	position: relative;
+	border: 1px solid #000000;
+	height: 235px;
+	width: 580px;
+	overflow: auto;
+}
+
+.representation_valeur_num {
+  position: absolute;
+  background-color: blue;
+}
+
+.popup_representation_valeur_num {
+	display: none;
+	position:relative;
+	width: 200px;
+	background-color: #FFFFCC;
+	border: 1px solid #000000;
+	z-index:1;
+	padding:5px;
+}
+
+.information{
+	margin-bottom: 5px;	
+}
+
+#legende_val_min {
+	position: relative;
+	left: 12px;
+	float:left;
+}
+
+#legende_val_moy {
+	position: relative;
+	left: 200px;
+	float:left;
+}
+
+#legende_val_max {
+	position: relative;
+	left: 400px;
+	width: 58px;
+	text-align: right;
+	float:left;
+}
+
+fieldset.field_cdc1 {
+	margin-bottom: 	0px;
+	padding-left: 10px;
+	border-width: 1px;
+	height:60px;
+}
+
+fieldset.field_cdc1 legend {
+	font-size: 11px;
+	font-weight: bold;
+	padding: 5px 0px;
+}
+
+fieldset.field_cdc1 input {
+	height: 22px;
+}
+
+fieldset.field_cdc2 {
+	margin-bottom: 	0px;
+	padding-left: 10px;
+	border-width: 1px;
+	height:240px;
+}
+
+fieldset.field_cdc2 legend {
+	font-size: 11px;
+	font-weight: bold;
+	padding: 5px 0px;
+}
+
+fieldset.field_cdc2 input {
+	height: 22px;
+}
+
+#cdc_btns_options{
+	position:absolute;
+	right: 30px; 
+	width: 70px;
+}
+
+#id_select_mcs_no_data{
+	margin-left:6px;
+	width : 380px;
+}
+
+#id_select_mcs_object_linked_to{
+	width : 430px;
+}
+
+#id_select_mcs_link_attribute{
+	width:410px;
+}
+
+.cl_tr_mcs_recursivity{
+	width:250px;
+}
+
+.cl_a_smc_date{
+	position: relative;
+	margin-left: -25px;
+	top: 3px;
+	margin-right: 6px;
+}

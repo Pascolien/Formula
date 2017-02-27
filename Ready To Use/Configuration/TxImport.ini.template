@@ -1,0 +1,14 @@
+[Settings]
+sDir_Log=D:\Tmp\TXImport\
+sLoginEnc=Ov+gBEcg6g+JyvX8xMM=
+sPasswordEnc=dB3VPwZ34dw
+
+[IUCLID5]
+iType=4
+sDir_Files=D:\Tmp\IUCLID5\
+sPath_File_DLl=D:\TEEXMA\Customer resources\Models\REACh\REACh\REACh.dll
+sFunc=Import_Substance_From_IUCLID5_File
+sExtension=.i5d
+
+[SQL]
+iType=5

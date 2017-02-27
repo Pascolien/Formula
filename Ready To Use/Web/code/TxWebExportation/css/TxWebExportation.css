@@ -1,0 +1,58 @@
+﻿html, body {
+    width: 100%;
+    margin: 0px;
+    height: 100%;
+}
+
+#id_div_cell_a, #id_div_cell_b, #id_div_cell_c {
+    width:100%;
+}
+
+#id_div_comboboxes,#id_div_cell_objects, #id_div_cell_data{
+    position:absolute;
+    top:0px;
+    bottom:0px;
+    right:6px;
+    left:6px;
+}
+
+.clLabelExport{
+    width:120px;
+    text-align:right;
+    float:left;
+    margin-top: 3px;
+    margin-right:5px;
+}
+
+.td_combo{
+    width:500px;
+}
+
+.cl_div_treeExport{
+    position:absolute !important;
+    top:16px;
+    bottom:26px;
+    right:0px;
+    left:0px;
+    border:1px solid #A4BED4;
+}
+
+#id_div_toolbarObject,#id_div_toolbarAttribute{
+    position:absolute !important;
+    bottom:0px;
+    right:0px;
+    left:0px;
+}
+#id_check_extract_pdf {
+    vertical-align: sub !important;
+}
+
+#idDivBtnsExport{
+    position: absolute;
+    bottom: 6px;
+    right: 0px;
+}
+
+#id_div_zip{
+    margin-left:6px;
+}

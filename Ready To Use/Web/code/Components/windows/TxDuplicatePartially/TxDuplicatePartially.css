@@ -1,0 +1,22 @@
+﻿
+#idDivMainTxDuplicatePartially{
+    margin:6px;
+}
+
+#idDivAttributesTxDuplicatePartially{
+	margin-top:6px;
+}
+
+#idDivTreeTxDuplicatePartially{
+	height:300px;
+	width:377px;
+	margin-top:5px;
+	border-top: #A4BED4 1px solid;
+	border-left: #A4BED4 1px solid;
+	border-right: #A4BED4 1px solid;
+}
+
+#idTextObjectNameTxDuplicatePartially{
+	width:286px;
+	margin-bottom:5px;
+}

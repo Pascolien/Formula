@@ -1,0 +1,14 @@
+﻿<div id="{{cell.sIdDivAttach}}" ng-repeat="cell in config.cellsSettings" ng-class="{'mainCell' : cell.config}">
+    <span ng-hide="cell.module || cell.config">Cell ID : {{cell.sIdDivAttach}}</span>
+    <div ng-if="rendered">
+        <div ng-if="cell.module">
+            <module config="cell.module" class="txModule"></module>
+        </div>
+
+        <div id="{{div.id}}" ng-repeat="div in cell.internalDivs"></div>
+
+        <div ng-if="cell.config">
+            <div data-config="cell.config" pattern></div>
+        </div>
+    </div>
+</div>

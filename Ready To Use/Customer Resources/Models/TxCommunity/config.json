@@ -1,0 +1,334 @@
+﻿{
+    "config": {
+        "sPattern": "2E",
+        "cellsSettings": [
+            { "sConfigId": "mainToolbarConfig" },
+            { "sConfigId": "SectionConfig" }
+        ]
+    },
+    "configs": [
+        {
+            "configId": "mainToolbarConfig",
+            "sHeight": "45",
+            "bFixHeight": true,
+            "bFixWidth": false,
+            "sIdDivAttach": "idDivMainLayoutCellA",
+            "internalDivs": [
+                { "id": "idDivMainToolbarLeftSide" }
+            ],
+            "module": {
+                "sType": "CMainToolbar",
+                "settings": {
+                    "sIdDiv": "idDivMainToolbar",
+                    "sIdDivTxLogo": "idDivMainToolbarLeftSide",
+                    "functions": {
+                        "displayHome": [ "displayHome" ],
+                        "editObject": [ "refreshForm" ],
+                        "navigateToObject": [ "mainTreeObjects" ]
+                    },
+                    "watch": [
+                        {
+                            "sName": "idOT",
+                            "sType": "idOT"
+                        },
+                        {
+                            "sName": "mainTreeObjects",
+                            "sType": "txObjs"
+                        },
+                        {
+                            "sName": "idFormTab",
+                            "sType": "idTab"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "configId": "SectionConfig",
+            "sIdDivAttach": "sIdDivSectionCell",
+            "config": {
+                "sPattern": "3L",
+                "cellsSettings": [
+                    { "sConfigId": "standardTreeConfig" },
+                    { "sConfigId": "bannerConfig" },
+                    { "sConfigId": "readFormConfig" }
+                ]
+            }
+        },
+        {
+            "configId": "standardTreeConfig",
+            "sWidth": "260",
+            "sHeaderText": "Afficher le panneau de navigation",
+            "sIdDivAttach": "idDivNavigation",
+            "internalDivs": [
+                {
+                    "id": "idDivNavigationCombo"
+                },
+                {
+                    "id": "idDivNavigationTree"
+                },
+                {
+                    "id": "idDivNavigationToolbar"
+                },
+                {
+                    "id": "idDivNavigationToolbarCreation"
+                }
+            ],
+            "module": {
+                "sType": "CTxTreeObject",
+                "sIdDiv": "idDivNavigationCombo",
+                "settings": {
+                    "comboBox": {
+                        "sIdDiv": "idDivNavigationCombo",
+                        "iWidth": "100%",
+                        "iMaxExpandedHeight": 400,
+                        "bDisplayImage": true
+                    },
+                    "tree": {
+                        "sIdDiv": "idDivNavigationTree",
+                        "sIdDivToolbar": "idDivNavigationToolbar",
+                        "sIdDivToolbarCreation": "idDivNavigationToolbarCreation",
+                        "bFolderCheckable": false,
+                        "bEnableMultiSelection": true,
+                        "bWriteMode": false,
+                        "bEnableContextMenu": true,
+                        "bEnableEdition": true,
+                        "bEnableDragAndDrop": true
+                    },
+                    "functions": {
+                        "onSelect": [ "mainTreeObjects" ],
+                        "onChange": [ "idOT" ],
+                        "onCollapseNav": [ "collapseNav" ],
+                        "onExpandNav": [ "expandNav" ]
+                    },
+                    "watch": [
+                        {
+                            "sName": "idOT",
+                            "sType": "idOT"
+                        },
+                        {
+                            "sName": "mainTreeObjects",
+                            "sType": "txObjs"
+                        },
+                        {
+                            "sName": "collapseNavTreeCell",
+                            "sType": "cell",
+              				"bPersistent": false
+                        },
+                        {
+                            "sName": "updateTree",
+                            "sType": "treeUpdateRequest",
+              				"bPersistent": false
+                        },
+                        {
+                            "sName": "displayHome",
+                            "sType": "displayHome",
+              				"bPersistent": false
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "configId": "businessTreeConfig",
+            "sWidth": "260",
+            "sHeaderText": "Afficher le panneau de navigation",
+            "sIdDivAttach": "idDivNavigation",
+            "internalDivs": [
+                {
+                    "id": "idDivNavigationCombo"
+                },
+                {
+                    "id": "idDivNavigationTree"
+                },
+                {
+                    "id": "idDivNavigationToolbar"
+                },
+                {
+                    "id": "idDivNavigationToolbarCreation"
+                }
+            ],
+            "module": {
+                "sType": "CTxBusinessTree",
+                "sIdDiv": "idDivNavigationCombo",
+                "settings": {
+                    "comboBox": {
+                        "sIdDiv": "idDivNavigationCombo",
+                        "iWidth": "100%",
+                        "iMaxExpandedHeight": 400,
+                        "bDisplayImage": true
+                    },
+                    "tree": {
+                        "sIdDiv": "idDivNavigationTree",
+                        "sIdDivToolbar": "idDivNavigationToolbar",
+                        "sIdDivToolbarCreation": "idDivNavigationToolbarCreation",
+                        "bFolderCheckable": false,
+                        "bEnableMultiSelection": true,
+                        "bWriteMode": false,
+                        "bEnableContextMenu": true,
+                        "bEnableEdition": true,
+                        "bEnableDragAndDrop": true
+                    },
+                    "functions": {
+                        "onCollapseNavTree": [ "collapseNavTreeCell" ],
+                        "onSelect": [ "mainTreeObjects" ],
+                        "onChange": [ "idOT" ],
+                        "onCollapseNav": [ "collapseNav" ],
+                        "onExpandNav": [ "expandNav" ]
+                    },
+                    "watch": [
+                        {
+                            "sName": "idOT",
+                            "sType": "idOT"
+                        },
+                        {
+                            "sName": "mainTreeObjects",
+                            "sType": "txObjs"
+                        },
+                        {
+                            "sName": "collapseNavTreeCell",
+                            "sType": "cell",
+              				"bPersistent": false
+                        },
+                        {
+                            "sName": "updateTree",
+                            "sType": "treeUpdateRequest",
+              				"bPersistent": false
+                        },
+                        {
+                            "sName": "displayHome",
+                            "sType": "displayHome",
+              				"bPersistent": false
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "configId": "bannerConfig",
+            "sHeight": "50",
+            "sIdDivAttach": "sIdDivBannerCell",
+            "bFixHeight": true,
+            "bFixWidth": false,
+            "module": {
+                "sType": "CBanner",
+                "settings": {
+                    "sIdDiv": "idDivBanner",
+                    "functions": {
+                        "onCollapseNavTree": [ "collapseNavTreeCell" ],
+                        "onCollapseExpandTreeComment": [ "collapseExpandTreeComment" ]
+                    },
+                    "DivBannerRight": [
+                        {
+                            "sType": "div",
+                            "id": "test",
+                            "Children": [
+                                {
+                                    "sType": "a",
+                                    "id": "idACopyToClipboard",
+                                    "ArrHtmlTag": { "href": "#" },
+                                    "Children": [
+                                        {
+                                            "sType": "img",
+                                            "id": "idImgCopyToClipboard",
+                                            "title": "Copier l'url vers cette Entité dans le presse papier",
+                                            "ArrHtmlTag": { "src": "/Resources/theme/img/btn_form/link.png" }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "sType": "a",
+                            "id": "idACollapseBanner",
+                            "ArrHtmlTag": { "href": "#" },
+                            "Children": [
+                                {
+                                    "sType": "img",
+                                    "id": "idImgCollapseBanner",
+                                    "title": "Cacher le bandeau de l'Entité",
+                                    "ArrHtmlTag": { "src": "/Resources/theme/img/btn_content/collapse_header.gif" }
+                                }
+                            ]
+                        }
+                    ],
+                    "watch": [
+                        {
+                            "sName": "idOT",
+                            "sType": "idOT"
+                        },
+                        {
+                            "sName": "mainTreeObjects",
+                            "sType": "txObjs"
+                        },
+                        {
+                            "sName": "idFormTab",
+                            "sType": "idTab"
+                        },
+                        {
+                            "sName": "refreshForm",
+                            "sType": "refreshBanner"
+                        },
+                        {
+                            "sName": "expandNav",
+                            "sType": "showBtnCollapseNav"
+                        },
+                        {
+                            "sName": "collapseNav",
+                            "sType": "hideBtnCollapseNav"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "configId": "readFormConfig",
+            "sIdDivAttach": "sIdDivFormCell",
+            "module": {
+                "sType": "CReadForm",
+                "settings": {
+                    "sIdDiv": "sIdDivForm",
+                    "functions": {
+                        "tabbarOnSelect": [ "idFormTab" ],
+                        "navigateToObject": [ "mainTreeObjects" ]
+                    },
+                    "watch": [
+                        {
+                            "sName": "idOT",
+                            "sType": "idOT"
+                        },
+                        {
+                            "sName": "mainTreeObjects",
+                            "sType": "txObjs"
+                        },
+                        {
+                            "sName": "refreshForm",
+                            "sType": "update",
+              				"bPersistent": false
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+  "dataStorage": {
+    "history": {
+      "txObject": "mainTreeObjects"
+    }
+  },
+  "resources": {
+    "css": [
+      "/code/TxASP/TxASP.css"
+    ],
+    "js": [
+      "/code/TxGenerator/custom/StandardTree/CTreeObjectCreationModded.js",
+      "/code/TxGenerator/custom/StandardTree/CComboBoxOTModded.js",
+      "/code/TxGenerator/custom/StandardTree/CTxTreeObject.js",
+      "/code/TxGenerator/custom/BusinessTree/CBusinessComboBoxOTModded.js",
+      "/code/TxGenerator/custom/BusinessTree/CBusinessTreeObjectCreationModded.js",
+      "/code/TxGenerator/custom/BusinessTree/CTxBusinessTree.js",
+      "/code/TxBanner/js/CBanner.js",
+      "/code/TxWebForms/js/CReadForm.js"
+    ]
+  }
+}

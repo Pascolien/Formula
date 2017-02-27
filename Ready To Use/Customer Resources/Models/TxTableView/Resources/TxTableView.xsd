@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="TxTableViews" type="XTxTableViews"/>
+
+    <xs:complexType name="XTxTableViews">
+        <xs:sequence maxOccurs="unbounded">
+            <xs:element name="TxTableViewConfiguration" type="XTxTableViewConfiguration"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:complexType name="XTxTableViewConfiguration"> 
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="ObjectColumnConfiguration" type="XVirtualColumnConfiguration" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="ActionColumnConfiguration" type="XActionColumnConfiguration" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="AttributeColumnConfiguration" type="XAttributeColumnConfiguration" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="RawDataColumnConfiguration" type="XRawDataColumnConfiguration" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="CheckboxColumnConfiguration" type="XVirtualColumnConfiguration"  minOccurs="0" maxOccurs="1"/>
+        </xs:choice>
+        <xs:attribute name="sObjectsPreselectionType" type="XObjectsPreselectionType" use="required"/>
+        
+        <xs:attribute name="sRLTag" type="xs:string" use="optional"/>
+        <xs:attribute name="sOTTag" type="xs:string" use="optional"/>
+        
+        <xs:attribute name="sName" type="xs:string" use="required"/>
+        <xs:attribute name="sTag" type="xs:string" use="required"  />
+        <xs:attribute name="iNbRowsPerPage"  type="xs:int" default="100" use="optional"/>
+        <xs:attribute name="bDisplayFilters" type="xs:boolean" use="required"/>
+        <xs:attribute name="bAllowOpenInNewTab" type="xs:boolean" use="required"/>
+        <xs:attribute name="bEnableAutoRefresh" type="xs:boolean" use="optional"/>
+        <xs:attribute name="bAllowEdition" type="xs:boolean" use="optional"/>
+        <xs:attribute name="bAllowExportation" type="xs:boolean" use="optional"/>
+        <xs:attribute name="bDisplayMCSButton" type="xs:boolean" use="optional"/>
+        <xs:attribute name="bAllowNavigation" type="xs:boolean" use="optional"/>
+        <xs:attribute name="sModelApplicationsTags" type="xs:string" use="optional"/>
+        <xs:attribute name="bEnableObjectNameColNavigation" type="xs:boolean" use="optional"/>
+        <xs:attribute name="iNbFixedColumns" type="xs:int" default="0" use="optional"/>
+    </xs:complexType>
+
+    <xs:complexType name="XVirtualColumnConfiguration">
+        <xs:attribute name="sName" type="xs:string" use="optional"/>
+        <xs:attribute name="iWidth" type="xs:int" use="optional"/>
+        <xs:attribute name="bMultiline" type="xs:boolean" use="optional"/>
+    </xs:complexType>
+    
+    <xs:complexType name="XActionColumnConfiguration">
+      <xs:complexContent>
+          <xs:extension base="XVirtualColumnConfiguration">
+              <xs:attribute name="sModelApplicationTag" type="xs:string"/>
+          </xs:extension>
+      </xs:complexContent>
+     </xs:complexType>
+     
+    <xs:complexType name="XAttributeColumnConfiguration">
+        <xs:complexContent>
+            <xs:extension base="XVirtualColumnConfiguration">
+                <xs:attribute name="sAttTag" type="xs:string"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:complexType name="XRawDataColumnConfiguration">
+        <xs:complexContent>
+            <xs:extension base="XVirtualColumnConfiguration">
+                <xs:attribute name="sType" type="XDataColumnType"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:simpleType name="XDataColumnType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="text"/>
+            <xs:enumeration value="numeric"/>
+            <xs:enumeration value="date"/>
+            <xs:enumeration value="dateTime"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="XObjectsPreselectionType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="optManualPreselection"/>
+            <xs:enumeration value="optFullObjectType"/>
+            <xs:enumeration value="optMulticriteriaSelection"/>
+            <xs:enumeration value="optRawData"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

@@ -1,0 +1,22 @@
+.mce-btn{
+    background-color:transparent!important;
+    background-image : none!important;
+    background-repeat : no-repeat!important;
+    min-height: 22px;
+}
+
+.mce-btn:hover,.mce-btn:focus{
+    color:#FFE3AC;
+    background-image : none!important;
+    background-repeat : no-repeat!important;
+    border: #ffbe51 1px solid;
+    background-color: #FFE3AC!important;
+}
+
+.mce-active, .mce-active:hover{
+    color:#3f4245;
+    background-image : none!important;
+    background-repeat : no-repeat!important;
+    border: #ffbe51 1px solid;
+    background-color: #FFC957!important;
+}

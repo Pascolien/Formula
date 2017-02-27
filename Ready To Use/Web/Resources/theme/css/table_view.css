@@ -1,0 +1,27 @@
+div.gridbox_light table.obj tr.rowselected td{
+	background-color:black;
+	color:black;
+}
+div.gridbox_light table.obj tr.rowselected td.cellselected, div.gridbox_light table.obj td.cellselected {
+	background-color:black;
+}
+
+.cl_img_btn{
+	float:left;
+}
+
+#table_tree_view, #table_linear_view{
+    margin:6px;
+    width:868px; 
+	height:460px;
+}
+
+#table_view_btns { 
+  position: absolute; 
+  bottom: 10px; 
+  left: 10px;
+}
+
+#table_view_btns img {
+  margin-right: 5px;
+}

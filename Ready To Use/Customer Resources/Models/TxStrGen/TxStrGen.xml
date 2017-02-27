@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TxStrGen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Resources\TxStrGen.xsd">
+	<TxStrGenConfiguration sName="TEB" sOTTag="txOT_Library">
+		<Data sTags_Att="txAtt_Library_Short_Title" sSuffix="_"/>
+		<Data sTags_Att="TxAtt_Library_Title"/>
+		<Data sTags_Att="txAtt_Library_Number" sPrefix="_"/>
+		<Data sTags_Att="txAtt_Library_Version" sPrefix="_v"/>
+	</TxStrGenConfiguration>
+</TxStrGen>

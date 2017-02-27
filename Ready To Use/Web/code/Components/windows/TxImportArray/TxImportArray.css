@@ -1,0 +1,17 @@
+﻿#idDivMainTxImportArray{
+    margin:5px;
+}
+
+#idDivGridArrayImport{
+    /*margin:5px;*/
+    width:100%-10px;
+}
+
+#idLabelSeparatorTxImportArray{
+    margin-left:6px;
+    margin-right:6px;
+    margin-top:3px;
+    float:left;
+    width: 120px;
+    text-align: right;
+}

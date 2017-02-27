@@ -1,0 +1,680 @@
+
+/************************************************************************************************************************/
+/*	common														*/
+
+.dhxform_obj_dhx_skyblue {
+	font-family: Tahoma;
+	float: left;
+	line-height: normal;
+	/*border: 1px solid yellow; /* debug */
+}
+
+.dhxform_obj_dhx_skyblue div.dhxform_base {
+	position: relative;
+	float: left;
+}
+.dhxform_obj_dhx_skyblue div.dhxform_base_nested {
+	padding: 0px 0px 0px 20px;
+	clear: both;
+}
+
+/************************************************************************************************************************/
+/*	label-link, inner container, checkbox/radio									*/
+
+.dhxform_obj_dhx_skyblue div.dhxform_label div.dhxform_label_nav_link,
+.dhxform_obj_dhx_skyblue div.dhxform_label div.dhxform_label_nav_link:visited,
+.dhxform_obj_dhx_skyblue div.dhxform_label div.dhxform_label_nav_link:active,
+.dhxform_obj_dhx_skyblue div.dhxform_label div.dhxform_label_nav_link:hover {
+	outline: none;
+	text-decoration: none;
+	color: inherit;
+	cursor: default;
+	overflow: hidden;
+	white-space: normal;
+}
+.dhxform_obj_dhx_skyblue div.dhxform_label div.dhxform_label_nav_link:focus {
+	color: #30678a;
+}
+.dhxform_obj_dhx_skyblue div.disabled span.nav_link {
+	color: inherit;
+}
+
+/************************************************************************************************************************/
+/*	image, checkbox/radio												*/
+
+.dhxform_obj_dhx_skyblue div.dhxform_img {
+	width: 18px;
+	height: 18px;
+	font-size: 1px;
+	-moz-user-select: -moz-none;
+}
+.dhxform_obj_dhx_skyblue div.dhxform_img.chbx0,
+.dhxform_obj_dhx_skyblue div.dhxform_img.chbx1,
+.dhxform_obj_dhx_skyblue div.disabled div.dhxform_img.chbx0,
+.dhxform_obj_dhx_skyblue div.disabled div.dhxform_img.chbx1,
+.dhxform_obj_dhx_skyblue div.dhxform_img.rdbt0,
+.dhxform_obj_dhx_skyblue div.dhxform_img.rdbt1,
+.dhxform_obj_dhx_skyblue div.disabled div.dhxform_img.rdbt0,
+.dhxform_obj_dhx_skyblue div.disabled div.dhxform_img.rdbt1 {
+	background-image: url("../../../img/dhtmlx/form/dhxform_chbxrd.gif");
+	background-repeat: no-repeat;
+}
+.dhxform_obj_dhx_skyblue div.dhxform_img.chbx0 { background-position: -18px 0px; }
+.dhxform_obj_dhx_skyblue div.dhxform_img.chbx1 { background-position: 0px 0px; }
+.dhxform_obj_dhx_skyblue div.disabled div.dhxform_img.chbx0 { background-position: -54px 0px; }
+.dhxform_obj_dhx_skyblue div.disabled div.dhxform_img.chbx1 { background-position: -36px 0px; }
+	
+.dhxform_obj_dhx_skyblue div.dhxform_img.rdbt0 { background-position: -90px 0px; }
+.dhxform_obj_dhx_skyblue div.dhxform_img.rdbt1 { background-position: -72px 0px; }
+.dhxform_obj_dhx_skyblue div.disabled div.dhxform_img.rdbt0 { background-position: -126px 0px; }
+.dhxform_obj_dhx_skyblue div.disabled div.dhxform_img.rdbt1 { background-position: -108px 0px; }
+
+
+/************************************************************************************************************************/
+/*	label, parent container												*/
+
+.dhxform_obj_dhx_skyblue div.dhxform_label {
+	font-family: inherit;
+	font-size: inherit;
+	color: #000000;
+	overflow-x: hidden;
+	-moz-user-select: none;
+	overflow: hidden;
+	white-space: normal;
+}
+
+.dhxform_obj_dhx_skyblue div.dhxform_label.dhxform_label_align_left {
+	text-align: left;
+}
+.dhxform_obj_dhx_skyblue div.dhxform_label.dhxform_label_align_center {
+	text-align: center;
+}
+.dhxform_obj_dhx_skyblue div.dhxform_label.dhxform_label_align_right {
+	text-align: right;
+}
+
+.dhxform_obj_dhx_skyblue div.disabled div.dhxform_label,
+.dhxform_obj_dhx_skyblue div.disabled div.dhxform_label div.dhxform_label_nav_link,
+.dhxform_obj_dhx_skyblue div.disabled div.dhxform_label span.dhxform_item_required {
+	color: #b2b2b2;
+}
+
+.dhxform_obj_dhx_skyblue div.dhxform_label span.dhxform_item_required {
+	margin-left: 5px;
+	color: red;
+}
+
+
+/************************************************************************************************************************/
+/*	input														*/
+
+.dhxform_obj_dhx_skyblue input.dhxform_textarea {
+	padding: 1px 0px !important;
+	margin: 0px;
+	font-size: 1em;
+}
+.dhxform_obj_dhx_skyblue .dhxform_textarea {
+	border: #a4bed4 1px solid;
+	font-family: Tahoma;
+	font-size: inherit;
+	color: #000000;
+	-moz-user-select: text;
+	font-size: 1em;
+}
+.dhxform_obj_dhx_skyblue div.disabled .dhxform_textarea {
+	color: #b2b2b2;
+	background-color: #ffffff;
+	border: #c2d0dd 1px solid;
+}
+
+/************************************************************************************************************************/
+/*	hidden input for checkbox/radio											*/
+
+.dhxform_obj_dhx_skyblue div.dhxform_control.dhxform_img_node {
+	position: relative;
+}
+.dhxform_obj_dhx_skyblue div.dhxform_control.dhxform_img_node .dhxform_textarea {
+	border: 1px solid white;
+	background-color: white;
+	color: white;
+	visibility: hidden;
+}
+.dhxform_obj_dhx_skyblue div.dhxform_control.dhxform_img_node div.dhxform_img {
+	float: none;
+	top: 3px;
+	left: 0px;
+	position: absolute;
+	margin: 0px;
+}
+
+
+/************************************************************************************************************************/
+/*	select														*/
+
+.dhxform_obj_dhx_skyblue .dhxform_select {
+	border: #a4bed4 1px solid;
+	background-color: #ffffff;
+	font-family: Tahoma;
+	font-size: inherit;
+	color: #000000;
+	margin: 0px;
+	font-size: 1em;
+}
+.dhxform_obj_dhx_skyblue div.disabled .dhxform_select {
+	color: #b2b2b2;
+	background-color: #ffffff;
+	border: #c2d0dd 1px solid;
+}
+
+
+/************************************************************************************************************************/
+/*	fieldset													*/
+
+.dhxform_obj_dhx_skyblue fieldset.dhxform_fs {
+	border: #a4bed4 1px solid;
+	margin-top: 5px;
+	padding: 5px;
+	adisplay: inline;
+	clear: left;
+	width: 100%;
+}
+.dhxform_obj_dhx_skyblue div.disabled fieldset.dhxform_fs {
+	border: #c2d0dd 1px solid;
+}
+	
+.dhxform_obj_dhx_skyblue fieldset.dhxform_fs legend.fs_legend {
+	font-family: Tahoma;
+	color: #256187;
+	font-size: inherit;
+	font-weight: normal;
+	padding: 0px 4px 1px 4px;
+	text-align: left;
+	
+}
+.dhxform_obj_dhx_skyblue div.disabled fieldset.dhxform_fs legend.fs_legend {
+	color: #b2b2b2;
+}
+
+
+/************************************************************************************************************************/
+/*	item node, label right												*/
+
+.dhxform_obj_dhx_skyblue div.dhxform_item_label_right {
+	clear: both;
+	padding-top: 2px;
+	cursor: default;
+}
+.dhxform_obj_dhx_skyblue div.dhxform_item_label_right div.dhxform_img {
+	float: left;
+	margin: 3px 5px 0px 1px;
+}
+.dhxform_obj_dhx_skyblue div.dhxform_item_label_right div.dhxform_label {
+	float: left;
+	padding: 1px 0px 1px 0px;
+	margin: 2px 0 2px 0px;
+}
+
+.dhxform_obj_dhx_skyblue div.dhxform_item_label_right div.dhxform_control {
+	float: left;
+	margin-right: 6px;
+}
+
+/************************************************************************************************************************/
+/*	item node, label left												*/
+
+.dhxform_obj_dhx_skyblue div.dhxform_item_label_left {
+	clear: both;
+	padding-top: 2px;
+	cursor: default;
+}
+.dhxform_obj_dhx_skyblue div.dhxform_item_label_left div.dhxform_img {
+	float: right;
+	margin: 3px 1px 0px 5px;
+}
+
+.dhxform_obj_dhx_skyblue div.dhxform_item_label_left div.dhxform_label {
+	float: left;
+	padding: 1px 0px 1px 0px;
+	margin: 2px 0px 2px 0px;
+}
+
+.dhxform_obj_dhx_skyblue div.dhxform_item_label_left div.dhxform_control {
+	float: left;
+	margin-left: 4px;
+}
+
+/************************************************************************************************************************/
+/*	item node, label top												*/
+
+.dhxform_obj_dhx_skyblue div.dhxform_item_label_top {
+	clear: both;
+}
+
+/************************************************************************************************************************/
+/*	item node, absolute position											*/
+
+.dhxform_obj_dhx_skyblue div.dhxform_item_absolute {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	cursor: default;
+}
+.dhxform_obj_dhx_skyblue div.item_absolute div.dhxform_img {
+	position: absolute;
+}
+.dhxform_obj_dhx_skyblue div.dhxform_item_absolute div.dhxform_control,
+.dhxform_obj_dhx_skyblue div.dhxform_item_absolute div.dhxform_label,
+.dhxform_obj_dhx_skyblue div.dhxform_item_absolute div.dhxform_control.dhxform_img_node,
+.dhxform_obj_dhx_skyblue div.dhxform_item_absolute div.dhxform_txt_label2,
+.dhxform_obj_dhx_skyblue div.dhxform_item_absolute div.dhxform_btn,
+.dhxform_obj_dhx_skyblue div.block_item_absolute div.dhxform_block {
+	position: absolute;
+}
+
+
+/************************************************************************************************************************/
+/*	label, level 2													*/
+
+.dhxform_obj_dhx_skyblue div.dhxform_txt_label2 {
+	color: #256187;
+	font-family: Tahoma;
+	font-size: inherit;
+	font-weight: bold;
+	margin: 0px 3px;
+	padding: 5px 0px;
+	cursor: default;
+}
+
+.dhxform_obj_dhx_skyblue div.disabled div.dhxform_txt_label2 {
+    color: #B2B8BC;
+}
+
+
+/************************************************************************************************************************/
+/*	button														*/
+
+.dhxform_obj_dhx_skyblue div.dhxform_btn {
+	font-size: inherit;
+	font-family: Tahoma;
+	height: 21px;
+	margin: 1px 2px;
+	float: left;
+	cursor: default;
+	clear: both;
+	-moz-user-select: none;
+}
+
+.dhxform_obj_dhx_skyblue div.dhxform_btn table {
+	height: 21px;
+	font-size: 1em;
+}
+.dhxform_obj_dhx_skyblue div.dhxform_btn td {
+	text-align: center;
+	vertical-align: middle;
+	font-size: inherit;
+}
+
+.dhxform_obj_dhx_skyblue div.dhxform_btn td.btn_l,
+.dhxform_obj_dhx_skyblue div.dhxform_btn td.btn_r {
+	background-image: url("../../../img/dhtmlx/form/dhxform_btns.gif");
+	background-repeat: no-repeat;
+	width: 5px;
+	height: 21px;
+	font-size: 1px;
+}
+	
+	
+.dhxform_obj_dhx_skyblue div.dhxform_btn td.btn_l { background-position: 0px 0px; }
+.dhxform_obj_dhx_skyblue div.dhxform_btn td.btn_r { background-position: -5px 0px; }
+
+.dhxform_obj_dhx_skyblue div.dhxform_btn td.btn_m {
+	background-image: url("../../../img/dhtmlx/form/dhxform_btns.gif");
+	background-repeat: repeat-x;
+	background-position: 0px -21px;
+	height: 21px;
+}
+
+.dhxform_obj_dhx_skyblue div.dhxform_btn td.btn_l div.btn_l, .dhxform_obj_dhx_skyblue div.dhxform_btn td.btn_r div.btn_r { width: 5px; height: 21px;}
+	
+/* dis, over, pressed */
+.dhxform_obj_dhx_skyblue div.disabled div.dhxform_btn td.btn_l { background-position: 0px -42px !important; }
+.dhxform_obj_dhx_skyblue div.disabled div.dhxform_btn td.btn_m { background-position: 0px -63px !important; }
+.dhxform_obj_dhx_skyblue div.disabled div.dhxform_btn td.btn_r { background-position: -5px -42px !important; }
+.dhxform_obj_dhx_skyblue div.dhxform_btn table.dhxform_btn_over td.btn_l { background-position: 0px -84px !important; }
+.dhxform_obj_dhx_skyblue div.dhxform_btn table.dhxform_btn_over td.btn_m { background-position: 0px -105px !important; }
+.dhxform_obj_dhx_skyblue div.dhxform_btn table.dhxform_btn_over td.btn_r { background-position: -5px -84px !important; }
+.dhxform_obj_dhx_skyblue div.dhxform_btn table.dhxform_btn_pressed td.btn_l { background-position: 0px -126px !important; }
+.dhxform_obj_dhx_skyblue div.dhxform_btn table.dhxform_btn_pressed td.btn_m { background-position: 0px -147px !important; }
+.dhxform_obj_dhx_skyblue div.dhxform_btn table.dhxform_btn_pressed td.btn_r { background-position: -5px -126px !important; }
+	
+/* label */
+.dhxform_obj_dhx_skyblue div.dhxform_btn td.btn_m div.btn_txt {
+	font-size: inherit;
+	font-family: Tahoma;
+	color: #000000;
+	padding: 0px 20px;
+	height: 21px;
+	line-height: 21px;
+	vertical-align: middle;
+	overflow: hidden;
+	white-space: nowrap;
+}
+.dhxform_obj_dhx_skyblue div.dhxform_btn td.btn_m div.btn_txt.btn_txt_fixed_size { padding: 0px; width: 100%; }
+.dhxform_obj_dhx_skyblue div.disabled div.dhxform_btn td.btn_m div.btn_txt { color: #b2b2b2 !important; }
+.dhxform_obj_dhx_skyblue div.dhxform_btn table.dhxform_btn_pressed td.btn_m div.btn_txt { top: 2px; height: 19px; }
+
+
+/************************************************************************************************************************/
+/*	note/info													*/
+
+.dhxform_obj_dhx_skyblue div.dhxform_control div.dhxform_note {
+	font-size: 0.8em;
+	color: gray;
+	padding-bottom: 3px;
+}
+.dhxform_obj_dhx_skyblue div.disabled div.dhxform_control div.dhxform_note {
+	color: #b2b2b2;
+}
+
+.dhxform_obj_dhx_skyblue div.dhxform_label span.dhxform_info {
+	font-size: 0.6em;
+	color: gray;
+	margin-left: 3px;
+	padding-bottom: 2px;
+	line-height: 100%;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+/************************************************************************************************************************/
+/*	validate													*/
+
+.dhxform_obj_dhx_skyblue .validate_error .dhxform_label,
+.dhxform_obj_dhx_skyblue .validate_error .dhxform_textarea,
+.dhxform_obj_dhx_skyblue .validate_error .dhxform_select,
+.dhxform_obj_dhx_skyblue .validate_error div.dhxform_label_nav_link,
+.dhxform_obj_dhx_skyblue .validate_error div.dhxform_label div.dhxform_label_nav_link:focus {
+	color: red;
+}
+
+
+/************************************************************************************************************************/
+/*	disabled combo													*/
+
+.dhxform_obj_dhx_skyblue div.disabled .dhx_combo_box.dhx_skyblue {
+	border:  1px solid #c2d0dd;
+}
+.dhxform_obj_dhx_skyblue div.disabled .dhx_combo_box.dhx_skyblue .dhx_combo_input {
+	color: #b2b2b2;
+	background-color: #ffffff;
+}
+
+
+/************************************************************************************************************************/
+/*	dhtmlxeditor													*/
+
+.dhxform_obj_dhx_skyblue div.dhxform_item_template.dhxeditor_inside {
+	border: 1px solid #a4bed4;
+}
+.dhxform_obj_dhx_skyblue div.disabled div.dhxform_item_template.dhxeditor_inside {
+	border: 1px solid #c2d0dd;
+}
+.dhxform_obj_dhx_skyblue div.dhxform_item_template.dhxeditor_inside div.dhxcont_content_blocker {
+	display: none;
+}
+.dhxform_obj_dhx_skyblue div.disabled div.dhxform_item_template.dhxeditor_inside div.dhxcont_content_blocker {
+	display: inline;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	background-color: #fefefe;
+	filter: alpha(opacity=70);
+	-moz-opacity: 0.7;
+	opacity: 0.7;
+}
+
+
+/************************************************************************************************************************/
+/*	in window													*/
+
+.dhtmlx_skin_dhx_skyblue div.dhtmlx_wins_body_inner .dhxform_obj_dhx_skyblue {
+	background-color: white;
+}
+
+/* combo font-size */
+.dhxform_obj_dhx_skyblue div.dhxform_control .dhx_combo_box.dhx_skyblue .dhx_combo_input,
+.dhx_combo_list.dhx_skyblue_list div {
+	font-size: 1em !important;
+}
+
+/************************************************************************************************************************/
+/*	uploader													*/
+
+/* main cont */
+.dhxform_obj_dhx_skyblue .dhx_file_uploader {
+	position: relative;
+	width: 100%;
+	margin-bottom: 4px;
+}
+
+/* buttons area */
+.dhxform_obj_dhx_skyblue .dhx_file_uploader div.dhx_upload_controls {
+	position: relative;
+	width: 100%;
+	height: 35px;
+	font-size: 2px;
+	overflow: hidden;
+	-moz-user-select: none;
+}
+
+/* buttons */
+.dhxform_obj_dhx_skyblue .dhx_file_uploader div.dhx_upload_controls div.dhx_file_uploader_button {
+	position: absolute;
+	width: 19px;
+	height: 19px;
+	top: 8px;
+	background-image: url("../../../img/dhtmlx/form/dhxform_upload_buttons.gif");
+	background-repeat: no-repeat;
+	font-size: 2px;
+	cursor: pointer;
+	overflow: hidden;
+	-moz-user-select: none;
+}
+.dhxform_obj_dhx_skyblue .dhx_file_uploader div.dhx_upload_controls div.dhx_file_uploader_button.button_info {
+	display: none;
+}
+.dhxform_obj_dhx_skyblue .dhx_file_uploader div.dhx_upload_controls div.dhx_file_uploader_button.button_browse {
+	background-position: 0px 0px;
+	right: 108px;
+}
+.dhxform_obj_dhx_skyblue .dhx_file_uploader div.dhx_upload_controls div.dhx_file_uploader_button.button_upload {
+	background-position: -19px 0px;
+	right: 79px;
+}
+.dhxform_obj_dhx_skyblue .dhx_file_uploader div.dhx_upload_controls div.dhx_file_uploader_button.button_cancel {
+	background-position: -57px 0px;
+	right: 79px;
+}
+.dhxform_obj_dhx_skyblue .dhx_file_uploader div.dhx_upload_controls div.dhx_file_uploader_button.button_clear {
+	background-position: -38px 0px;
+	right: 50px;
+}
+
+/* upload input, html5 */
+.dhxform_obj_dhx_skyblue .dhx_file_uploader div.dhx_upload_controls .dhx_uploader_input {
+	position: absolute;
+	left: -1000px;
+	top: 0px;
+	visibility: hidden;
+}
+
+/* upload input/form, html4 */
+.dhxform_obj_dhx_skyblue .dhx_file_uploader div.dhx_upload_controls div.dhx_file_form_cont {
+	position: absolute;
+	width: 19px;
+	height: 19px;
+	left: 0px;
+	top: 0px;
+	cursor: pointer;
+	overflow: hidden;
+}
+.dhxform_obj_dhx_skyblue .dhx_file_uploader div.dhx_upload_controls div.dhx_file_form_cont form.dhx_file_form {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	cursor: pointer;
+}
+.dhxform_obj_dhx_skyblue .dhx_file_uploader div.dhx_upload_controls div.dhx_file_form_cont form.dhx_file_form .dhx_file_input {
+	opacity: 0;
+	filter: alpha(opacity=0);
+	cursor: pointer;
+	outline: none;
+	height: 19px;
+}
+
+/* file list */
+.dhxform_obj_dhx_skyblue .dhx_file_uploader div.dhx_upload_files {
+	position: relative;
+	width: 100%;
+	left: 0px;
+	top: 0px;
+	overflow: auto;
+}
+
+/* single file entry in list */
+.dhxform_obj_dhx_skyblue .dhx_file_uploader div.dhx_upload_files div.dhx_file {
+	position: relative;
+	width: 100%;
+	height: 25px;
+	overflow: hidden;
+}
+.dhxform_obj_dhx_skyblue .dhx_file_uploader div.dhx_upload_files div.dhx_file.dhx_file_added,
+.dhxform_obj_dhx_skyblue .dhx_file_uploader div.dhx_upload_files div.dhx_file.dhx_file_uploading {
+	color: black;
+}
+.dhxform_obj_dhx_skyblue .dhx_file_uploader div.dhx_upload_files div.dhx_file.dhx_file_uploaded {
+	color: #30678a;
+}
+.dhxform_obj_dhx_skyblue .dhx_file_uploader div.dhx_upload_files div.dhx_file.dhx_file_fail {
+	color: #e94a4a;
+}
+.dhxform_obj_dhx_skyblue .dhx_file_uploader div.dhx_upload_files div.dhx_file_param {
+	position: absolute;
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+	top: 0px;
+	height: 25px;
+	line-height: 25px;
+	vertical-align: middle;
+	overflow: hidden;
+}
+/* single file labels (name/size, progress, remove icon) */
+.dhxform_obj_dhx_skyblue .dhx_file_uploader div.dhx_upload_files div.dhx_file_param.dhx_file_name {
+	left: 20px;
+}
+.dhxform_obj_dhx_skyblue .dhx_file_uploader div.dhx_upload_files div.dhx_file_param.dhx_file_progress {
+	right: 50px;
+	width: 38px;
+	text-align: right;
+}
+.dhxform_obj_dhx_skyblue .dhx_file_uploader div.dhx_upload_files div.dhx_file_param.dhx_file_delete {
+	right: 30px;
+	width: 11px;
+	background-image: url("../../../img/dhtmlx/form/dhxform_upload_buttons.gif");
+	background-position: -76px 0px;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	-moz-user-select: none;
+}
+.dhxform_obj_dhx_skyblue .dhx_file_uploader div.dhx_upload_files div.dhx_file_param.dhx_file_uploading {
+	right: 50px;
+	width: 38px;
+	text-align: right;
+	background-image: url("../../../img/dhtmlx/form/dhxform_upload_uploading.gif");
+	background-position: center center;
+	background-repeat: no-repeat;
+	-moz-user-select: none;
+}
+
+/* title screen/button, label */
+.dhxform_obj_dhx_skyblue .dhx_file_uploader.dhx_file_uploader_title div.dhx_upload_controls {
+	height: 60px;
+}
+.dhxform_obj_dhx_skyblue .dhx_file_uploader.dhx_file_uploader_title div.dhx_upload_files {
+	display: none;
+}
+.dhxform_obj_dhx_skyblue .dhx_file_uploader.dhx_file_uploader_title div.dhx_upload_controls div.dhx_file_uploader_button.button_info {
+	display: inline;
+	background-image: none;
+	font-size: 13px;
+	height: auto;
+	top: 0px;
+	left: 35px;
+	color: #a0a0a0;
+	vertical-align: top;
+	padding-top: 6px;
+	line-height: 20px;
+	cursor: default;
+}
+.dhxform_obj_dhx_skyblue .dhx_file_uploader.dhx_file_uploader_title div.dhx_upload_controls div.dhx_file_uploader_button.button_browse {
+	top: 0px;
+	width: 54px;
+	height: 54px;
+	right: 35px;
+	background-image: url("../../../img/dhtmlx/form/dhxform_upload_buttons.gif");
+	background-position: 0px -38px;
+	background-repeat: no-repeat;
+}
+.dhxform_obj_dhx_skyblue .dhx_file_uploader.dhx_file_uploader_title div.dhx_upload_controls div.dhx_file_uploader_button.button_upload,
+.dhxform_obj_dhx_skyblue .dhx_file_uploader.dhx_file_uploader_title div.dhx_upload_controls div.dhx_file_uploader_button.button_cancel,
+.dhxform_obj_dhx_skyblue .dhx_file_uploader.dhx_file_uploader_title div.dhx_upload_controls div.dhx_file_uploader_button.button_clear {
+	display: none;
+}
+
+/* title screen/html4 form */
+.dhxform_obj_dhx_skyblue .dhx_file_uploader.dhx_file_uploader_title div.dhx_upload_controls div.dhx_file_form_cont {
+	width: 54px;
+	height: 54px;
+}
+.dhxform_obj_dhx_skyblue .dhx_file_uploader.dhx_file_uploader_title div.dhx_upload_controls div.dhx_file_form_cont form.dhx_file_form .dhx_file_input {
+	height: 54px;
+}
+
+
+/* disabled */
+.dhxform_obj_dhx_skyblue .dhx_file_uploader.dhx_file_uploader_title div.dhx_upload_controls.dhx_uploader_dis div.dhx_file_uploader_button.button_info,
+.dhxform_obj_dhx_skyblue .dhx_file_uploader div.dhx_upload_files.dhx_uploader_dis div.dhx_file.dhx_file_added,
+.dhxform_obj_dhx_skyblue .dhx_file_uploader div.dhx_upload_files.dhx_uploader_dis div.dhx_file.dhx_file_uploading,
+.dhxform_obj_dhx_skyblue .dhx_file_uploader div.dhx_upload_files.dhx_uploader_dis div.dhx_file.dhx_file_uploaded,
+.dhxform_obj_dhx_skyblue .dhx_file_uploader div.dhx_upload_files.dhx_uploader_dis div.dhx_file.dhx_file_fail {
+	color: #b2b2b2;
+}
+.dhxform_obj_dhx_skyblue .dhx_file_uploader.dhx_file_uploader_title div.dhx_upload_controls.dhx_uploader_dis div.dhx_file_uploader_button.button_browse {
+	background-position: -54px -38px;
+	cursor: default;
+}
+.dhxform_obj_dhx_skyblue .dhx_file_uploader div.dhx_upload_controls.dhx_uploader_dis div.dhx_file_form_cont {
+	display: none;
+}
+.dhxform_obj_dhx_skyblue .dhx_file_uploader div.dhx_upload_controls.dhx_uploader_dis div.dhx_file_uploader_button {
+	cursor: default;
+}
+.dhxform_obj_dhx_skyblue .dhx_file_uploader div.dhx_upload_controls.dhx_uploader_dis div.dhx_file_uploader_button.button_browse {
+	background-position: 0px -19px;
+}
+.dhxform_obj_dhx_skyblue .dhx_file_uploader div.dhx_upload_controls.dhx_uploader_dis div.dhx_file_uploader_button.button_upload {
+	background-position: -19px -19px;
+}
+.dhxform_obj_dhx_skyblue .dhx_file_uploader div.dhx_upload_controls.dhx_uploader_dis div.dhx_file_uploader_button.button_cancel {
+	background-position: -57px -19px;
+}
+.dhxform_obj_dhx_skyblue .dhx_file_uploader div.dhx_upload_controls.dhx_uploader_dis div.dhx_file_uploader_button.button_clear {
+	background-position: -38px -19px;
+}
+.dhxform_obj_dhx_skyblue .dhx_file_uploader div.dhx_upload_files.dhx_uploader_dis div.dhx_file_param.dhx_file_delete {
+	background-position: -87px 0px;
+	cursor: default;
+}

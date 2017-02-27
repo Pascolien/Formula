@@ -1,0 +1,158 @@
+body, input, textarea{
+    font-family : Tahoma;
+    font-size:11px;
+}
+
+#divBtn{
+    text-align:right;
+}
+
+.clInput{
+    height:18px;
+}
+
+
+.clInformation :hover{
+    text-decoration : underline;
+    cursor : pointer;
+}
+
+.clBackground{
+    margin-left: 5px;
+}
+.ui-datepicker-trigger{
+    vertical-align:middle;
+    margin-left : -20px;
+    margin-top: -2px;
+    cursor:pointer;
+}
+
+.GenericRow{
+    margin-top:6px;
+    margin-bottom:6px;     
+    float:left;
+}
+
+.GenericRow textarea {
+    height: auto;
+}
+
+.GenericLabel{
+    float :left;
+    clear :left;
+    text-align :right;
+    margin-right:3px;
+    width :25%;
+}
+
+.GenericField{        
+    width:74%;
+    float:left;
+}
+
+.GenericGroup{
+    margin:6px;
+    padding:3px;
+    clear:left;
+    border: 1px solid #A4BED4;
+}
+
+.GenericLegend{
+    font-size:14px;
+	font-weight:bold;
+    padding:0px 4px;
+    cursor : pointer;
+}
+
+.point{
+    width:58px;
+}
+
+.clDivTreeForm{
+    border:1px solid #A4BED4;
+    margin-bottom:-1px;
+}
+
+.clIcon:hover {
+    cursor: pointer;
+    border: 1px grey solid;
+    box-shadow: 0px 1px 0px #aaa;
+    border-radius: 2px;
+}
+
+.clIconHover:hover {
+    cursor: pointer;
+    border: 1px grey solid;
+    box-shadow: 0px 1px 0px #aaa;
+    border-radius: 2px;
+}
+
+.clIcon:active{
+    cursor: pointer;
+    border: 1px grey solid;
+    background-color: #e2e2e2;
+    border-radius: 2px;
+}
+
+.clIconPressed {
+    text-decoration: none;
+    _border: 0px;
+    cursor: pointer;
+    margin-right: 0px;
+    margin-left: 3px;
+    padding: 1px;
+    vertical-align: middle;
+    border: 1px grey solid;
+    background-color: #e2e2e2;
+    border-radius: 2px;
+}
+
+.clIconPressedExt {
+    text-decoration: none;
+    _border: 0px;
+    cursor: pointer;
+    margin-right: 0px;
+    border: 1px grey solid;
+    background-color: #e2e2e2;
+    border-radius: 2px;
+}
+
+.clIcon, .clIconExt{
+    text-decoration: none;
+    background: transparent;
+    border: 1px transparent solid;
+    _border: 0px;
+    cursor: pointer;
+    margin-right: 0px;
+    margin-left: 3px;
+    padding: 1px;
+    vertical-align: middle;
+}
+
+
+div.mce-fullscreen {
+    position: absolute;
+    top: 30px;
+    bottom: 20px;
+    left: 10px;
+    right: 10px;
+    z-index:1;
+}
+
+ div.divFileAtt div.gridbox {
+     width: 341.2px !important;
+ }
+
+.formProgress {
+    width: 100%;
+    height: 100%;
+    background: rgba(226, 239, 255, 0.65);
+    position: absolute;
+    z-index: 20;
+ }
+ .formProgress .formProgressImg {
+        margin: auto;
+        display: block;
+        padding-top: 23%;
+        width: 55px;
+ }

@@ -1,0 +1,147 @@
+﻿.fillParent {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.mcsPadding {
+    padding: 5px;
+}
+
+.mcsMainLayout .fillParentWidth {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.mcsPadding .mcsTopCell {
+    padding: 5px 5px 0 5px;
+}
+
+.mcsRightCell {
+    padding-left: 2px;
+}
+
+.mcsObjectsTypeCombo {
+    position: absolute;
+    left: 5px;
+    right: 2px;
+}
+
+.mcsMainLayout .ui-datepicker-trigger{
+    vertical-align:middle;
+    margin-left : -20px;
+    margin-top: -2px;
+    cursor:pointer;
+}
+
+.mcsMainLayout .mcsAttributesTree {
+    position: absolute;
+    top: 32px;
+    left: 5px;
+    right: 2px;
+    bottom: 32px;
+    border: #A4BED4 1px solid;
+}
+
+.mcsMainLayout .mcsToolbar, .mcsMainLayout *[id^=idMCSToolbar] {
+    position: absolute;
+    height: 28px;
+    right: 2px;
+    left: 5px;
+    bottom: 5px;
+}
+
+.mcsMainLayout *[id^=idMCSOptions] {
+    position: absolute;
+    left: 6px;
+}
+
+.mcsMainLayout .mcsResultsTab {
+    white-space: pre;
+    overflow: auto;
+}
+/*Criteria header*/
+.mcsMainLayout .mcsCriteriaHeader {
+    border: 1px solid #A4BED4;
+    padding: 5px;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+    .mcsMainLayout .mcsCriteriaHeader form {
+        margin-top: 10px;
+    }
+
+        .mcsMainLayout .mcsCriteriaHeader form input[type=radio] {
+            position: relative;
+            top: 2px;
+            margin-left: 5px;
+        }
+
+        .mcsMainLayout .mcsCriteriaHeader form input[type=checkbox] {
+            position: relative;
+            top: 3px;
+        }
+
+/*form*/
+.mcsMainLayout .formGroup {
+    margin: 5px 0;
+}
+
+    .mcsMainLayout .formGroup label:first-child {
+        display: inline-block;
+        width: 100px;
+        text-align: right;
+    }
+
+/* Numercal attributes */
+.mcsMainLayout .mcsNumericalEqualitySlider {
+    width: 75%;
+    margin: 15px auto;
+    display: inline-block;
+}
+
+.mcsMainLayout .mcsNumericalRange {
+    display: none;
+}
+
+.mcsMainLayout .entryHelper {
+    color: #336699;
+    text-align: center;
+    margin-top: 25px;
+}
+
+.mcsMainLayout .mcsNumericalEquality > div:last-child, .mcsMainLayout .mcsNumericalRange > div:last-child {
+    text-align: center;
+}
+
+/* Link attributes */
+.mcsMainLayout .mcsLinkTree {
+    height: 335px;
+    border: 1px solid #A4BED4;
+    border-bottom: none;
+    box-sizing: border-box;
+}
+
+.mcsMainLayout .readOnly {
+    background: #EBEBE4;
+}
+
+/* Table attributes*/
+.mcsMainLayout .mcsTableNumericalSeries, .mcsMainLayout .mcsTableOtherSeries {
+    display: inline-block;
+}
+
+    .mcsMainLayout .mcsTableNumericalSeries > div {
+        display: inline-block;
+    }
+
+    .mcsMainLayout .mcsTableNumericalSeries input[type="number"] {
+        width: 60px;
+    }
+
+.mcsMainLayout .mcsTableSpecificColumn {
+    display: none;
+}

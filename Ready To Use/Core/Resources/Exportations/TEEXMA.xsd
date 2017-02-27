@@ -1,0 +1,991 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+    <xs:element name="Obj" type="XObj"/>
+
+    <xs:element name="Data" type="Data"/>
+    
+    <xs:element name="RL" type="XRL"/>
+    
+    <xs:element name="XML" type="Header"/>
+
+    <xs:complexType name="Header">
+        <xs:sequence>
+            <xs:element name="Data" type="XData" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="Objs" type="Objs" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute name="iDb_Revision" type="xs:int" fixed="4204"/>
+        <xs:attribute name="fDate" type="xs:double"/>
+        <xs:attribute name="ID_OT" type="xs:int"/>
+        <xs:attribute name="sOT" type="xs:string"/>
+        <xs:attribute name="ID_User" type="xs:int"/>
+        <xs:attribute name="sUser" type="xs:string"/>
+
+
+    </xs:complexType>
+
+    <!-- Base complex Types -->
+
+    <xs:complexType name="XID">
+        <xs:annotation>
+            <xs:documentation xml:lang="en"> Base object. ID is an identifier into a given table . TD (for data type) identifies the table the object belongs to. </xs:documentation>
+        </xs:annotation>
+        <xs:attribute name="ID" type="xs:int" use="optional"/>
+        <xs:attribute name="TD" type="xs:int" use="optional"/>
+        <xs:attribute name="iDB" type="xs:int" use="optional"/>
+        <xs:attribute name="iDB_LM" type="xs:int" use="optional"/>
+    </xs:complexType>
+
+    <xs:complexType name="XNamed">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">Named and ordered object.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="XID">
+                <xs:attribute name="sName" type="xs:string" use="optional"/>
+                <xs:attribute name="iOrder" type="xs:int" use="optional"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="XTree">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">Tree organized object. </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="XNamed">
+                <xs:attribute name="ID_Parent" type="xs:int" use="optional"/>
+                <xs:attribute name="iIcon" type="xs:int" use="optional"/>
+                <xs:attribute name="bParent" type="xs:boolean" use="optional"/>
+                <xs:attribute name="bFolder" type="xs:boolean" use="optional"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <!-- TEEXMA complex Types -->
+
+    <xs:complexType name="XObj">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">Object.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="XTree">
+                <xs:sequence>
+                    <xs:element name="Data" type="Data" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="Srcs" type="Srcs" minOccurs="0" maxOccurs="1"/>
+                </xs:sequence>
+                <xs:attribute name="ID_OT" type="xs:int" use="optional"/>
+                <xs:attribute name="ID_Obj_Owner" type="xs:int" use="optional"/>
+                <xs:attribute name="fDate" type="xs:double" use="optional"/>
+                <xs:attribute name="sOT" type="xs:string" use="optional"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="XData">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">Base data class (virtual).</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="XID">
+                <xs:attribute name="ID_Obj" type="xs:int" use="optional"/>
+                <xs:attribute name="ID_Att" type="xs:int" use="optional"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="XDBool">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">Boolean data.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="XData">
+                <xs:attribute name="bVal" type="xs:boolean" use="required"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="XDStr">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">String data (also handles text and email data).</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="XData">
+                <xs:attribute name="sVal" type="xs:string" use="required"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="XDDec">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">Decimal data (min/max/mean data).</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="XData">
+                <xs:attribute name="ID_Unit" type="xs:int" use="optional"/>
+                <xs:attribute name="fMin" type="xs:float" use="required"/>
+                <xs:attribute name="fMax" type="xs:float" use="optional"/>
+                <xs:attribute name="fMean" type="xs:float" use="optional"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="XDDate">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">Date and datetime data.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="XData">
+                <xs:attribute name="fVal" type="xs:double" use="optional"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="XAF">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">Archived File .</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="XNamed">
+                <xs:attribute name="iIndex_Global" type="xs:int" use="optional"/>
+                <xs:attribute name="iIndex" type="xs:int" use="optional"/>
+                <xs:attribute name="iVersion" type="xs:int" use="optional"/>
+                <xs:attribute name="sDate" type="xs:string" use="optional"/>
+                <xs:attribute name="sLeft_Ext" type="xs:string" use="optional"/>
+                <xs:attribute name="sPath_File" type="xs:string" use="optional"/>
+                <xs:attribute name="sRPath_File" type="xs:string" use="optional"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="XDFile">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">Document data.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="XData">
+                <xs:sequence>
+                    <xs:element name="AF" type="XAF" minOccurs="0" maxOccurs="1"/>
+                </xs:sequence>
+                <xs:attribute name="sName" type="xs:string" use="required"/>
+                <xs:attribute name="bView" type="xs:boolean" use="optional"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="XDURL">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">URL data.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="XDStr">
+                <xs:attribute name="bView" type="xs:boolean" use="optional"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="XSerie">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">Series (belongs to a table data). Table values are described as a string of values separated by the value separator. ID_ST is the identifier of the Series Type the Series belong to. </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="XNamed">
+                <xs:attribute name="ID_ST" type="xs:int" use="optional"/>
+                <xs:attribute name="sST" type="xs:string" use="optional"/>
+                <xs:attribute name="sVal" type="xs:string" use="optional"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="XDTble">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">Table data (a list of series).</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="XData">
+                <xs:sequence>
+                    <xs:element name="Series" type="Series" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="Graphs" type="Graphs" minOccurs="0" maxOccurs="1"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="XDLnk">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">Link data.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="XData">
+                <xs:sequence>
+                    <xs:element name="Obj" type="XObj" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+                <xs:attribute name="sVal" type="xs:string" use="optional"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="XRL">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">Requirement list.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="XNamed">
+                <xs:choice minOccurs="1" maxOccurs="2">
+                    <xs:element name="PreselectionCriterion" type="XCriterion" minOccurs="1" maxOccurs="1"/>
+                    <xs:element name="SubRLs" minOccurs="0" maxOccurs="1"/>
+                </xs:choice>
+                <xs:attribute name="ID_OT" type="xs:int"/>
+                <xs:attribute name="sAggregation" type="xs:string" use="required"/>
+                <xs:attribute name="fDate" type="xs:double" use="optional"/>
+                <xs:attribute name="fWeight" type="xs:float" use="optional"/>
+                <xs:attribute name="sRLType" type="xs:string" use="required"/>
+                <xs:attribute name="idChoiceGuide" type="xs:int" use="optional"/>
+                <xs:attribute name="idQuestion" type="xs:int" use="optional"/>
+                <xs:attribute name="idOwnerRL" type="xs:int" use="optional"/>
+                <xs:attribute name="idExportation" type="xs:int" use="optional"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="XCriterion">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">Criterion.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="XNamed">
+                <xs:choice minOccurs="0" maxOccurs="1">
+                    <xs:element name="PreselectionCriterion" type="XCriterion" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="SubCriteria" minOccurs="0" maxOccurs="1">
+                        <xs:complexType>
+                            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                                <xs:element name="Criterion" type="XCriterion" minOccurs="0" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="TableCriterion" type="XTableCriterion" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="NumericalCriterion" type="XNumericalCriterion" minOccurs="0" maxOccurs="1"/>
+                </xs:choice>
+                <xs:attribute name="idRL" type="xs:int" use="optional"/>
+                <xs:attribute name="ID_OT" type="xs:int" use="required"/>
+                <xs:attribute name="ID_Att" type="xs:int" use="optional"/>
+                <xs:attribute name="bSelection" type="xs:boolean" use="optional"/>
+                <xs:attribute name="sCritType" type="xs:string" use="required"/>
+                <xs:attribute name="sEmptyDataTreatment" type="xs:string" use="optional"/>
+                <xs:attribute name="sDataTreatment" type="xs:string" use="optional"/>
+                <xs:attribute name="sQuestionsIds" type="xs:string" use="optional"/>
+                <xs:attribute name="fWeight" type="xs:float" use="optional"/>
+                <xs:attribute name="fCreationDate" type="xs:float" use="optional"/>
+                <xs:attribute name="bVisible" type="xs:boolean" use="optional"/>
+                <xs:attribute name="bForceCriterion" type="xs:boolean" use="optional"/>
+                
+                <xs:attribute name="sBooleanCritType" type="xs:string" use="optional"/>
+                
+                <xs:attribute name="sOptimizationCritType" type="xs:string" use="optional"/>
+                <xs:attribute name="fOptimizationValue" type="xs:float" use="optional"/>
+                <xs:attribute name="idOptimizationUnit" type="xs:int" use="optional"/>
+                
+                <xs:attribute name="sSearchedValue" type="xs:string" use="optional"/>
+
+                <xs:attribute name="sLinkCritType" type="xs:string" use="optional"/>
+                <xs:attribute name="sRecursivityType" type="xs:string" use="optional"/>
+                <xs:attribute name="sPreselectionType" type="xs:string" use="optional"/>
+                <xs:attribute name="sPreselection" type="xs:string" use="required"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:complexType name="XNumericalCriterion">
+        <xs:attribute name="sNumericalCritType" type="xs:string" use="required"/>
+        <xs:attribute name="sLBCritType" type="xs:string" use="optional"/>
+        <xs:attribute name="fLBValue" type="xs:float" use="optional"/>
+        <xs:attribute name="fLBFzness" type="xs:float" use="optional"/>
+        <xs:attribute name="idLBUnit" type="xs:int" use="optional"/>
+        <xs:attribute name="sUBCritType" type="xs:string" use="optional"/>
+        <xs:attribute name="fUBValue" type="xs:float" use="optional"/>
+        <xs:attribute name="fUBFzness" type="xs:float" use="optional"/>
+        <xs:attribute name="idUBUnit" type="xs:int" use="optional"/>
+    </xs:complexType>
+    
+    <xs:complexType name="XTableSubCriterion">
+        <xs:complexContent>
+            <xs:extension base="XNumericalCriterion">
+                <xs:attribute name="sSubCriterionType" type="xs:string" use="required"/>
+                <xs:attribute name="sSearchedValue" type="xs:string" use="optional"/>
+                <xs:attribute name="idSeriesType" type="xs:int" use="required"/>
+                <xs:attribute name="iValueIndex" type="xs:int" use="required"/>
+                
+            </xs:extension>
+        </xs:complexContent>      
+    </xs:complexType>
+    
+    <xs:complexType name="XTableCriterion">
+        <xs:choice minOccurs="1" maxOccurs="2">
+            <xs:element name="TableSubCriterion1" minOccurs="0" maxOccurs="1" type="XTableSubCriterion"/>
+            <xs:element name="TableSubCriterion2" minOccurs="0" maxOccurs="1" type="XTableSubCriterion"/>
+            <xs:element name="TableInterpolationCriterion" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="XNumericalCriterion">
+                            <xs:attribute name="idXSeriesType" type="xs:int" use="required"/>
+                            <xs:attribute name="idYSeriesType" type="xs:int" use="required"/>
+                            <xs:attribute name="fXValue" type="xs:float" use="required"/>
+                        </xs:extension>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+        </xs:choice>
+        <xs:attribute name="sTableCritType" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="XOT">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">Object Type.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="XTree">
+                <xs:sequence>
+                    <xs:element name="Att" type="XAtt" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+                <xs:attribute name="iType" type="xs:int" use="required"/>
+                <xs:attribute name="bDistinct_Names" type="xs:boolean" use="optional"/>
+                <xs:attribute name="bVisible" type="xs:boolean" use="optional"/>
+                <xs:attribute name="iTag" type="xs:int" use="optional"/>
+                <xs:attribute name="sDescription" type="xs:string" use="optional"/>
+                <xs:attribute name="sProcesses" type="xs:string" use="optional"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="XAtt">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">Attribute.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="XTree">
+                <xs:sequence>
+                    <xs:element name="Units" type="Units" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="Att" type="XAtt" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+                <xs:attribute name="TD_Data" type="xs:int" use="required"/>
+                <xs:attribute name="ID_Att_Inheritage" type="xs:int" use="optional"/>
+                <xs:attribute name="bTracking" type="xs:boolean" use="optional"/>
+                <xs:attribute name="bDynamic" type="xs:boolean" use="optional"/>
+                <xs:attribute name="ID_Obj_Info" type="xs:int" use="optional"/>
+                <xs:attribute name="ID_LT" type="xs:int" use="optional"/>
+                <xs:attribute name="ID_Unit" type="xs:int" use="optional"/>
+                <xs:attribute name="ID_FT" type="xs:int" use="optional"/>
+                <xs:attribute name="bList" type="xs:boolean" use="optional"/>
+                <xs:attribute name="iFF" type="xs:int" use="optional"/>
+                <xs:attribute name="iPrec" type="xs:int" use="optional"/>
+                <xs:attribute name="iDgts" type="xs:int" use="optional"/>
+                <xs:attribute name="fLB" type="xs:float" use="optional"/>
+                <xs:attribute name="bLB_Inc" type="xs:boolean" use="optional"/>
+                <xs:attribute name="fUB" type="xs:float" use="optional"/>
+                <xs:attribute name="bUB_Inc" type="xs:boolean" use="optional"/>
+                <xs:attribute name="bDisp_In_MU" type="xs:boolean" use="optional"/>
+                <xs:attribute name="bInherited" type="xs:boolean" use="optional"/>
+                <xs:attribute name="iTag" type="xs:int" use="optional"/>
+                <xs:attribute name="ID_TT" type="xs:int" use="optional"/>
+                <xs:attribute name="ID_OT" type="xs:int" use="optional"/>
+                <xs:attribute name="bDisp_Table" type="xs:boolean" use="optional"/>
+                <xs:attribute name="bTranspose" type="xs:boolean" use="optional"/>
+                <xs:attribute name="bDisp_SN" type="xs:boolean" use="optional"/>
+                <xs:attribute name="bDisp_Indexes" type="xs:boolean" use="optional"/>
+                <xs:attribute name="iView_Type" type="xs:int" use="optional"/>
+                <xs:attribute name="sIDs_Unit" type="xs:int" use="optional"/>
+                <xs:attribute name="sUnit" type="xs:string" use="optional"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="XLT">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">Link Type.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="XID">
+                <xs:attribute name="ID_OT_Srce" type="xs:boolean" use="required"/>
+                <xs:attribute name="ID_OT_Dest" type="xs:boolean" use="required"/>
+                <xs:attribute name="ID_Obj_Filtering" type="xs:boolean" use="optional"/>
+                <xs:attribute name="ID_Obj_Filtering_Inv" type="xs:boolean" use="optional"/>
+                <xs:attribute name="bN" type="xs:boolean" use="optional"/>
+                <xs:attribute name="bN_Inv" type="xs:boolean" use="optional"/>
+                <xs:attribute name="bAsso" type="xs:boolean" use="optional"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="XFT">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">File Type.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="XNamed">
+                <xs:attribute name="sBase_Name" type="xs:string" use="optional"/>
+                <xs:attribute name="bIndex_Modifiable" type="xs:boolean" use="optional"/>
+                <xs:attribute name="bBase_Name_Modifiable" type="xs:boolean" use="optional"/>
+                <xs:attribute name="bVersion" type="xs:boolean" use="optional"/>
+                <xs:attribute name="bDate_File" type="xs:boolean" use="optional"/>
+                <xs:attribute name="sRDir" type="xs:string" use="required"/>
+                <xs:attribute name="bRO" type="xs:boolean" use="optional"/>
+                <xs:attribute name="sTitle_Index" type="xs:string" use="optional"/>
+                <xs:attribute name="bAlpha_Index" type="xs:boolean" use="optional"/>
+                <xs:attribute name="sTitle_Version" type="xs:string" use="optional"/>
+                <xs:attribute name="bAlpha_Version" type="xs:boolean" use="optional"/>
+                <xs:attribute name="iFIT" type="xs:int" use="optional"/>
+                <xs:attribute name="iTag" type="xs:int" use="optional"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="XConv">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">Conversion between two unit (Unit2= fA x Unit1+fB).</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="XID">
+                <xs:attribute name="fA" type="xs:float" use="required"/>
+                <xs:attribute name="fB" type="xs:float" use="required"/>
+                <xs:attribute name="ID_Unit1" type="xs:int" use="required"/>
+                <xs:attribute name="ID_Unit2" type="xs:int" use="required"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="XST">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">Series Type (for table data). Owned by a table type.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="XNamed">
+                <xs:attribute name="ID_Unit" type="xs:int" use="optional"/>
+                <xs:attribute name="bN" type="xs:boolean" use="optional"/>
+                <xs:attribute name="bNum" type="xs:boolean" use="optional"/>
+                <xs:attribute name="ID_TT" use="optional    "/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="XTT">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">Table Type (for table data).</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="XID">
+                <xs:sequence>
+                    <xs:element name="ST" type="XST" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+                <xs:attribute name="iGrapher" type="xs:int" use="optional"/>
+                <xs:attribute name="sName" type="xs:string" use="optional"/>
+                <xs:attribute name="sPath_File" type="xs:string" use="optional"/>
+                <xs:attribute name="sRPath_File" type="xs:string" use="optional"/>
+                <xs:attribute name="bMOH" type="xs:boolean" use="optional"/>
+                <xs:attribute name="bSOH" type="xs:boolean" use="optional"/>
+                <xs:attribute name="bMCH" type="xs:boolean" use="optional"/>
+                <xs:attribute name="iTag" type="xs:integer" use="optional"/>
+                <xs:attribute name="sDescription" type="xs:string" use="optional"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="XSrc">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">Source object.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="XID">
+                <xs:sequence>
+                    <xs:element name="Obj" type="XObj" minOccurs="0" maxOccurs="1"/>
+                </xs:sequence>
+                <xs:attribute name="ID_Att" type="xs:int" use="required"/>
+                <xs:attribute name="ID_Obj" type="xs:int" use="required"/>
+                <xs:attribute name="ID_Obj_Src" type="xs:int" use="optional"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="XASL">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">Attributes Set Level</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="XID">
+                <xs:attribute name="ID_AS" type="xs:int" use="optional"/>
+                <xs:attribute name="ID_Att" type="xs:int" use="required"/>
+                <xs:attribute name="iType" type="xs:int" use="optional"/>
+                <xs:attribute name="sFormat_Date" type="xs:string" use="optional"/>
+                <xs:attribute name="iCol" type="xs:int" use="optional"/>
+                <xs:attribute name="sXML" type="xs:string" use="optional"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="XAS">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">Attributes Set</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="XNamed">
+                <xs:sequence>
+                    <xs:element name="ASL" type="XASL" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+                <xs:attribute name="ID_OT" type="xs:int" use="optional"/>
+                <xs:attribute name="sDescription" type="xs:int" use="optional"/>
+                <xs:attribute name="iType" type="xs:int" use="optional"/>
+                <xs:attribute name="ID_Applied_IO" type="xs:int" use="optional"/>
+                <xs:attribute name="ID_Exportation" type="xs:int" use="optional"/>
+                <xs:attribute name="ID_Data_Table" type="xs:int" use="optional"/>
+                <xs:attribute name="bTrigger_MA" type="xs:boolean" use="optional"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="XExport">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">Exportation settings</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="XNamed">
+                <xs:sequence>
+                    <xs:element name="RL" type="XRL" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="AS" type="XAS" minOccurs="0" maxOccurs="1"/>
+                </xs:sequence>
+                <xs:attribute name="ID_OT" type="xs:int" use="required"/>
+                <xs:attribute name="iType" type="xs:int" use="required"/>
+                <xs:attribute name="bZip" type="xs:boolean" use="optional"/>
+                <xs:attribute name="sBase_Filename" type="xs:string" use="optional"/>
+                <xs:attribute name="sDir" type="xs:string" use="optional"/>
+                <xs:attribute name="bSave_Log" type="xs:boolean" use="optional"/>
+                <xs:attribute name="bVisible" type="xs:boolean" use="optional"/>
+                <xs:attribute name="bModifiable" type="xs:boolean" use="optional"/>
+                <xs:attribute name="sPath_File_Config" type="xs:string" use="optional"/>
+                <xs:attribute name="sRPath_File_Config" type="xs:string" use="optional"/>
+                <xs:attribute name="bInc_Header" type="xs:boolean" use="optional"/>
+                <xs:attribute name="iXML_Verbosity" type="xs:int" use="optional"/>
+                <xs:attribute name="bInc_Src" type="xs:boolean" use="optional"/>
+                <xs:attribute name="iOPT" type="xs:int" use="optional"/>
+                <xs:attribute name="bDefault" type="xs:boolean" use="optional"/>
+                <xs:attribute name="bInc_Date" type="xs:boolean" use="optional"/>
+                <xs:attribute name="ID_Log" type="xs:int" use="optional"/>
+                <xs:attribute name="ID_Action_LT" type="xs:int" use="optional"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="XRight">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">A right</xs:documentation>
+        </xs:annotation>
+        <xs:attribute name="ID_Obj" type="xs:int" use="required"/>
+        <xs:attribute name="iRight" type="xs:int" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="XRight_OT">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">Right for Object Type</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="XRight">
+                <xs:attribute name="iRight_New_Obj" type="xs:int" use="required"/>
+                <xs:attribute name="iRight_Lkd_Obj" type="xs:int" use="required"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="XRight_Att">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">Right for Attributes</xs:documentation>
+        </xs:annotation>
+    </xs:complexType>
+
+    <xs:complexType name="XRight_Obj">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">Right for Object</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="XRight">
+                <xs:attribute name="iNb_Str" type="xs:int" use="optional"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="XUser">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">User</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="XNamed">
+                <xs:attribute name="ID_Obj" type="xs:int" use="optional"/>
+                <xs:attribute name="sPwd" type="xs:string" use="optional"/>
+                <xs:attribute name="bBlocked" type="xs:boolean" use="optional"/>
+                <xs:attribute name="fLC_Date" type="xs:double" use="optional"/>
+                <xs:attribute name="fLCP_Date" type="xs:double" use="optional"/>
+                <xs:attribute name="fAE_Date" type="xs:double" use="optional"/>
+                <xs:attribute name="iDPV" type="xs:int" use="optional"/>
+                <xs:attribute name="sLogin" type="xs:string" use="optional"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="XUG">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">Users Group</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="XNamed">
+                <xs:sequence>
+                    <xs:element name="RObj" type="Rights_Obj" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="ROT" type="Rights_OT" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="RAtt" type="Rights_Att" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="UGU" type="UGUs" minOccurs="0" maxOccurs="1"/>
+                </xs:sequence>
+                <xs:attribute name="sDescription" type="xs:string" use="optional"/>
+                <xs:attribute name="sLogin" type="xs:string" use="optional"/>
+                <xs:attribute name="bfraStructure" type="xs:boolean" use="optional"/>
+                <xs:attribute name="bfraRights" type="xs:boolean" use="optional"/>
+                <xs:attribute name="bfraImportation" type="xs:boolean" use="optional"/>
+                <xs:attribute name="bfraMultibase" type="xs:boolean" use="optional"/>
+                <xs:attribute name="bfruExportation" type="xs:boolean" use="optional"/>
+                <xs:attribute name="bfruExtraction" type="xs:boolean" use="optional"/>
+                <xs:attribute name="bfruMCS" type="xs:boolean" use="optional"/>
+                <xs:attribute name="bfruText_Search" type="xs:boolean" use="optional"/>
+                <xs:attribute name="bfruModels" type="xs:boolean" use="optional"/>
+                <xs:attribute name="bfruData_Mining" type="xs:boolean" use="optional"/>
+                <xs:attribute name="ID_User" type="xs:integer" use="optional"/>
+                <xs:attribute name="iType" type="xs:integer" use="optional"/>
+                <xs:attribute name="bAssign_To_New_User" type="xs:boolean" use="optional"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name=" XUGU">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">Bind Users Group / User</xs:documentation>
+        </xs:annotation>
+        <xs:attribute name="ID_User" type="xs:integer" use="optional"/>
+        <xs:attribute name="ID_UG" type="xs:integer" use="optional"/>
+    </xs:complexType>
+    
+    <xs:complexType name="XIO">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">Input or Output.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="XNamed">
+                <xs:attribute name="sIOType" use="required">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="iotInput"/>
+                            <xs:enumeration value="iotOutput"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:attribute>
+                <xs:attribute name="idModel" type="xs:int" use="optional"/>
+                <xs:attribute name="sWorksheet" type="xs:string" use="optional"/>
+                <xs:attribute name="sCell" type="xs:string" use="optional"/>
+                <xs:attribute name="sIONature" use="required">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="ionUndefined"/>
+                            <xs:enumeration value="ionText"/>
+                            <xs:enumeration value="ionNumerical"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:attribute>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="XModel">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">Model.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="XNamed">
+                <xs:sequence>
+                    <xs:element name="Input" type="XIO" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element name="Output" type="XIO" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+                <xs:attribute name="sRFilePath" type="xs:string" use="optional"/>
+                <xs:attribute name="sExplaination" type="xs:string" use="optional"/>
+                <xs:attribute name="sFunctionName" type="xs:string" use="optional"/>
+                <xs:attribute name="sModelType" use="required">
+                       <xs:simpleType>
+                           <xs:restriction base="xs:string">
+                               <xs:enumeration value="mtDll"/>
+                               <xs:enumeration value="mtExcel"/>
+                               <xs:enumeration value="mtExecutable"/>
+                               <xs:enumeration value="mtASPModel"/>
+                               <xs:enumeration value="mtGroupVisibility"/>
+                           </xs:restriction>
+                       </xs:simpleType>
+                </xs:attribute>
+                <xs:attribute name="bWait" type="xs:boolean" use="optional"/>
+                <xs:attribute name="sInputsFilePath" type="xs:string" use="optional"/>
+                <xs:attribute name="sOutputsFilePath" type="xs:string" use="optional"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="XAppliedIO">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">Applied Input or Output.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="XTree">
+                <xs:sequence>
+                    <xs:element name="AS" type="XAS" minOccurs="0" maxOccurs="1"/>
+                </xs:sequence>
+                <xs:attribute name="idIO" type="xs:int" use="optional"/>
+                <xs:attribute name="sDefaultValue" type="xs:string" use="optional"/>
+                <xs:attribute name="sAggregationFunction" use="required">
+                <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="dafNone"/>
+                            <xs:enumeration value="dafXMLFlow"/>
+                            <xs:enumeration value="dafSum"/>
+                            <xs:enumeration value="dafProduct"/>
+                            <xs:enumeration value="dafMeanValue"/>
+                            <xs:enumeration value="dafStdDev"/>
+                            <xs:enumeration value="dafMinValue"/>
+                            <xs:enumeration value="dafMaxValue"/>
+                            <xs:enumeration value="dafXMLFile"/>
+                        </xs:restriction>
+                </xs:simpleType>    
+                </xs:attribute>
+                <xs:attribute name="sAppliedIOType" use="optional">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="aiotConst"/>
+                            <xs:enumeration value="aiotObjectType"/>
+                            <xs:enumeration value="aiotObject"/>
+                            <xs:enumeration value="aiotData"/>
+                            <xs:enumeration value="aiotEquivalencesSet"/>
+                            <xs:enumeration value="aiotObjectName"/>
+                            <xs:enumeration value="aiotBanner"/>
+                            <xs:enumeration value="aiotActiveUser"/>
+                            <xs:enumeration value="aiotTEEXMAPath"/>
+                            <xs:enumeration value="aiotOUT"/>
+                            <xs:enumeration value="aiotMA"/>
+                            <xs:enumeration value="aiotHTMLFlow"/>
+                            <xs:enumeration value="aiotXMLFlow"/>
+                            <xs:enumeration value="aiotTriggers"/>
+                            <xs:enumeration value="aiotDataAndSources"/>
+                            <xs:enumeration value="aiotXMLFile"/>
+                            <xs:enumeration value="aiotMessage"/>
+                            <xs:enumeration value="aiotReloadStructure"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:attribute>
+                <xs:attribute name="idEquivalencesSet" type="xs:int" use="optional"/>
+                <xs:attribute name="bTrigger" type="xs:boolean" use="optional"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="XMA">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">Model application.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="XTree">
+                <xs:sequence>
+                    <xs:element name="AppliedInput" type="XAppliedIO" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element name="AppliedOutput" type="XAppliedIO" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+                <xs:attribute name="idModel" type="xs:int" use="optional"/>
+                <xs:attribute name="ID_OT" type="xs:int" use="optional"/>
+                <xs:attribute name="sEvent" use="required">
+                    <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="eModelApplicationMenu"/>
+                                <xs:enumeration value="eOnDataChange"/>
+                                <xs:enumeration value="eObjectContextMenu"/>
+                                <xs:enumeration value="eToolBar"/>
+                                <xs:enumeration value="eOnShowObject"/>
+                                <xs:enumeration value="eAfterAuthentication"/>
+                                <xs:enumeration value="eAfterObjectCreation"/>
+                                <xs:enumeration value="eOnObjectMoved"/>
+                                <xs:enumeration value="eOnTabDisplay"/>
+                                <xs:enumeration value="eOnObjectChecked"/>
+                                <xs:enumeration value="eOnObjectDeletion"/>
+                                <xs:enumeration value="eSystem"/>
+                                <xs:enumeration value="eOnAdvancedDuplication"/>
+                                <xs:enumeration value="eOnAdvancedCreation"/>
+                            </xs:restriction>
+                    </xs:simpleType>
+                </xs:attribute>
+                <xs:attribute name="sDisplayMode" use="required">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="mdmUndefined"/>
+                            <xs:enumeration value="mdmVisible"/>
+                            <xs:enumeration value="mdmHidden"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:attribute>
+                <xs:attribute name="sCompatibilityMode" use="required">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="mcmBoth"/>
+                                <xs:enumeration value="mcmWindows"/>
+                                <xs:enumeration value="mcmWEB"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                </xs:attribute>
+                <xs:attribute name="sIconRFilePath" type="xs:string" use="optional"/>
+                <xs:attribute name="sReadWriteMode" type="xs:string" use="optional"/>
+                <xs:attribute name="bAllowCascade" type="xs:boolean" use="optional"/>
+                <xs:attribute name="bEnabled" type="xs:boolean" use="optional"/>
+                <xs:attribute name="sObjectTypeDependency" use="required">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="otdOne"/>
+                            <xs:enumeration value="otdNone"/>
+                            <xs:enumeration value="otdAll"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:attribute>
+                <xs:attribute name="sObjectDependency" use="required">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="odASingleOne"/>
+                            <xs:enumeration value="odNone"/>
+                            <xs:enumeration value="odZeroToOne"/>
+                            <xs:enumeration value="odMany"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:attribute>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <!--List objects. They all end with an "s". -->
+
+    <xs:complexType name="Data">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">list of Data</xs:documentation>
+        </xs:annotation>
+        <xs:choice maxOccurs="unbounded">
+            <xs:element name="DBool" type="XDBool" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="DStr" type="XDStr" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="DDec" type="XDDec" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="DDate" type="XDDate" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="DTxt" type="XDStr" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="DFile" type="XDFile" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="DURL" type="XDURL" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="DTble" type="XDTble" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="DLnk" type="XDLnk" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:choice>
+    </xs:complexType>
+
+    <xs:complexType name="Series">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">list of Series</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="Ser" type="XSerie" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Graphs">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">list of Graphs (pictures files)</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="Graph" type="xs:base64Binary" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Objs">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">list of Objects</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="Obj" type="XObj" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="OTs">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">list of Objects Types</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="OT" type="XOT" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Atts">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">list of Attributes</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="Att" type="XAtt" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Units">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">list of Units</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="Unit" type="XNamed" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Srcs">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">list of Sources</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="Src" type="XSrc" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Rights_Obj">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">list of Object's Rights</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="RObj" type="XRight_Obj" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Rights_OT">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">list of Object Type's Rights</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="ROT" type="XRight_OT" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Rights_Att">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">list of Attribute's Rights</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="RAtt" type="XRight_Att" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Users">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">list of Users</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="User" type="XUser" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="UGUs">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">list of binds Users Group / User</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="UGU" type="XUGU" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

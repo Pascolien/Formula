@@ -1,0 +1,17 @@
+﻿<body>
+    <div class="formGroup">
+        <span>Les Entités doivent être liées à </span>
+        <select name="sLinkCritType">
+            <option value="lctAt_Least_One" selected="true">au moins une</option>
+            <option value="lctNone">aucune des</option>
+        </select>
+        des Entités <span data-replace="attributeName"></span> parmi
+        <select name="sPreselectionType">
+            <option value="ptFullOT" selected="true">toutes les Entités</option>
+            <option value="ptManual_Preselection">une partie des Entités</option>
+        </select>
+    </div>
+    <div id="idDivMCSLinkTree" class="mcsLinkTree fillParentWidth"></div>
+    <div id="idDivMCSLinkTreeToolbar" class="mcsLinkTreeToolbar"></div>
+    <div id="idDivLinkIncludedMCS"></div>
+</body>

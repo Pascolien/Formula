@@ -1,0 +1,76 @@
+
+#cmb_principal {
+	position: relative;
+	margin-top: 5px;
+	margin-bottom: 20px;
+	/*border: 1px solid black;*/
+}
+
+
+#cmb_titre {
+	position: relative;
+	padding-left: 2px;
+	height: 20px;
+	/*line-height: 20px;*/
+  border: 1px black solid;
+  width: 235px;
+  float: left;
+	cursor: pointer;
+}
+
+#cmb_liste {
+	position: absolute;
+	font-size: 12px;
+	left: 0px !important;
+	left: -255px;
+	top: 20px;
+	background-color: white;
+  display: none;
+  border: 1px black solid;
+  width: 253px;
+  height: 200px;
+  overflow: auto;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+#combo_extract{
+	width:250px;
+}
+
+#cmb_liste img {
+	/*top: 3px;*/
+	vertical-align: middle;
+}
+
+#cmb_fleche {
+	position: relative;
+  border: 1px black solid;
+  border-left: 0px;
+  text-align: center;
+  height:20px;
+  width: 15px;
+  float: left;
+  vertical-align: middle;
+	cursor: pointer;
+}
+
+
+#cmb_fleche img {
+	padding-top: 5px;
+}
+
+
+span.cmb_valeur {
+	margin-left: 			3px;
+  text-decoration: 	none;
+  color: 						#000000;
+}
+
+span.cmb_valeur:hover {
+	background-color: #CCCCCC;
+}
+
+#cmb_titre span.cmb_valeur:hover {
+	background-color: transparent;
+}

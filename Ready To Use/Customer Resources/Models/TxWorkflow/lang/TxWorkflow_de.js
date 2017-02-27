@@ -1,0 +1,6 @@
+﻿jTranslation["Formulaire"] = "Formular"; //Generic_Devs\TxWorkflow\Web\CWorkflowActionExecution.js
+jTranslation["Voulez- vous verrouiller l'Entité '#1' pour une durée de #2 minute(s) ?"] = "Möchten Sie das Objekt '#1' für eine Zeit von #2 Minute(n) sperren?"; //Generic_Devs\TxWorkflow\Web\CWorkflowActionExecution.js
+jTranslation["Voulez-vous re-verrouiller l'Entité '#1' pour une durée de #2 minute(s) ?"] = "Soll das Objekt '#1' nochmals für eine Dauer von #2 Minuten gesperrt werden?"; //Generic_Devs\TxWorkflow\Web\CWorkflowActionExecution.js
+jTranslation["Aucune action disponible."] = "Keine Aktion verfügbar."; //Generic_Devs\TxWorkflow\Web\CWorkflow.js
+jTranslation["L'Entité '#1' est déjà verrouillée. Vous pouvez revérifier la disponibilité de l'Entité en cliquant sur le bouton Verrouiller l'Entité.<br>Si vous fermer la fenêtre, les modifications seront perdues."] = "Das Objekt '#1' ist bereits gesperrt. Sie können testen, ob das Objekt verfügbar ist indem Sie auf  Sperren des Objekts klicken.<br> Wenn Sie das Fenster schließen, gehen die Änderungen verlohren."; //Generic_Devs\TxWorkflow\Web\CWorkflowActionExecution.js
+jTranslation["L'Entité '#1' est verrouillée."] = "Das Objekt '#1' ist gesperrt."; //Generic_Devs\TxWorkflow\Web\CWorkflowActionExecution.js

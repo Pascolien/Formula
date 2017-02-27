@@ -1,0 +1,26 @@
+<RL ID="1" TD="-18" sName="Cdc_Notif" iIcon="1" ID_OT="NOTIFICATION" iAgg_Func="1" fDate="40521.6145940162"
+    fWeight="1">
+    <Criterion ID="1" TD="-181" iIcon="1" ID_RL="1" ID_OT="NOTIFICATION" bSelection="-1" iCT="1" iBool_Val="2"
+        fOpt_val="0" fLB_val="0" fLB_Fzness="0" fUB_val="0" fUB_Fzness="0" ID_ST_X="-1" ID_ST_Y="-1"
+        fSeries_X_Val="0" fWeight="1" bComplete_OT="-1">
+        <Criterion ID="2" TD="-181" ID_Parent="1" iIcon="1" ID_RL="1" ID_OT="NOTIFICATION" ID_Att="USER_TO"
+            bSelection="-1" iCT="6" iCLT="1" iBool_Val="2" fOpt_val="0" fLB_val="0" fLB_Fzness="0"
+            fUB_val="0" fUB_Fzness="0" ID_ST_X="-1" ID_ST_Y="-1" fSeries_X_Val="0" fWeight="1"
+            bComplete_OT="-1">
+            <Criterion ID="3" TD="-181" ID_Parent="2" iIcon="1" ID_RL="1" ID_OT="NOTIF_ASSO" bSelection="-1"
+                iCT="7" iCLT="1" iBool_Val="2" fOpt_val="0" fLB_val="0" fLB_Fzness="0" fUB_val="0"
+                fUB_Fzness="0" ID_ST_X="-1" ID_ST_Y="-1" fSeries_X_Val="0" fWeight="1"
+                bComplete_OT="-1">
+                <Criterion ID="5" TD="-181" ID_Parent="3" iIcon="1" ID_RL="1" ID_OT="NOTIF_ASSO" ID_Att="VALIDATE"
+                    bSelection="-1" iCT="5" iCLT="1" iBool_Val="2" fOpt_val="0" fLB_val="0"
+                    fLB_Fzness="0" fUB_val="0" fUB_Fzness="0" ID_ST_X="-1" ID_ST_Y="-1"
+                    fSeries_X_Val="0" fWeight="0.5" bComplete_OT="-1" iEDT="1"/>
+                <Criterion ID="4" TD="-181" ID_Parent="3" iIcon="1" ID_RL="1" ID_OT="NOTIF_ASSO" ID_Att="RECALL_DATE"
+                    bSelection="-1" iCT="2" iCLT="1" iBool_Val="2" iNCT="3" fOpt_val="0"
+                    iLB_Type="2" fLB_val="NOW" fLB_Fzness="0" iUB_Type="2" fUB_val="0"
+                    fUB_Fzness="0" ID_ST_X="-1" ID_ST_Y="-1" fSeries_X_Val="0" fWeight="0.5"
+                    bComplete_OT="-1"/>
+            </Criterion>
+        </Criterion>
+    </Criterion>
+</RL>

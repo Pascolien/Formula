@@ -1,0 +1,288 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	/*font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif, monospace;*/
+	/*font-size: 11px;*/
+}
+/*
+* {
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif, monospace;
+	font-size: 11px;
+}*/
+
+.cl_div_group, .cl_div_pe, .mwi_valeur, field_chaine {
+	font-family:	Tahoma, Verdana, Arial, Helvetica, sans-serif, monospace;
+	font-size:	11px;
+}
+
+body.mceContentBody {
+  background: #fff;
+  color: #000;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+img {
+	border: 0;
+}
+#id_div_main_pe {
+	padding: 5px;
+	padding-top: 5px;
+}
+.cl_div_traceability_Sentence {
+	color: #3F3F3F;
+	padding: 5px;
+}
+		.cl_div_group {
+			clear: both;
+			border: 1px solid grey;
+			padding: 5px;
+			margin: 5px 10px 10px 10px;			
+		}
+		.cl_div_group legend {
+			padding: 0 3px;
+			font-family: Arial;		
+			font-size: 14px;
+			font-weight: bold;
+			cursor: pointer;
+		}	
+			.cl_div_group_title {
+				cursor:	pointer;
+			}
+				.cl_div_pe {					
+					clear: both;
+					/*box-sizing: border-box !important;*/
+				}
+						.cl_div_btn_label {
+							float: left;
+						}
+							.cl_div_btn_info {
+								float: left;
+								width: 20px;
+								overflow: hidden;
+							}
+
+							.cl_div_label {
+								float: left;
+								text-align: right;
+								line-height: 20px;
+                                max-width : 300px;
+								padding: 0 10px 0 0;
+							}
+
+							.cl_div_btn_source {
+								float: left;
+								padding-left: 10px;
+								width: 30px;
+								overflow: hidden;
+							}
+						.cl_div_arrows{
+							display: none;
+							float: left;
+							display: none;
+							margin-left : 10px;
+							border: 1px transparent solid;
+							padding:1px;
+						}
+							.cl_div_arrows :hover{
+								cursor: pointer;
+								border: 1px grey solid;
+								border-radius: 2px;
+								box-shadow: 0px 1px 0px #aaa; 
+								padding: 1px;
+							}
+							.cl_div_arrows:active{
+								padding: 1px;
+								background-color: #e2e2e2;
+							}
+							
+						.cl_div_data {
+							float:left;
+							min-width:10px;
+							padding: 0 0 0 3px;
+							color: #000080;
+							margin-bottom: 15px;
+						}
+							.cl_more_links{
+								/*height:20px;*/
+							}
+							.cl_div_data_row {
+								clear: both;
+								line-height: 20px;														
+							}
+							
+								.cl_div_numbering {
+									font-size: 8px;
+									color: #000000;
+									margin: 0px 5px 0 0;
+									float: left;		
+									line-height: 20px;								
+								}
+							  
+								.cl_div_boolean{
+									line-height: 20px;
+								}
+								
+								.cl_div_date, .cl_string .cl_texte {
+									line-height: 20px;
+								}
+								
+								/*.cl_div_texte *{
+									max-width: inherit !important;
+								}*/
+								.cl_div_texte {
+									margin-top: 4px;
+									line-height: normal;
+									/*max-width: 100%;*/
+								}
+								.cl_div_texte p{
+									margin: 0px !important;
+                                    margin-bottom: 10px !important;
+								}
+
+                                .cl_div_texte ul {
+                                    margin-left: 15px;
+                                    padding-left: 15px;
+                                }
+								
+								.cl_div_mail {
+									width:100%;
+								}
+														
+								.cl_div_mail a {
+									float: left;
+									line-height: 20px;
+								}
+														
+									.cl_div_btn_open {	
+										float: left;
+									}
+							
+									.cl_div_btn_open a {	
+										margin-left: 5px;
+									}
+								
+									.cl_div_document_url {
+										width:100%;
+									}
+									.cl_div_document_url_link {
+										float: left;
+										margin: 2px 0 0 5px;
+									}
+									.cl_div_document_url_save {
+										float: left;
+										margin: 2px 0 0 5px;
+									}						
+							
+							    .cl_div_wiewer {
+									min-width: 800px;
+									width: 100%;
+								}
+							
+									.iframe_form {
+										clear:	both;
+										width: 98%;
+										height: 600px;
+										margin: 5px 0 0 0;
+									}
+									.cl_div_image{
+										clear: both;
+										margin: 5px 0 0 0;
+										max-width: 100%;
+										
+									}
+									.cl_div_image img{
+										max-width: 100%;
+									}
+
+							.cl_div_decimal {
+								line-height: 20px;
+							}
+							
+								.cl_div_decimal_data {							   
+									float: left;
+								} 
+							
+								.cl_div_decimal_min {
+									float: left;
+								}
+
+								.cl_div_decimal_moy {
+									float: left;
+									margin:	0 10px 0 20px;
+								}
+		
+								.cl_div_decimal_max {
+									float: left;
+								}
+		
+								.cl_div_decimal_unit {
+									float: left;
+									margin-left: 5px;
+								}
+
+								.cl_div_board {
+									float: left;
+								}
+
+								.cl_div_link{
+									float: left;
+									line-height: 20px;
+								}
+								.cl_div_board , .cl_div_link table {
+									border-collapse: collapse;
+									border: 1px solid black;
+								}
+
+								.cl_div_board td, .cl_div_link td {
+									border: 1px solid gray;
+									padding: 5px;
+									text-align: center;
+									min-width: 50px;
+								}
+								
+								.cl_div_link td ul{
+									margin-left:12px;
+								}
+
+								td.td_s_l {
+									border: 0px solid black;
+									text-align: left; 
+									vertical-align: top;
+									padding: 0;		
+                                    position: absolute;
+                                    height: 30px;							
+								} 
+								 
+								td.td_s_r {
+									border-left: 0px solid black; 
+								}
+                
+								.cl_td_first_col div {
+									text-align: left;
+								}
+                
+								.cl_div_board th, .cl_div_link th {
+									border: 1px solid gray;
+									background-color: #A1A1A1;
+									color: white;
+									padding: 5px;
+									text-align: center;
+								}
+
+								.cl_div_btn_export {
+									float: left;
+									margin-left: 5px;
+									min-width: 15px;
+								}
+
+							.cl_div_table {
+						    	line-height: 20px;
+							}  
+						
+							.cl_div_table_picture {
+								clear: both;
+							}

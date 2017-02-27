@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="DynamicRights" type="XDynamicRights"> </xs:element>
+    
+    <xs:complexType name="XDynamicRights">
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="DynamicRightsConfiguration" type="XDynamicRightsConfiguration"/>
+        </xs:choice>
+    </xs:complexType>
+    
+    <xs:complexType name="XDynamicRightsConfiguration">
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="RightsDeletion" type="XRightsDeletion" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="SpecificUsersGroup" type="XSpecificUsersGroup" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="ObjectOwner" type="XObjectOwner" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="ActiveUser" type="XActiveUser" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="UsersInLink" type="XUsersInLink" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="WhiteLists" type="XWhiteLists" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:choice>
+        <xs:attribute name="sName" type="xs:string" use="required"/>
+        <xs:attribute name="sOTTag" type="xs:string" use="required"/>
+    </xs:complexType>  
+    
+    <xs:complexType name="XRightsDeletion">
+        <xs:attribute name="sStatusTags " type="xs:string" />
+        <xs:attribute name="bEraseSpecificRights " type="xs:boolean" />
+        <xs:attribute name="bEraseStandardRights " type="xs:boolean" />
+    </xs:complexType>
+    
+    <xs:complexType name="XSpecificUsersGroup">
+        <xs:attribute name="sStatusTags " type="xs:string" />
+        <xs:attribute name="sUsersGroupTags " type="xs:string" />
+        <xs:attribute name="sNewRightValue " type="XNewRightValue" />
+    </xs:complexType> 
+    
+    <xs:complexType name="XObjectOwner">
+        <xs:attribute name="sStatusTags " type="xs:string" />
+        <xs:attribute name="sNewRightValue " type="XNewRightValue" />
+    </xs:complexType> 
+    
+    <xs:complexType name="XActiveUser">
+        <xs:attribute name="sStatusTags " type="xs:string" />
+        <xs:attribute name="sNewRightValue " type="XNewRightValue" />
+    </xs:complexType> 
+    
+    <xs:complexType name="XUsersInLink">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="LinkAttributeTags" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>    
+        <xs:attribute name="sStatusTags " type="xs:string" />
+        <xs:attribute name="sNewRightValue " type="XNewRightValue" />
+    </xs:complexType> 
+    
+    <xs:complexType name="XWhiteLists">
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="LinkAttributeTags" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:choice>
+        <xs:attribute name="sStatusTags " type="xs:string" />
+        <xs:attribute name="sNewRightValue " type="XNewRightValue" />
+        <xs:attribute name="sUsersGroupTemplate " type="xs:string" />
+    </xs:complexType>
+    
+    <xs:simpleType name="XNewRightValue">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="None"/>            
+            <xs:enumeration value="Read"/>            
+            <xs:enumeration value="Modification"/>            
+            <xs:enumeration value="AdvancedModification"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+</xs:schema>    

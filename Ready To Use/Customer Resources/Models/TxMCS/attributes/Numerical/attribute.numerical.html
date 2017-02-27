@@ -1,0 +1,46 @@
+﻿<body>
+    <div>
+        <div>
+            <label for="idSelectMcsNumerical">La valeur doit être :</label>
+            <select id="idSelectMcsNumerical" name="sNumericalCritType">
+                <option value="nctEqual_To" selected="">égale à une valeur</option>
+                <option value="nctRange_Max">comprise dans un intervalle</option>
+            </select>
+        </div>
+
+        <div class="mcsNumericalEquality">
+            <div class="formGroup">
+                <label for="idMCSNumericalTargetValue">Valeur cible :</label>
+                <input type="number" step="any" name="fLBValue" id="idMCSNumericalTargetValue" />
+                <span data-replace="unit"></span>
+            </div>
+            <div>
+                <div class="entryHelper">Aide à la saisie : utilisez le simple/double curseur dont les bornes sont définies par les données existantes.</div>
+                <span data-replace="min"></span>
+                <div id="idMCSNumericalEqualitySlider" class="mcsNumericalEqualitySlider"></div>
+                <span data-replace="max"></span>
+            </div>
+        </div>
+
+        <div class="mcsNumericalRange">
+            <div class="formGroup">
+                <label for="idMCSNumericalMinValue">Borne inférieure :</label>
+                <input type="number" step="any" name="fLBValue" id="idMCSNumericalMinValue" />
+                <span data-replace="unit"></span>                
+                (champ vide : -&#8734;)<br/>
+            </div>
+            <div class="formGroup">
+                <label for="idMCSNumericalMaxValue">Borne supérieure :</label>
+                <input type="number" step="any" name="fUBValue" id="idMCSNumericalMaxValue" />
+                <span data-replace="unit"></span>
+                (champ vide : +&#8734;)
+            </div>
+            <div>
+                <div class="entryHelper">Aide à la saisie : utilisez le simple/double curseur dont les bornes sont définies par les données existantes.</div>
+                <span data-replace="min"></span>
+                <div id="idMCSNumericalRangeSlider" class="mcsNumericalEqualitySlider"></div>
+                <span data-replace="max"></span>
+            </div>
+        </div>
+    </div>
+</body>

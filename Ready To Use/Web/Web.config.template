@@ -1,0 +1,27 @@
+﻿<?xml version="1.0"?>
+<configuration>
+  <system.webServer>
+    <rewrite>
+      <rules>
+        <rule name="Webservice" stopProcessing="true">
+          <match url="ws/*" />
+          <conditions logicalGrouping="MatchAll" trackAllCaptures="false" />
+          <action type="None" />
+        </rule>
+        <rule name="Route" stopProcessing="true">
+          <match url=".*\.asp|resources/|code/|temp_resources/|Pictures/|temp/" negate="true"/>
+          <conditions logicalGrouping="MatchAll" trackAllCaptures="false"/>
+          <action type="Redirect" url="default.asp"/>
+        </rule>
+      </rules>
+    </rewrite>
+    <staticContent>
+      <mimeMap fileExtension=".aff" mimeType="text/plain"/>
+      <mimeMap fileExtension=".dic" mimeType="text/plain"/>
+      <mimeMap fileExtension=".dat" mimeType="application/octet-stream"/>
+    </staticContent>
+  </system.webServer>
+  <system.web>
+    <compilation debug="true"/>
+  </system.web>
+</configuration>

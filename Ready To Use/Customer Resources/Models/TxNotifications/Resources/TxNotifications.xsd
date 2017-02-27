@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    
+    <xs:element name="TxNotifications">
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="TxNotificationConfiguration" type="XTxNotificationConfiguration"></xs:element>
+            </xs:sequence>            
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:complexType name="XTxNotificationConfiguration">
+            <xs:choice minOccurs="1" maxOccurs="unbounded">
+                <xs:element name="MailServer" maxOccurs="1" minOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence minOccurs="1" maxOccurs="1">
+                            <xs:element minOccurs="1" maxOccurs="1" name="Host"/>
+                            <xs:element minOccurs="1" maxOccurs="1" name="Port"/>
+                            <xs:element minOccurs="1" maxOccurs="1" name="UserName"/>
+                            <xs:element minOccurs="1" maxOccurs="1" name="Password"/>
+                        </xs:sequence>                        
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Recipients" type="XRecipients" minOccurs="1" maxOccurs="unbounded"/>
+                <xs:element name="Attachments" type="XAttachments" minOccurs="0" maxOccurs="unbounded"/>
+
+                <xs:element name="Subject" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="Body" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="ReturnMessage" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="CharSet" minOccurs="0" maxOccurs="1" default="UTF-8"/>                
+            </xs:choice>    
+        <xs:attribute type="xs:boolean" name="bZipAttachements" use="optional" default="false"/>
+        <xs:attribute type="xs:boolean" name="bUsePlainText" use="optional" default="false"/>
+        <xs:attribute name="sOTTag" type="xs:string" use="required"/>
+        <xs:attribute name="sName" type="xs:string"  use="required"/>
+        <xs:attribute name="sTag" type="xs:string"  use="required"/>
+        <xs:attribute name="sRLTag" type="xs:string"  use="optional"/>
+    </xs:complexType>
+    
+    <xs:complexType name="XRecipients" mixed="true">
+       <xs:attribute name="sAttTags" type="xs:string" use="optional"/>
+        <xs:attribute name="sType" type="XRecipientType" use="required"/>
+        <xs:attribute name="sSourceType" type="XRecipientSourceType"/>
+    </xs:complexType>
+    
+    <xs:complexType name="XAttachments" mixed="true">
+        <xs:attribute name="sAttTags" type="xs:string" use="optional"/>
+		<xs:attribute name="sSourceType" type="XAttachmentSourceType"/>
+    </xs:complexType>
+    
+    <xs:simpleType name="XRecipientSourceType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Data"></xs:enumeration>
+            <xs:enumeration value="Constant"></xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="XRecipientType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="From"></xs:enumeration>
+            <xs:enumeration value="To"></xs:enumeration>
+            <xs:enumeration value="CC"></xs:enumeration>
+            <xs:enumeration value="BCC"></xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="XAttachmentSourceType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Data"></xs:enumeration>
+            <xs:enumeration value="Constant"></xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>  	
+</xs:schema>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="Dictionaries">
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="Dictionary">
+                    <xs:complexType>
+                        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                            <xs:element name="Phrase">
+                                <xs:complexType>
+                                    <xs:sequence minOccurs="1" maxOccurs="1">
+                                        <xs:element name="Text" minOccurs="1" maxOccurs="1"/>
+                                        <xs:element name="Translation" minOccurs="1" maxOccurs="1"/>                                        
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="sLanguageCode" type="xs:string"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>    
+</xs:schema>

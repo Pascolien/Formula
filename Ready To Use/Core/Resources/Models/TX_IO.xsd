@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"  xmlns:TX_IO="http://www.teexma.com/XMLSchema" targetNamespace="http://www.teexma.com/XMLSchema" >
+    <xs:complexType name="XIO">
+        <xs:attribute name="sName" type="xs:string" use="required"/>
+    </xs:complexType>
+    
+    <xs:complexType name="XInputs">
+        <xs:sequence>
+                <xs:element name="Input" minOccurs="1" maxOccurs="1" type="TX_IO:XIO"></xs:element>
+         </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="XOutputs">
+        <xs:sequence>
+            <xs:element name="Output" minOccurs="1" maxOccurs="1" type="TX_IO:XIO"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:element name="Inputs" type="TX_IO:XInputs"/>
+    <xs:element name="Outputs" type="TX_IO:XOutputs"/>
+
+</xs:schema>

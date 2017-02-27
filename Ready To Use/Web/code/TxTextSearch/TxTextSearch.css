@@ -1,0 +1,93 @@
+﻿body, html{
+    margin:0px;
+}
+
+#idDivTabbar{
+	position:absolute;
+    left:6px;
+    right:6px;
+    top: 35px;
+    height:50px;
+    z-index:1;
+}
+
+#idDivComponents{
+    position:absolute;
+    left:6px;
+    right:6px;
+    top: 55px;
+    bottom: 36px;
+    z-index:2;
+    border: 1px solid #A4BED4;
+}
+
+#idTextAndWord{
+    display:inline-block;
+    width: 513px;
+}
+
+#idTableAdvancedSettings{
+    display:none;
+    margin-top: -4px;
+}
+
+.clLabelSearch{
+    display:inline-block;
+    width:180px;
+    text-align:right;
+    margin-top:5px;
+    padding-right:5px;
+}
+.clInputSearch{
+    width:300px;
+    height:18px;
+    margin-top:5px;
+}
+
+.clBoldUnderline{
+    font-weight:bold;
+    text-decoration:underline;
+}
+
+.clLabelSearchInData {
+    display: inline-flex;
+    width: 150px;
+}
+
+.checkBoxSearchInData {
+    margin: 0px 10px;
+    position: relative;
+    top: 5px;
+    left: 5Px;
+}
+
+#idDivGridOT{
+    position:absolute;
+    top:6px;
+    right:6px;
+    left:6px;
+    bottom:6px;
+}
+
+.clDivTree{
+    position:absolute;
+    top:32px;
+    right:6px;
+    left:6px;
+    bottom:5px;
+    border:1px solid #A4BED4;
+    float:left;
+
+}
+
+#idDivToolbarObjects{
+    position:absolute;
+    right:6px;
+    left:6px;
+    top:6px;
+}
+
+#idTabData{
+    width:100%;
+    height:100%;
+}

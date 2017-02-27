@@ -1,0 +1,218 @@
+﻿/*  ---------------------------------------------------------------------  */
+/*                            Main toolbar                                 */
+/*  ---------------------------------------------------------------------  */
+#idDivMainLayoutCellA {
+	background: rgba(26, 61, 93, 0.58);
+	color: #ffffff; /* Blanc */
+}
+
+#idDivMainLayoutCellA {
+	position:absolute;
+	left:3px;
+	right:3px;
+	height:40px;
+	border:1px #336699 solid;
+	z-index:1;
+}
+    #idTxLogo {
+	    margin: 3px 0 0 4px;
+	    height: 32px;
+	    width: 32px;
+	    float: left;
+    }
+
+    #idBassettiLogo {
+	    float: left;
+	    margin: 10px 25px 0 5px;
+    }
+
+	#idDivMainToolbarLeftSide{
+		float:left;
+	}
+	#idDivMainToolbar{
+		float:left;
+		position:absolute;
+		right:5px;
+		left:150px;
+	}
+
+    #idDivLayout {
+	    position:absolute;
+	    left:5px;
+	    right:5px;
+        bottom:0px;
+        top:0px;
+        width:100%;
+        height:100%;
+	    z-index:1;
+    }
+
+
+/*  ---------------------------------------------------------------------  */
+/*                               Navigation                                */
+/*  ---------------------------------------------------------------------  */
+#idDivNavigation{
+	position:absolute;
+	top:0px;
+	bottom:0px;
+	left : 3px;
+	right:1px;
+}
+	#idDivNavigationTreebox{
+		position:absolute;
+		top: 28px;
+		left: 0px;
+		right:0px;
+		bottom:0px;
+	}
+		#idDivNavigationTree{
+			position:absolute;
+			top: 28px;
+			bottom:26px;
+			left: 0px;
+			right:0px;
+			border: #A4BED4 1px solid;
+			background:	white; 
+		}
+
+		#idDivNavigationToolbar{
+			position:absolute;
+			height:28px;
+			width:auto;
+			right:0px;
+			left:0px;
+			bottom:-1px;
+		}
+		#idDivNavigationToolbarCreation{
+			position:absolute;
+			height:28px;
+			width:auto;
+			right:0px;
+			left:0px;
+			bottom:25px;
+		}
+        #idDivNavigationBusinessTree{
+			position:absolute;
+			top: 0px;
+			bottom:26px;
+			left: 0px;
+			right:0px;
+			background:	white; 
+			border: #A4BED4 1px solid;
+            display:none;
+		}
+        #idDivNavigationBusinessToolbar{
+			position:absolute;
+			height:28px;
+			width:auto;
+			right:0px;
+			left:0px;
+			bottom:-1px;
+            display:none;
+		}
+
+
+/*  ---------------------------------------------------------------------  */
+/*                                 TxHeader                                */
+/*  ---------------------------------------------------------------------  */	
+#idDivBanner{
+	position:absolute;
+	line-height:46px;
+	height:46px;
+	font-weight : bold;
+	top:0px;
+	right:3px;
+	left:0px;
+	border : #A4BED4 1px solid;
+}
+    #idDivBannerLeft{
+		position:absolute;
+		z-index: 30;
+		width:auto;
+	}
+        #idImgCopyToClipboard{
+			position: absolute; 
+			top : 15px;
+			right:60px;
+		}
+        #idImgCollapseNav{
+			position: absolute;
+			top : 25px;
+			left:5px;
+			cursor:pointer;
+		}
+	#idDivBannerMiddle{	
+		position:absolute;
+		left:0px;
+		right:0px;
+		width:100%;
+		text-align:center;
+		font-size:20px;
+	}
+	#idDivBannerRight{		
+		float:right;
+		height:100%;
+		margin-right:5px;
+        padding-right:30px;
+	}
+        #idImgCollapseBanner{
+			position: absolute; 
+			top : 2px;
+			right:2px;
+		}	
+
+/*  ---------------------------------------------------------------------  */
+/*                                  Form                                   */
+/*  ---------------------------------------------------------------------  */
+#idDivFormContainer{
+	position:absolute;
+	top:0px;
+	bottom:0px;
+	right:2px;
+	left:0px;	
+}
+
+    #idDivForm{
+		position:absolute;
+		top:0px;
+		bottom:0px;
+		right:0px;
+		left:0px;
+		display:none;
+        overflow:auto;
+	}
+	#idDivBlank{
+		position:absolute;
+		top:0px;
+		bottom:0px;
+		right:0px;
+		left:0px;
+		border: #A4BED4 1px solid;
+		display:none;
+	}
+
+    #idDivInfoSourceRead{
+        height:100%;
+        overflow: auto;
+    }
+
+    div.field_traca {
+        clear: both;
+        margin-bottom: 5px;
+    }
+
+    div.field_traca fieldset {
+      border: 1px solid #A4BED4;
+      margin: 0 5px 0 8px;
+    }
+
+    div.field_traca fieldset legend {
+      margin: 0 5px 0 8px;
+    }
+
+    div.field_traca fieldset div {
+      margin: 2px;
+      color: #959595;
+      overflow: auto;
+    }
+		

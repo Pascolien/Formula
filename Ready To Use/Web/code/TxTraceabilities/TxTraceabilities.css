@@ -1,0 +1,90 @@
+﻿#bodyTraceabilities {
+    position: relative; 
+    width: 100%; 
+    height: 100%;
+}
+
+#gridTraceabilities {
+    position: relative; 
+    width: 100% !important; 
+    height: calc(100% - 39px) !important;
+}
+
+.errorMsgTraceabilities {
+    margin: 10px;
+}
+
+#buttonsBarTraceabilities {
+    z-index: 10;
+}
+
+div.divGridFilters {
+
+}
+
+div.divGridFilters .inputTextFilter {
+    width: Calc(100% - 20px);
+    height: 18px;
+}
+
+div.divGridFilters .divComboFilter {
+    width: Calc(100% - 20px);
+}
+div.divGridFilters .divComboFilter .dhx_combo_box {
+    width: 100% !important;
+}
+
+.activeFilter {
+    border: 2px solid cornflowerblue;
+}
+
+.divBoundFilter {
+    height: 45px;
+    padding-left: 5px;
+    margin: 6px;
+}
+
+.divBoundFilter .popupInputDate {
+    width: 90px;
+    margin: 5px;
+}
+
+.divBoundFilter #popupButtonDelete {
+    display: block;
+    padding: 0px 5px;
+    margin: 5px 3px 0px 5px;
+    font-size: 11px;
+    font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif, monospace;
+    position: absolute;
+    bottom: 0;
+    right: 118px;
+}
+
+.divBoundFilter #popupButtonValid {
+    display: block;
+    width: 55px;
+    padding: 0px 5px;
+    margin: 5px 3px 0px 5px;
+    font-size: 11px;
+    font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif, monospace;
+    position: absolute;
+    bottom: 0;
+    right: 60px;
+}
+
+.divBoundFilter #popupButtonCancel {
+    display: block;
+    width: 52px;
+    padding: 0px 5px;
+    margin: 5px 3px 0px 5px;
+    font-size: 11px;
+    font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif, monospace;
+    position: absolute;
+    bottom: 0;
+    right: 5px;
+}
+
+.divBoundFilter img.ui-datepicker-trigger {
+    margin-left: -25px !important;
+    margin-right: 5px !important;
+}

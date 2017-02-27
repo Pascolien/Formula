@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TxExtractions>
+    <TxExcelExtraction 
+        sTemplateRFilePath="Templates\Excel\TestsReport.xltm"
+        sName="Extraction demandes d'essais"
+        sTag="TestContacts"
+        sTemplateFileName="Requests.xlsm"
+        sOTTag="otContact">
+        <TxWorksheet
+            sName="Feuille 1"
+            bTranspose="false"
+            iStartRow="6"
+            sObjectColumn="A"
+            sDateAndTimeCell="B2"
+            sObjectTypeCell="B3"
+            sUsernameCell="C4"> 
+            <TxSource sAttributesSetTag="AScontact" />            
+        </TxWorksheet>     
+        <TxWorksheet
+            sName="Feuille 2"
+            bTranspose="true"
+            sStartColumn="B"
+            iObjectRow="6"
+            sDateAndTimeCell="B2"
+            sObjectTypeCell="B3"
+            sUsernameCell="C4"> 
+            <TxSource sAttributesSetTag="AContactTranspose" />            
+        </TxWorksheet>      
+    </TxExcelExtraction>
+</TxExtractions>

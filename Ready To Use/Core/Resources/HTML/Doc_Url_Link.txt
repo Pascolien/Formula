@@ -1,0 +1,1 @@
+<a id="doc_url_link" title="<#TEEXMA_HTML_VALUE#>" href="<#TEEXMA_HTML_DOC_LINK#>" <#TEEXMA_HTML_DOC_JS#> <#TEEXMA_HTML_DOC_TARGET#>><#TEEXMA_HTML_VALUE#></a>

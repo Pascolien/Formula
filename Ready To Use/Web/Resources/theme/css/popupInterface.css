@@ -1,0 +1,155 @@
+﻿/*** PopupInterface ***/
+.popupInterface {
+    background: white;
+}
+/*
+.popupInterfaceTriangle {
+	width: 10%;
+	height: 0;
+	margin: 0px auto;
+	padding-left: 10%;
+	padding-bottom: 2%;
+	overflow: hidden;
+}
+.popupInterfaceTriangle:after, .popupInterfaceTriangle:before {
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-color: transparent;
+	border-top: 0;
+}
+.popupInterfaceTriangle:after {
+	top: 0px;
+	border-bottom-color: #ccc;
+	margin: -1px;
+	border-width: 16px;
+}
+.popupInterfaceTriangle:before {
+	top: 1px;
+	border-bottom-color: #fff;
+	border-width: 15px;
+	z-index: 1;
+}
+*/
+.popupInterface .modalScreen {
+    position: fixed;
+    z-index: -10;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(20,20,50,0.2);
+    display: none;
+}
+.mainContainerPopup {
+    width: 100%;
+    background: #fff;
+}
+
+.contentPopup {
+    position: relative;
+    overflow: auto;
+	display: block;
+	background: #fff;
+	margin: 0;
+	width: 100%;
+	height: Calc(100% - 40px);
+}
+
+.layoutPopup {
+    position: absolute;
+    top: 12px;
+    width: 100%;
+    height: Calc(100% - 40px);
+    background:url(/resources/theme/img/dhtmlx/layout/dhxlayout_progress.gif) no-repeat center center;
+}
+
+.btnsContainerPopup {
+    border-top: 1px solid #A4BED4;
+	background: rgba(26, 61, 93, 0.58);
+	height: 40px;
+	text-align: center;
+	border-radius: 0px 0px 4px 4px;
+}
+
+.btnActionsPopup {
+	display: inline-block;
+	float: right;
+	margin-right: 10px;
+	margin-top: 8px;
+	padding: 5px 10px;
+	height: 25px;
+	cursor: pointer;
+	background: #f8f8f8;
+	border: 1px solid #c6c6c6;
+	color: #444;
+	border-radius: 2px;
+	font-family: Tahoma;
+	font-size: 12px;
+	font-weight: bolder;
+}
+
+@font-face {
+	font-family: 'icomoon';
+	src:url('/code/TxASP/TxUserInfo/fonts/icomoon.eot?lqotgs');
+	src:url('/code/TxASP/TxUserInfo/fonts/icomoon.eot?lqotgs#iefix') format('embedded-opentype'),
+		url('/code/TxASP/TxUserInfo/fonts/icomoon.ttf?lqotgs') format('truetype'),
+		url('/code/TxASP/TxUserInfo/fonts/icomoon.woff?lqotgs') format('woff'),
+		url('/code/TxASP/TxUserInfo/fonts/icomoon.svg?lqotgs#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+	font-family: 'icomoon' !important;
+    margin-right: 5px;
+    line-height: 1;
+}
+
+.icon-close:before {
+	content: "\ea0f";
+}
+.icon-key:before {
+	content: "\e98d";
+}
+.icon-switch:before {
+	content: "\e9b6";
+}
+
+/*** Accordion ***/
+.accItem {
+    border-bottom: 1px solid lightgray;
+}
+.accItemActive {
+    color: #39c;
+    font-weight: bold;
+}
+.accItemLabel {
+    padding: 6px;
+    cursor: pointer;
+}
+.accItemLabel:hover {
+    background: #cce2fe;
+}
+.accItemLabel span.accLabelWithIcon {
+    margin-left: 6px;
+    position: relative;
+    top: -3px;
+}
+.accItemArrow {
+    
+}
+.accItemContentArea {
+    height: 223px;
+    display: none;
+    border-top: 1px solid lightgray;
+    background:white;
+}
+
+/** Fix Dhtmlx */
+div.dhx_popup_dhx_skyblue div.dhx_popup_area {
+    border-radius: 4px !important;
+}
+

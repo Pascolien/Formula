@@ -1,0 +1,412 @@
+/* CSS Document */
+
+#bar {
+	position: 	absolute;
+	top: 				19px;
+	bottom : 		5px;
+	left: 			5px;
+	right: 			5px;
+	_height:		500px;
+	_width: 		738px;
+	overflow: 	hidden;
+}
+
+#smc_affiche_cdc {
+	position: 	absolute;
+	top: 				5px;
+	bottom : 		5px;
+	left: 			5px;
+	right: 			5px;
+	padding:							10px;
+	background-color:			white;
+	border:								1px #000000 dotted;
+	_height:         490px;
+	_width:          728px;
+	display: 		none;
+	overflow: 	auto;
+}
+
+#img_val_inf_{
+	position:relative;
+}
+
+#smc_affiche_resultat {
+	position: 	absolute;
+	top: 				5px;
+	bottom : 		5px;
+	left: 			5px;
+	right: 			5px;
+	_height:         490px;
+	_width:          728px;
+	padding:							10px;
+	background-color:			white;
+	border:								1px #000000 dotted;
+	overflow:   auto;
+	display: 		none;
+}
+
+#smc_cdc img {
+	text_decoration: none;
+	border: none;
+}
+
+#smc_text_cdc {
+	float: left;
+	/*text-align: left;*/
+	margin-top: 20px;
+	width: 500px;
+	height: 400px;
+	overflow: auto;
+}
+
+#smc_text_cdc ul {
+	margin: 6px 0 5px 20px;
+	padding: 0;
+}
+
+#smc_text_cdc li {
+	margin: 6px 0 5px 15px;
+	padding: 0;
+}
+
+#smc_text_cdc span {
+	margin: 0;
+	
+}
+
+
+#conteneur_entete {
+  position: absolute;
+  background-color: #333333;
+  color: black;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  height: 20px;
+ 	overflow: auto;
+ 	_overflow: none;
+}
+
+#resultat_smc_entete {
+	position: 	absolute;
+	top: 				0px;
+	left: 			0px;
+	right: 			-9000px;
+	padding: 		1px 0 0 0;
+	height: 		20px;
+}
+
+#resultat_smc_entete div {
+  background-color: #333333;
+	float: 						left;
+	color: 						white;
+}
+
+#resultat_smc {
+	position: absolute;
+	left: 		10px;
+	right: 		10px;
+	top: 			35px;
+	bottom: 	50px;
+	_height: 	340px;
+	_width:  	730px;
+	overflow: auto;
+}
+
+#resultat_smc_int {
+	width: 10000px;
+	font-weight: normal;
+	border-top: 1px solid black;
+	white-space: nowrap;
+}
+
+#affichage_resultat {
+	display: none;
+	position: absolute;
+	bottom: 0px;
+	width:100%;
+}
+
+#affichage_resultat input {
+	margin-left: 10px;
+}
+
+#affichage_resultat span {   	
+	padding-top: -5px;	
+}
+
+#btn_smc_grid{
+	width:150px;
+	margin-bottom:40px;
+}
+	#btn_smc_selection{
+		position:absolute;
+		left:0px;
+		top:10px;
+		
+	}
+	#btn_smc_all{
+		display:none;
+		position:absolute;
+		left:0px;
+		top:10px;
+	}
+	#btn_smc_check_all{
+		position:absolute;
+		left:30px;
+		top:10px;
+	}
+	#btn_smc_uncheck_all{
+		position:absolute;
+		left:60px;
+		top:10px;
+	}
+	
+#checkboxes_smc_resultat{
+	position:absolute;
+	float:left;
+	top:12px;
+	left:95px;
+	width:450px;
+	height:50px;
+}
+
+#btn_smc_export{
+	position:absolute;
+	right:20px;
+	top:6px;
+	width:auto;
+	height:50px;
+}
+
+#btn_open_gdc{
+	position:absolute;
+	right:20px;
+}
+
+#smc_legende {
+	display: none;
+	position: absolute;
+	margin-top: 10px;
+	bottom: 40px;
+	left: 240px;
+	font-weight: normal;
+}
+
+#btn_export {
+	display: none;
+	position: absolute;
+	bottom: 	5px;
+	right: 		10px;
+}
+
+#btn_export input:first-child {
+	/*visibility: hidden;*/
+}
+
+
+
+div.smc_btn_action_vertical {
+	position: absolute;
+	right: 35px;
+	margin-top: 20px;
+	/*float: left;*/
+	border-left: 1px #000000 solid;
+	height: 390px;
+	width: 200px;
+}
+
+div.smc_btn_action_vertical input {
+	display: block;
+	width: 200px;
+	margin-left: 10px;
+}
+
+div.smc_btn_action_vertical span {
+	margin-left: 10px;
+	margin-top: 20px;
+	margin-bottom: 5px;
+	display: block;
+}
+
+div.smc_tr_i {
+	clear: both;
+	float: none;
+	display: block;
+}
+
+div.smc_tr_v {
+	clear: both;
+	float: none;
+	display: block;
+}
+
+div.smc_tr_r {
+	clear: both;
+	float: none;
+	display: block;
+}
+
+	.smc_tr_v div, .smc_tr_i div, .smc_tr_r div, .smc_v_tol div {
+		width: 				180px;
+		/*padding: 			2px 5px 2px 5px;*/
+		border: 			1px solid black;
+		border-top: 	0px;
+		border-left:	0px;
+		line-height: 	20px;
+		height: 			20px;
+		/*_overflow:		auto;*/
+		overflow-y: 		auto;
+		overflow-x:			hidden;
+		white-space: 	normal;
+		float: 				left;
+		text-align: center;
+	}
+	
+div.smc_r, div.smc_i, div.smc_v, div.smc_v_tol {
+	border: 1px solid black;
+	border-top: 0px;
+	/*padding: 0px 5px 2px 5px;*/
+	width: 200px;
+	height: 20px;
+	line-height: 20px;
+	text-align: left;
+	overflow: hidden;
+}
+
+div.smc_r {	
+	background-color: red;
+}
+
+div.smc_i {
+	background-color: yellow;
+}
+
+div.smc_v {
+	background-color: rgb(0,255,0);
+}
+
+div.smc_v_tol {
+	background-color: #A5FFA5;
+}
+
+div.smc_v span, div.smc_i span, div.smc_r span, div.smc_v_tol span {
+	color: #3300FF;
+	text-decoration: underline;
+	cursor: hand;
+}
+
+div.tbl_c2 {
+	text-align: center;
+	width: 100px;
+}
+
+div.tbl_c3 {
+	text-align: center;
+	width: 100px;
+}
+
+
+.tbl_entete_col1, .tbl_entete_col2, .tbl_entete_col3, .tbl_entete_colx {
+  width: 					180px;
+  padding: 				0;
+  line-height:    20px;
+  height:         20px;
+  border: 				0 white solid;
+  border-right:		1px;
+  overflow: 			hidden;
+  text-align: center;
+}
+
+.tbl_entete_col1 {
+	width: 200px;
+}
+
+.tbl_entete_col2 {
+	width: 100px;
+}
+
+.tbl_entete_col3 {
+	width: 100px;
+}
+
+.sp_nom_gc {
+	cursor: hand;
+}
+
+#table_mcs_view {
+	position: absolute;
+	left: 		10px;
+	right: 		10px;
+	top: 		10px;
+	bottom: 	20px;
+	width:auto;
+	height:auto;
+}
+
+#table_mcs_view_filtered {
+	position: absolute;
+	left: 		10px;
+	right: 		10px;
+	top: 		10px;
+	bottom: 	40px;
+	/*width:150px;
+	height:150px;*/
+	display:block;
+}
+	
+#id_div_toolbar_mcs_paging{
+	position: absolute;
+	left: 		10px;
+	right: 		10px;
+	top: 	10px;
+	width:auto;
+	height:28px;
+	display:block;
+}
+
+	
+#table_mcs_view_opt {
+	position: absolute;
+	display:	none;
+	left: 		10px;
+	bottom: 	10px;
+	overflow: auto;
+	display: 	none;	
+}
+
+.c_red, .c_green, .c_yellow {
+	text-align: center;
+}
+
+.c_red, .obj_c_red {	
+	background-color: #A32727;
+	font-weight:bold;
+}
+
+.c_green, .obj_c_green {
+	background-color: #6FB037;
+}
+
+.c_yellow, .obj_c_yellow {
+  background-image: -webkit-linear-gradient(right top, #D60F0F 0%, #FFDD00 100%); 
+  background-image: 	 -moz-linear-gradient(right top, #D60F0F 0%, #FFDD00 100%);
+  background-image:     -ms-linear-gradient(right top, #D60F0F 0%, #FFDD00 100%);
+  background-image:      -o-linear-gradient(right top, #D60F0F 0%, #FFDD00 100%);
+  background-image:         linear-gradient(right top, #D60F0F 0%, #FFDD00 100%);
+                               
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#D60F0F',endColorstr='#FFDD00', GradientType=1);
+}
+          
+#div_loading {  	
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	width: 200px;
+	height: 200px;
+	/*background-color: white;*/
+	display: none;
+}
+
+
+

@@ -1,0 +1,47 @@
+#TXPlugin_treebox{
+	float:left;
+	width:300px;
+}
+	#TXPlugin_tree{
+	cursor:default;
+	height:182px;
+	border-left: 1px solid #A4BED4;
+	border-top: 1px solid #A4BED4;
+	border-right: 1px solid #A4BED4;
+	}
+#TXPlugin_treebox_linear{
+	float:left;
+	display:none;
+	width:300px;
+}
+	#TXPlugin_tree_linear{
+	cursor:default ;
+	height:182px;
+	border-left: 1px solid #A4BED4;
+	border-top: 1px solid #A4BED4;
+	border-right: 1px solid #A4BED4;
+	}
+	
+#fieldset{
+	height:300px;
+}
+#TXPlugin_combobox{
+	width:300px;
+}
+
+.cl_input_insertImage{
+	width:230px;
+}
+
+fieldset { 
+	border:1px solid grey 
+}
+
+legend {
+	padding: 0.5em 0.7em;
+	color:navy ;
+	font-size:14px;
+	font-family : Tahoma, Verdana, Arial, Helvetica, sans-serif, monospace;
+	text-align:left;
+	position:relative;
+ }

@@ -1,0 +1,47 @@
+<object runat="server" scope="session" id="API_ASP_TxASP" progid="API_ASP.TxASP4_0_0_31092"></object>
+<SCRIPT LANGUAGE="VBScript" RUNAT="Server">
+    //we have to put this treatment here because of the initialization of the sLanguageCode session variable. 
+    //Else translations couldn't be apllied.
+
+    // rétro compatibilité nav.asp
+  SUB Session_OnStart
+  	Session("sWebDir") = Request.ServerVariables("APPL_PHYSICAL_PATH")
+	Session("sTxDir")  = Session("sWebDir") & "..\"	  
+    Session("sLanguageCode") = "fr"
+    Session("View") = "Form"
+   
+    sServerUrl =  Request.ServerVariables("URL")
+    sServerUrl = Request.ServerVariables("SERVER_NAME") & ":" & Request.ServerVariables("SERVER_PORT") & Left(sServerUrl,InStr(2,sServerUrl, "/"))
+	
+    if request.ServerVariables("HTTPS") = "on" then
+		sServerUrl = "https://" & sServerUrl
+    else
+		sServerUrl = "http://" & sServerUrl
+    end if  
+
+	API_ASP_TxASP.Init Session("sWebDir"), sServerUrl, Request.serverVariables("REMOTE_USER"), Application("bCopyCR"), sTmpDir, sLanguageCode, iMajor, iMinor, iRelease, iRevision, sTxDate, iUserSessionId, sTabTitle, sIISApplicationName, sMessage  
+    
+    Application("bCopyCR") = false  
+            
+    IF (sMessage <> "ok") THEN
+	  	Session.Abandon
+	  	response.write(sMessage)
+	  	Response.End	  	
+	END IF
+
+    Session("sTabTitle") = sTabTitle
+    Session("sIISApplicationName") = sIISApplicationName
+    Session("sLanguageCode") = LCase(sLanguageCode)
+    Session("sTmpDir") = sTmpDir
+    Session("iMajor") = iMajor
+    Session("iMinor") = iMinor
+    Session("iRelease") = iRelease
+    Session("iRevision") = iRevision
+    Session("sTxDate") = sTxDate
+    Session("iUserSessionId") = iUserSessionId
+    
+    Session.LCID = 1036 'usefull for some browsers
+	Session("iMaxSizeUpload") = 10
+ 	
+  END SUB
+</SCRIPT>

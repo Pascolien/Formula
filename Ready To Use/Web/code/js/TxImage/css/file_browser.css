@@ -1,0 +1,24 @@
+tr
+  { behavior: url('IEFixes.htc');
+  }
+body {
+margin-top: 5px;
+margin-bottom: 5px;
+margin-left: 0px;
+margin-right: 0px;
+}
+a {
+text-decoration:none;
+}
+a img{
+border: 0px;
+}
+td {
+font-family: arial;
+font-size: 10px;
+margin-top: 1px;
+margin-bottom: 1px;
+}
+tr:hover,tr.hover{
+background-color: #cccccc;
+}

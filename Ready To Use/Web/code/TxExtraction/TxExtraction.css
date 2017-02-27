@@ -1,0 +1,36 @@
+﻿
+#idDivLayoutTxExtraction{
+    position: relative; 
+    width: 510px; 
+    height: 365px;
+}
+
+#idDivComboboxesTxExtraction{
+    height:60px;
+}
+    .clLabels{
+        width:100px;
+        text-align:right;
+        float:left;
+        margin-top:5px;
+    }
+
+    #idDivComboOTTxExtraction, #idDivComboExtractionsTxExtraction{
+        float:left;
+        margin-left:5px;
+        margin-top:5px;
+    }
+
+#idDivObjectsTxExtraction{
+    margin:5px;
+}
+
+#idDivPDFTxExtraction{
+    margin:5px;
+}
+
+#idDivTreeObjectTxExtraction{
+    border:1px solid #A4BED4;
+    height:190px;
+    margin-bottom:-1px;
+}

@@ -1,0 +1,136 @@
+﻿.mcsManagerMainLayout *[id^=idMCSNew] {
+    position: absolute;
+    left: 6px;
+}
+
+.mcsManagerMainLayout *[id^=idMCSSave] {
+    position: absolute;
+    left: 83px;
+}
+
+.mcsManagerPopup {
+    height: 500px;
+    width: 840px;
+}
+    .mcsManagerAccordionWrapper {
+        height: 475px;
+        border: 1px solid lightgray;
+        overflow-y: auto;
+    }
+    .mcsManagerLoadInformation {
+        float: right;
+        padding: 6px;
+        color: blue;
+        cursor: pointer;
+        text-decoration: underline;
+    }
+    .mcsManagerAllInformationReturned {
+        color: lightgray;
+        cursor: default;
+    }
+
+.mcsManagerMainLayout .mcsContainer {
+    height: 450px;
+    width: 900px;
+    display: none;
+}
+
+.mcsOTRequirementsList {
+    overflow-y: auto;
+    position: relative;
+	display: block;
+    white-space: normal;
+	background: #fff;
+	margin: 0;
+	padding: 10px;
+	width: Calc(100% - 20px);
+    height: Calc(100% - 45px);
+}
+
+.mcsBoxContainer, .mcsModelBoxContainer {
+    position: relative;
+	vertical-align: top;
+	display: inline-block;
+	border: 1px solid #fff;
+	border-radius: 4px;
+	box-sizing: border-box;
+    white-space: normal;
+	height: 90px;
+	width: 250px;
+	margin-bottom: 5px;
+}
+.mcsBoxContainer:hover, .mcsModelBoxContainer:hover {
+    border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+    box-shadow: 0 0 5px #cecece;
+	cursor: pointer;
+}
+    .mcsBoxContainer img, .mcsModelBoxContainer img {
+        margin: 21px 13px;
+    }
+
+    .mcsBoxContainer .mcsBoxDetails, .mcsModelBoxContainer .mcsBoxDetails {
+        position: absolute;
+	    top: 3px;
+	    left: 76px;
+	    width: 155px;
+	    height: 85px;
+	    overflow: hidden;
+    }
+
+    .mcsBoxContainer .mcsBoxName, .mcsModelBoxContainer .mcsBoxName {
+        font-weight: bold;
+	    font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif, monospace;
+	    font-size: 13px;
+        white-space: normal;
+    }
+
+    .mcsModelBox{
+        max-height:48px;
+        max-width:48px;
+    }
+
+    .mcsBoxContainer .mcsBoxDescription, .mcsModelBoxContainer .mcsBoxDescription {
+        font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif, monospace;
+	    font-size: 11px;
+        white-space: normal;
+    }
+    .divVerticalCenter {
+	    width: 100%;
+	    height: 85px;
+	    display:table-cell;
+	    vertical-align:middle;
+    }
+
+.mcsModelBoxContainer {
+    width: 100% !important;
+}
+.mcsModelBoxContainer .mcsBoxDetails {
+    width: calc(100% - 95px) !important;
+}
+
+.mcsResultGrid {
+    margin: 5px;
+    height: 100%;
+    width: 100%;
+}
+
+.mcsResultDevs {
+    margin: 5px;
+    border: 1px solid #a4bed4;
+    height: calc(100% - 8px);
+    width: calc(100% - 10px);
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+.mcsManagerResultDevsTitle {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 15px 15px 0px 15px;
+}
+
+
+.dhx_popup_arrow_top {
+    left: 35px !important;
+}

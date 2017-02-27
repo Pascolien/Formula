@@ -1,0 +1,62 @@
+﻿body {
+    padding: 0;
+    margin: 10px;
+}
+
+#mainPattern {
+    width: 100%;
+    height: 100%;
+}
+
+.mainCell {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.txModule {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 0;
+    bottom: 0;
+}
+
+#idDivHeader {
+    position: absolute;
+    left: 5px;
+    right: 5px;
+    height: 40px;
+    border: 1px #336699 solid;
+    z-index: 1;
+}
+
+#overlay {
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(11, 22, 33, 0.9);
+    transition: 1s 0.4s;
+}
+
+#progress {
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    width: 0; /* will be increased by JS */
+    top: 50%;
+}
+
+#progstat {
+    font: 1.2em Helvetica, Arial, sans-serif;
+    letter-spacing: 3px;
+    position: absolute;
+    top: 50%;
+    margin-top: -40px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+}

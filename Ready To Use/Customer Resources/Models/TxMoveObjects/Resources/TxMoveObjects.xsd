@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    
+    <xs:element name="TxMoveObjects" type="XTxMoveObjects"/>
+    
+    <xs:complexType name="XTxMoveObjects">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded" >
+            <xs:element name="TxMoveObjectsConfiguration" type="XTxMoveObjectsConfiguration" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="XTxMoveObjectsConfiguration">
+        <xs:choice minOccurs="1" maxOccurs="3">
+            <xs:element name="TxStrGenString"  minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:attribute name="sConfiguration" type="xs:string" />   
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="LkdObjectPath" type="XLkdObjectPath" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="FirstChars" minOccurs="0" maxOccurs="1" >                
+                <xs:complexType>
+                    <xs:attribute name="iNbChars" type="xs:int" />   
+                  </xs:complexType>
+            </xs:element>
+        </xs:choice>
+        <xs:attribute name="sOTTag" type="xs:string" use="required"/>
+        <xs:attribute name="sName" type="xs:string"  use="required"/>
+        <xs:attribute name="sTag" type="xs:string"  use="required"/>
+        <xs:attribute name="bClean" type="xs:boolean"  use="optional" default="false"/>
+        <xs:attribute name="sRLTag" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en">Allows to define a requirement list the object must respect before using this "sort" configuration.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="bRemoveEmptyFolders" type="xs:boolean" use="optional" default="false">
+            <xs:annotation>
+                <xs:documentation xml:lang="en">This option allows to remove the empty folders. It is only  available for the massive treatment function (SortObjects).</xs:documentation>
+            </xs:annotation>     
+        </xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="XLkdObjectPath">
+        <xs:attribute name="sAttsTags" type="xs:string" use="required"/>       
+        <xs:attribute name="sDefaultPath" type="xs:string"/>
+    </xs:complexType>
+    
+</xs:schema>

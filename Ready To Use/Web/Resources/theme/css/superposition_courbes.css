@@ -1,0 +1,110 @@
+/* CSS Document */
+body {
+	background-color:white;
+}
+
+#div_affich_courbes {
+	width: 425px;
+	height: 325px;
+	border: 1px solid black;
+	display: none;
+	overflow: auto;
+}
+
+#div_comboTE {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+}
+
+#div_treeviewE {
+	position: absolute;
+	left: 10px;
+	top: 60px;
+}
+
+#combo_curves_ot {
+	left: 10px;
+	top: 10px;
+	width:auto;
+	margin-top:6px;
+}
+
+#id_div_tree_curves{
+	height:235px;
+	width:350px;
+	margin-top:6px;
+}
+	#treebox_curves{
+		float:left;
+		width:350px;
+		height:200px;
+	}
+		#tree_curves{
+			cursor:default;
+			height:200px;
+			border-left: 1px solid #A4BED4;
+			border-top: 1px solid #A4BED4;
+			border-right: 1px solid #A4BED4;
+		}
+		#toolbar_curves{
+
+		}
+	#treebox_curves_filtered{
+		float:left;
+		width:350px;
+		height:200px;
+		display:none;
+	}
+		#tree_curves_filtered{
+			cursor:default ;
+			height:200px;
+			border-left: 1px solid #A4BED4;
+			border-top: 1px solid #A4BED4;
+			border-right: 1px solid #A4BED4;
+		}
+		#toolbar_curves_filtered{
+		
+		}
+
+#id_div_options_curves{
+	height:90px;
+}
+	#id_slt_curves_attribute{
+		width:200px;
+	}
+	
+	#id_div_curves_carac{
+		float:left;
+	}
+	
+	#id_div_curves_mean {
+		margin-top:10px;
+		float:right;
+		padding-right:5px;
+	}
+	
+		
+div.smc_btn_action {
+  
+}
+
+#field_choix_affich{
+	margin-top:5px;
+}
+
+fieldset {
+	float: left;	
+	width: 260px;
+	height: 30px;
+	padding:5px;
+}
+
+legend{
+	padding-left:5px;
+	padding-right:5px;
+}
+
+select{
+	font-size:11px;
+}

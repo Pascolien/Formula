@@ -1,0 +1,40 @@
+body{
+	font-size: 11px;
+	font-family:Tahoma;
+    overflow:hidden;
+}
+
+#id_div_treebox{
+	float:left;
+	width:512px;
+}
+	#id_div_tree{
+		cursor:default;
+		height:208px;
+		border-left: 1px solid #A4BED4;
+		border-top: 1px solid #A4BED4;
+		border-right: 1px solid #A4BED4;
+	}
+
+    .clCross{
+        position:absolute;
+        margin-top:1px;
+        cursor:pointer;
+        margin-left:5px;
+    }
+	
+#fieldset{
+	height:300px;
+}
+#id_div_combo{
+	width:465px;
+}
+
+#entityText{
+	width:485px;
+}
+
+
+.nowrap{
+    width:100px;
+}

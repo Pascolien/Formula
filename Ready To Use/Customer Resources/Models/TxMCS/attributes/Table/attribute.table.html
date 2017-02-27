@@ -1,0 +1,45 @@
+﻿<body>
+<div>
+    <div data-name="header">
+        <span>Le tableau doit contenir dans </span>
+        <select name="sSubCritType">
+            <option data-replace="atLeastOneRow" value="lctAt_Least_One" selected="true">une ligne</option>
+            <option data-replace="definedRow" value="0">la ligne</option>
+        </select>
+        <input type="number" min="1" value="1" style="width: 35px;" name="iValueIndex" />
+        <span>et pour</span>
+    </div>
+    <div data-name="TableSubCriterion1">
+        <div class="formGroup">
+            <label data-replace="column">la colonne :</label>
+            <select name="idSeriesType"></select>
+        </div>
+        <div class="formGroup">
+            <label>une valeur :</label>
+            <div class="mcsTableNumericalSeries">
+                <select class="tableCriterionType" name="sNumericalCritType">
+                    <option value="nctEqual_To" selected="true">égale à</option>
+                    <option value="nctRange_Max">comprise dans un intervalle</option>
+                </select>
+                <div class="mcsTableEquality">
+                    <input type="number" step="any" size="6" name="fLBValue"/>
+                </div>
+                <div class="mcsTableRange">
+                    <input type="number" step="any" size="6" name="fLBValue"/>
+                    et
+                    <input type="number" step="any" size="6" name="fUBValue"/>
+                </div>
+                <span data-replace="unit"></span><br/>
+            </div>
+            <div class="mcsTableOtherSeries">
+                <input type="text" name="sSearchedValue"/>
+            </div>
+            <div style="display: none;" class="entryHelper">
+                Aide à la saisie : la borne inférieure vide implique la définition d'un filtre inférieur ou égal à la borne supérieure, 
+                la borne supérieure vide implique la définition d'un filtre supérieur ou égal à la borne inférieure.
+            </div>
+        </div>
+    </div>
+    <input type="checkbox" id="mcsTableCriterion2"/> <label for="mcsTableCriterion2">ainsi que pour</label>
+</div>
+</body>

@@ -1,0 +1,33 @@
+﻿#idDivTabbarTxProperty{
+    margin:5px;
+    width:100%-10px;
+    height:177px;
+}
+
+#idDivTxProperty{
+    margin:5px;
+}
+
+#idImgObjectTxProperty{
+    position:absolute;
+    top:5px;
+    
+}
+
+#idTextObjectIdTxProperty{
+    display:none;
+    width:60px;
+    margin-left:3px;
+}
+
+#idTextObjectNameTxProperty{
+	width:300px;
+    margin-left:20px;
+}#idDivTxProperty td{
+    font-weight:bold;
+}#idDivTxProperty tr td:first-child{
+    width:120px;
+    text-align:right;
+}#idDivTxProperty label{
+    font-weight:normal;
+}

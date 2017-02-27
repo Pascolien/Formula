@@ -1,0 +1,9 @@
+﻿#global {
+    overflow:auto;
+}
+
+#idDivToolboxMenu {
+    float: left;
+    width: 10%;
+    border-style: double;
+}

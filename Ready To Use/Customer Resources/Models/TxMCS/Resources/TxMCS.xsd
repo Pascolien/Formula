@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="TxMCS">
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="ObjectTypeMCSSettings" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:choice minOccurs="0" maxOccurs="unbounded">
+                            <xs:element name="RLSettings" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:attribute name="sName" type="xs:string" use="optional"/>
+                                    <xs:attribute name="sDescription" type="xs:string" use="optional"/>
+                                    <xs:attribute name="sRLTag" type="xs:string" use="required"/>                        
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="ModelApplicationAfterSelection" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:attribute name="sTag" type="xs:string" use="required"/>
+                                    <xs:attribute name="sSelectionVariableName" type="xs:string" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:choice>
+                        <xs:attribute name="sOTTag" type="xs:string" use="required"/>
+                        <xs:attribute name="bDisplayExtraction" type="xs:boolean" use="optional" default="true"/>
+                        <xs:attribute name="bDisplayExportation" type="xs:boolean" use="optional" default="true"/>
+                        <xs:attribute name="bDisplaySimplifiedExportation" type="xs:boolean" use="optional" default="true"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>  
+    
+</xs:schema>
