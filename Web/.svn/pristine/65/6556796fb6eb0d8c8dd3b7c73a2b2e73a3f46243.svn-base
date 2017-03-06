@@ -1,0 +1,123 @@
+
+function Close_Popup() {
+    parent.dhxWins.window("txFormula_simple").close();
+}
+
+function Cancel() {
+    Close_Popup();
+}
+
+function remove(divDisplay) {
+    if (divDisplay != undefined)
+        while (divDisplay.childNodes.length > 0) {
+            divDisplay.removeChild(divDisplay.childNodes[divDisplay.childNodes.length - 1]);
+        }
+}
+
+function display_formula(i) {
+    ObjFormula.iDisplay_Format = i;
+    ObjFormula.display();
+    ObjFormula.calculate();
+};
+
+function editFormula() {
+    displayFormulaWindow(ObjFormula);
+};
+
+function editVariable(v) {
+    displayVariableWindow(v || selectedVariable);
+    selectedVariable = null;
+}
+
+function deleteVariable() {
+    if (selectedVariable == undefined) return
+    dhtmlx.confirm({
+        title: "Delete Variable",
+        text: "Variable '" + selectedVariable.name + "' will be deleted, continue ?",
+        ok: "Continue",
+        cancel: "Cancel",
+        callback: function (result) {
+            if (result == true) {
+                ObjFormula.remVariable(selectedVariable.cell_id);
+
+                // FormulasGrid.deleteRow(FormulasGrid.getSelectedRowId());
+                ObjFormula.calculate();
+                ObjFormula.display();
+                selectedVariable = null;
+            }
+        }
+    });
+
+
+}
+//choice if its a new formulation or not
+
+function formula_Value() {
+    ObjFormula.show_formula();
+}
+function save() {
+    ObjFormula.save();
+}
+
+function check_formula() {
+
+}
+
+
+function convertResult() {
+
+    var r = math.unit(ObjFormula.result.unit);
+    var a = math.unit(ObjFormula.result.value, r.unit.name);
+    var b;
+    var c;
+
+    switch (r.unit.name) {
+
+        case "s":
+            /*var m = math.divide(ObjFormula.result.value, 60);
+            m = math.round(m, 0);
+            var h = math.divide(m, 60);
+            h = math.round(h, 0);
+            alert("result =" + m + "min ou " +h+"h");*/
+
+            b = a.to("min");
+            //  b = math.round(b,0);
+            c = b.to("h");
+            // c = math.round(c,0);
+
+            dhtmlx.message({
+                title: "Unit Convert",
+                type: "alert-warning",
+                text: ObjFormula.result.value + r + " = " + b + " or " + c,
+                callback: function () { }
+            });
+
+
+
+            break;
+
+        case "min":
+            b = a.to("s");
+            c = b.to("h");
+            c = math.round(c, 0);
+            dhtmlx.message({
+                title: "Unit Convert",
+                type: "alert-warning",
+                text: ObjFormula.result.value + " = " + b + " or" + c
+                // callback: function () { dhtmlx.alert("Test alert"); }
+            });
+
+        case "h":
+            b = a.to("min");
+            c = b.to("s");
+            // c = math.round(c,0);
+            dhtmlx.message({
+                title: "Unit Convert",
+                type: "alert-warning",
+                text: ObjFormula.result.value + " = " + b + " or" + c
+            });
+            break;
+    }
+
+
+}
