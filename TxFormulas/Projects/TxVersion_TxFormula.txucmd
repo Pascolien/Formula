@@ -1,0 +1,27 @@
+<TXUtils>
+	<Consts>
+		<Query sName="#TxVersion#" sValue="4.0.0"/>
+		<Query sName="#TxRevision#" sValue="29114"/>
+		<Query sName="#Code_Version#" sValue="Dev"/>		
+	</Consts>
+	
+	<!-- Txucg from template -->
+	<Remove sPathes="#FILEDIR#..\Code\#Code_Version#\TxFormula\TxFormula.txucg"/>
+	<Copy sPath_Src="#FILEDIR#..\Code\#Code_Version#\TxFormula\TxFormula_Template.txucg" sPath_Dest="#FILEDIR#..\Code\#Code_Version#\TxFormula\TxFormula.txucg" bRemove_Src="false"/>
+
+	<ReplaceText sPath_File="#FILEDIR#..\Code\#Code_Version#\TxFormula\TxFormula.txucg" sFrom="TxVersion" sTo="#TxVersion#"/>
+	<ReplaceText sPath_File="#FILEDIR#..\Code\#Code_Version#\TxFormula\TxFormula.txucg" sFrom="TxRevision" sTo="#TxRevision#"/>
+	<ReplaceText sPath_File="#FILEDIR#..\Code\#Code_Version#\TxFormula\TxFormula.txucg" sFrom="Code_Version" sTo="#Code_Version#"/>
+	
+	<Compile sPath_File="#FILEDIR#TxFormula\TxFormula.dpr" sConfig="Debug"/>     
+	
+	<Abstract sPath_File="#FILEDIR#..\Code\#Code_Version#\TxFormula\TxFormula.txucg"/>
+	
+	<!-- Txudir from template -->
+	<Copy sPath_Src="#FILEDIR#TxFormula_Template.txudir" sPath_Dest="#FILEDIR#TxFormula.txudir" bRemove_Src="false"/>
+	<ReplaceText sPath_File="#FILEDIR#TxFormula.txudir" sFrom="Code_Version" sTo="#Code_Version#"/>
+
+	
+	<Compile sPath_File="#FILEDIR#TxFormula\TxFormula.dpr" sConfig="Release"/>
+
+</TXUtils>

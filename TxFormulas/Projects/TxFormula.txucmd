@@ -1,0 +1,10 @@
+<TXUtils>
+	<Remove sPathes="#FILEDIR#Custom_Files_TxFormula\|#FILEDIR#Custom_Files_TxFormula.zip"/>
+	     
+	<TXUCmd sPath_File="#FILEDIR#TxVersion_TxFormula.txucmd"/>
+	<Compile sPath_File="#FILEDIR#TxFormula\TxFormula.dpr" sConfig="Release"/>  
+	
+     	
+	<Dir sPath_File="#FILEDIR#TxFormula.txudir"/>    
+	<ZipDir sDir="#FILEDIR#Custom_Files_TxFormula\" sPath_File_Dest="#FILEDIR#Custom_Files_TxFormula.zip"/>
+</TXUtils>

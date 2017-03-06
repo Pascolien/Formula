@@ -1,0 +1,19 @@
+[DPR]
+sPath_File=#FILEDIR#..\..\..\Projects\TxFormula\TxFormula.dpr
+sR={$R 'D:\CodeBassetti\Specific_Devs\4.0.0\Version_Info.res'}
+
+[U_Abstract]
+sPath_File=#FILEDIR#..\..\..\Projects\Txformula\pas\U_Abstract_TxFormula.pas
+sUses=Windows,SysUtils,U_Small_Lib;
+
+[DPR_Files]
+//FastSharemem,
+//System.SysUtils,
+//System.Classes,
+//U_Abstract in 'D:\CodeBassetti\Specific_Devs\4.0.0\U_Abstract\29114\U_Abstract.pas',
+//U_Const in '..\..\..\..\Specific_Devs\4.0.0\U_Abstract\29114\U_Const.pas',
+//U_Version in '..\..\..\..\Specific_Devs\4.0.0\U_Abstract\29114\U_Version.pas',
+//U_MainFormula in '..\..\Code\Dev\TxFormula\Pas\U_MainFormula.pas',
+U_TxFormula in '..\..\Code\Dev\TxFormula\Pas\U_TxFormula.pas',
+//U_TxFormula_Ini in '..\..\Code\Dev\TxFormula\Pas\U_TxFormula_Ini.pas',
+//U_TxJSON in 'D:\CodeBASSETTI\Business_Devs\Common_Files\Pas\U_TxJSON.pas';

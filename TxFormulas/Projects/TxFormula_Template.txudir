@@ -1,0 +1,7 @@
+[Folders]
+1=#FILEDIR#..\Code\Code_Version\TxFormula\Web|Custom_Files_TxFormula\Customer resources\Models\TxFormula\Web
+2=#FILEDIR#..\..\Common_Files\Web|Custom_Files_TxFormula\Customer resources\Models\TxFormula\Web
+3=#FILEDIR#..\Code\Code_Version\Locale\|Custom_Files_TxFormula\Customer resources\Models\TxFormula\Locale
+
+[Files]
+1=#FILEDIR#TxFormula\TxFormula.dll|Custom_Files_TxFormula\Customer resources\Models\TxFormula\TxFormula.dll

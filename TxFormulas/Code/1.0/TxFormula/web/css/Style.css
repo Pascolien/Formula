@@ -1,0 +1,104 @@
+﻿html, body {
+    width: 100%;
+    height: 100%;
+    font-size: 11px;
+    font-family: Tahoma;
+    background-color: white;
+    overflow: auto;
+}
+/************************  **********************************/
+
+
+.divFormula {
+    margin: 6px;
+    border: 1px solid #A4BED4;
+    position: absolute;
+    top: 10px;
+    bottom: 5px;
+    margin-top: 50px;
+    left: 0px;
+    right: 0px;
+    overflow: auto;
+    float: left;
+    height: auto;
+}
+
+.div_formule label{
+     font-weight: bold;
+     text-align: right;
+     margin-top: 10px;
+     text-align: right;
+ }
+
+.div_cell label{
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+    font-weight: bold;
+}
+
+.input_variable {
+    margin-left: 20px;
+    margin-right: 5px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    vertical-align:middle;
+    display:inline-block;
+    border: 1px solid black;    
+}
+
+.input_result {
+    margin-left: 20px;
+    margin-right: 5px;
+    margin-top: auto;
+    margin-bottom: 5px;
+    vertical-align:middle;
+    background-color: lightslategray;
+}
+
+.input_formula{
+    margin-left: 20px;
+    margin-right: 5px;
+    margin-top: auto;
+    margin-bottom: 5px;
+    vertical-align:middle;
+    font-size:12px;
+    border:none;
+    font-weight: 700;
+    color:darkslategray;
+    
+    
+}
+
+
+/*.overflow {
+    color: red;
+}*/
+
+.button {
+  /*  background-color: #4CAF50;  Green */ 
+    border: none;
+    color: white;
+    padding: 5px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */ 
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.tab {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #008CBA;
+}
+
+.tab:hover {
+    background-color: #008CBA;
+    color: white;
+}
+
+
